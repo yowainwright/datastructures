@@ -2,9 +2,18 @@
   "name": "datastructures.ts",
   "version": "0.0.1",
   "description": "Data Structures in TypeScript",
-  "main": "index.ts",
+  "main": "build/data-structures.js",
   "scripts": {
-    "test": "test"
+    "build": "rollup --config rollup.config.js",
+    "lint": "npm run lint:grammar && npm run lint:grammar && npm run lint:md",
+    "lint:ci": "npm run lint:grammar && npm run lint:grammar",
+    "lint:grammar": "write-good *.md --no-passive",
+    "lint:md": "markdownlint *.md",
+    "lint:ts": "tslint -c tslint.json 'src/**/*.{ts}'",
+    "start": "nvm i && npm i",
+    "test": "npm run test:unit && npm run test:es-check",
+    "test:es-check": "es-check es5 build/*.js",
+    "test:unit": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -26,6 +35,7 @@
   "homepage": "https://github.com/yowainwright/datastructures.ts#readme",
   "devDependencies": {
     "@types/jest": "^22.2.3",
+    "jest": "^22.4.3",
     "markdownlint-cli": "^0.8.1",
     "rollup": "^0.58.2",
     "rollup-plugin-typescript": "^0.8.1",
@@ -35,5 +45,15 @@
     "typedoc": "^0.11.1",
     "typescript": "^2.8.3",
     "write-good": "^0.11.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ]
   }
 }
