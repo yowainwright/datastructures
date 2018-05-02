@@ -1,0 +1,39 @@
+{
+  "name": "datastructures.ts",
+  "version": "0.0.1",
+  "description": "Data Structures in TypeScript",
+  "main": "index.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yowainwright/datastructures.ts.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "TS",
+    "JavaScript",
+    "DataStructures",
+    "Data",
+    "Structures"
+  ],
+  "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yowainwright/datastructures.ts/issues"
+  },
+  "homepage": "https://github.com/yowainwright/datastructures.ts#readme",
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "markdownlint-cli": "^0.8.1",
+    "rollup": "^0.58.2",
+    "rollup-plugin-typescript": "^0.8.1",
+    "ts-jest": "^22.4.4",
+    "tslint": "^5.9.1",
+    "tslint-config-dollarshaveclub": "^1.0.2",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.8.3",
+    "write-good": "^0.11.3"
+  }
+}

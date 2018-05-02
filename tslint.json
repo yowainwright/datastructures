@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "tslint-config-dollarshaveclub"
+  ],
+  "rules": {
+    "no-unnecessary-type-assertion": false,
+    "trailing-comma": false
+  }
+}

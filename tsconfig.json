@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "outDir": "build/",
+    "module": "esnext",
+    "target": "es5",
+    "lib": [
+      "es6",
+      "es2016.array.include",
+      "es2017",
+      "dom"
+    ],
+    "sourceMap": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "rollup",
+    "jest",
+  ]
+}
