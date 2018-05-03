@@ -19,10 +19,10 @@
     "noUnusedLocals": true,
     "strictNullChecks": true
   },
-
   "exclude": [
-    "node_modules",
     "build",
-    "__test__"
+    "coverage",
+    "node_modules",
+    "src/__tests__"
   ]
 }

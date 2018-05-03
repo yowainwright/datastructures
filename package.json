@@ -4,7 +4,9 @@
   "description": "Data Structures in TypeScript",
   "main": "build/data-structures.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "npm run build:ts && npm run build:docs",
+    "build:docs": "rm -rf docs && typedoc --readme none --target ES6 --out docs/ src/*.ts && touch docs/.nojekyll",
+    "build:ts": "tsc -p tsconfig.json",
     "lint": "npm run lint:grammar && npm run lint:grammar && npm run lint:ts",
     "lint:grammar": "write-good *.md --no-passive",
     "lint:md": "markdownlint *.md",
@@ -33,10 +35,6 @@
   },
   "homepage": "https://github.com/yowainwright/datastructures.ts#readme",
   "devDependencies": {
-    "@types/acorn": "^4.0.3",
-    "@types/chokidar": "^1.7.5",
-    "magic-string": "^0.24.0",
-    "source-map": "^0.7.2",
     "@types/jest": "^22.2.3",
     "es-check": "^2.0.4",
     "jest": "^22.4.3",
