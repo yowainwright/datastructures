@@ -1,0 +1,20 @@
+{
+  "name": "@datastructures-ts/linked-list",
+  "version": "0.0.1",
+  "description": "Linked List Data Structure in TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel/tree/master/packages/linked-list"
+  },
+  "keywords": [
+    "data-structures",
+    "datastructures",
+    "typescript"
+  ],
+  "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
+  "license": "MIT"
+}
