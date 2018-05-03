@@ -1,0 +1,1 @@
+{"version":3,"file":"data-structures.js","sources":["../src/index.ts"],"sourcesContent":["import LinkedList from 'linked-list/index'\n\nexport default {\n  LinkedList\n}\n"],"names":[],"mappings":";;;;;;;;AAEA,cAAe;EACf,EAAE,UAAU;EACZ,CAAC;;;;;;;;"}

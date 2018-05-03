@@ -1,4 +1,4 @@
-import LinkedList from './linked-list'
+import LinkedList from 'linked-list/index'
 
 export default {
   LinkedList
