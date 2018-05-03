@@ -2,29 +2,28 @@
   This project directly inherits from eyas-ranjous/datastructures-js 🙏
 */
 
-export default class LinkedList {
-  constructor (public value: string, public next: Object) {
+export default class Node<T> {
+  private value: T
+  private next: Node<T> | null
+
+  constructor (value: T, next: Node<T> | null = null) {
     this.value = value
-    this.setNext(next)
+    this.next = next 
   }
 
-  getValue () {
+  getValue (): T {
     return this.value
   }
 
-  setValue (value: string) {
+  setValue (value: T): void {
     this.value = value
   }
 
-  getNext () {
+  getNext (): Node<T> | null {
     return this.next
   }
 
-  setNext (node: Object) {
-    this.setNode(node, 'next')
-  }
-
-  setNode (node: Object, type: string) {
-    this[type] = node instanceof LinkedList ? node : null
+  setNext (node: Node<T>): void {
+    this.next = node
   }
 }
