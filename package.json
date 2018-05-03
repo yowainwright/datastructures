@@ -1,11 +1,10 @@
 {
-  "name": "datastructures.ts",
+  "name": "datastructures-ts",
   "version": "0.0.1",
   "description": "Data Structures in TypeScript",
   "main": "build/data-structures.js",
   "scripts": {
-    "build": "npm run build:ts && npm run build:docs",
-    "build:docs": "rm -rf docs && typedoc --readme none --target ES6 --out docs/ src/*.ts && touch docs/.nojekyll",
+    "build": "npm run build:ts",
     "build:ts": "tsc -p tsconfig.json",
     "lint": "npm run lint:grammar && npm run lint:grammar && npm run lint:ts",
     "lint:grammar": "write-good *.md --no-passive",
@@ -13,7 +12,7 @@
     "lint:ts": "tslint -c tslint.json 'src/**/*.{ts}'",
     "start": "nvm i && npm i",
     "test": "npm run test:unit && npm run test:es-check",
-    "test:es-check": "es-check es5 build/*.js",
+    "test:es-check": "es-check es5 !./packages/node_modules/* ./packages/index.js",
     "test:unit": "jest --coverage"
   },
   "repository": {
@@ -38,12 +37,12 @@
     "@types/jest": "^22.2.3",
     "es-check": "^2.0.4",
     "jest": "^22.4.3",
+    "lerna": "^2.5.1",
     "markdownlint-cli": "^0.8.1",
     "rollup": "^0.58.2",
     "ts-jest": "^22.4.4",
     "tslint": "^5.9.1",
     "tslint-config-dollarshaveclub": "^1.0.2",
-    "typedoc": "^0.11.1",
     "typescript": "^2.8.3",
     "write-good": "^0.11.3"
   },

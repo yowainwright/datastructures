@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "build",
+    "outDir": ".",
     "target": "es5",
     "lib": [
       "es6",
@@ -10,7 +10,7 @@
     ],
     "sourceMap": true,
     "allowJs": true,
-    "rootDir": "src/",
+    "rootDir": ".",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -20,9 +20,8 @@
     "strictNullChecks": true
   },
   "exclude": [
-    "build",
     "coverage",
     "node_modules",
-    "src/__tests__"
+    "**/__tests__/*"
   ]
 }

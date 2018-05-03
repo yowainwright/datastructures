@@ -33,4 +33,4 @@ var LinkedListNode = /** @class */ (function () {
     return LinkedListNode;
 }());
 exports.default = LinkedListNode;
-//# sourceMappingURL=linked-list-node.js.map
+//# sourceMappingURL=index.js.map
