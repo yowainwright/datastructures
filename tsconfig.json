@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "build/",
-    "module": "esnext",
+    "outDir": "build",
     "target": "es5",
     "lib": [
       "es6",
@@ -11,8 +10,7 @@
     ],
     "sourceMap": true,
     "allowJs": true,
-    "moduleResolution": "node",
-    "rootDir": ".",
+    "rootDir": "src/",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -21,9 +19,10 @@
     "noUnusedLocals": true,
     "strictNullChecks": true
   },
+
   "exclude": [
     "node_modules",
     "build",
-    "jest",
+    "__test__"
   ]
 }

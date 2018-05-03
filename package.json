@@ -4,7 +4,7 @@
   "description": "Data Structures in TypeScript",
   "main": "build/data-structures.js",
   "scripts": {
-    "build": "rollup --config rollup.config.js",
+    "build": "tsc -p tsconfig.json",
     "lint": "npm run lint:grammar && npm run lint:grammar && npm run lint:ts",
     "lint:grammar": "write-good *.md --no-passive",
     "lint:md": "markdownlint *.md",
