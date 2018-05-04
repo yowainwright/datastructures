@@ -1,6 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /*
+  LINKED LIST ⛓
+  ----
+  The Linked List Node is a Linear Structure of Nodes. Each node is a seperate object.
+
   Credits: This project directly inherits from eyas-ranjous/datastructures-js 🙏
   ----
   <T> Generics = is used instead of typescript's 'any'
@@ -32,5 +36,30 @@ var LinkedListNode = /** @class */ (function () {
     };
     return LinkedListNode;
 }());
-exports.default = LinkedListNode;
+/*
+  Linked List ⛓
+  ----
+
+  The Linked List Class inheritis the Linked List Node Class as a child
+*/
+var LinkedList = /** @class */ (function () {
+    function LinkedList(nodeCount, headNode) {
+        if (headNode === void 0) { headNode = null; }
+        this.nodeCount = nodeCount;
+        this.headNode = headNode;
+    }
+    // get the initial node
+    LinkedList.prototype.getHeadNode = function () {
+        return this.headNode;
+    };
+    // get the number of nodes in a Linked List
+    LinkedList.prototype.getNodeCount = function () {
+        return this.nodeCount;
+    };
+    return LinkedList;
+}());
+exports.default = {
+    LinkedListNode: LinkedListNode,
+    LinkedList: LinkedList
+};
 //# sourceMappingURL=index.js.map

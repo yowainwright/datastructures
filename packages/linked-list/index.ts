@@ -1,4 +1,8 @@
 /*
+  LINKED LIST ⛓
+  ----
+  The Linked List Node is a Linear Structure of Nodes. Each node is a seperate object.
+
   Credits: This project directly inherits from eyas-ranjous/datastructures-js 🙏
   ----
   <T> Generics = is used instead of typescript's 'any'
@@ -44,4 +48,43 @@ class LinkedListNode<T> {
   }
 }
 
-export default LinkedListNode
+/*
+  Linked List ⛓
+  ----
+
+  The Linked List Class inheritis the Linked List Node Class as a child
+*/
+class LinkedList<T> {
+  /*
+    headNode
+    - the initial node
+    - is a LinkedListNode
+    - a class
+    nodeCount
+    - number
+    - the number of nodes
+  */
+  private headNode: LinkedListNode<T> | null
+  private nodeCount: number
+
+  constructor (nodeCount: number, headNode: LinkedListNode<T> | null = null) {
+    this.nodeCount = nodeCount
+    this.headNode = headNode
+  }
+
+  // get the initial node
+  getHeadNode () {
+    return this.headNode
+  }
+
+  // get the number of nodes in a Linked List
+  getNodeCount () {
+    return this.nodeCount
+  }
+
+}
+
+export default {
+  LinkedListNode,
+  LinkedList
+}
