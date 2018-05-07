@@ -48,12 +48,12 @@ class LinkedListNode<T> {
   }
 }
 
-/*
-  Linked List ⛓
-  ----
+// /*
+//   Linked List ⛓
+//   ----
 
-  The Linked List Class inheritis the Linked List Node Class as a child
-*/
+//   The Linked List Class inheritis the Linked List Node Class as a child
+// */
 class LinkedList<T> {
   /*
     headNode
@@ -84,7 +84,7 @@ class LinkedList<T> {
 
 }
 
-export default {
+export {
   LinkedListNode,
   LinkedList
 }
