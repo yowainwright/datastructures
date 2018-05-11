@@ -1,8 +1,7 @@
 import { LinkedListNode, LinkedList } from '../index'
 
 /*
-   linkedListNode
-   ---
+   linkedListNode Tests
 */
 test('Jest is working, LinkedListNode is imported', () => {
   expect(typeof LinkedListNode).toBe('function')

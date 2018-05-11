@@ -35,13 +35,6 @@ class LinkedListNode<T> {
   }
 
   /**
-   * sets the linked list node value
-   */
-  setNodeValue (value: T): void {
-    this.value = value
-  }
-
-  /**
    * @returns the next list node
    */
   getNextNode (): LinkedListNode<T> | null {
@@ -51,7 +44,14 @@ class LinkedListNode<T> {
   /**
    * sets the linked list node value
    */
-  setNextNode (nextNode: LinkedListNode<T>): void {
+  setNodeValue (value: T): void {
+    this.value = value
+  }
+
+  /**
+   * sets the linked list node value
+   */
+  setNextNode (nextNode: LinkedListNode<T> | null): void {
     this.nextNode = nextNode
   }
 }
@@ -81,6 +81,10 @@ class LinkedList<T> {
   }
 
   /**
+   * Add methods
+   */
+
+  /**
    * @param value value
    * adds a new node to the beginning of the linkedList
    */
@@ -107,6 +111,50 @@ class LinkedList<T> {
   }
 
   /**
+   * @param value
+   * @param  previous node
+   * @param current node
+   * removes a node by its value from the linkedlist
+   */
+  removeNode (value: T, previous: LinkedListNode<T> | null, current = this.headNode) {
+    if (current && previous === null && current.getNodeValue()) {
+      this.removeFirstNode()
+    } else if (current && previous && current.getNodeValue()) {
+      previous.setNextNode(current.getNextNode())
+      this.nodeCount = this.nodeCount - 1
+    } else if (current) {
+      this.removeNode(value, current, current.getNextNode())
+    }
+  }
+
+  /**
+   * removes the first node
+   */
+  removeFirstNode () {
+    if (this.headNode === null) return
+    this.headNode = this.headNode.getNextNode() === null ?
+      null :
+      this.headNode.getNextNode()
+    this.nodeCount = this.nodeCount - 1
+  }
+
+  /**
+   * @param  previous node
+   * @param current node
+   */
+  removeLastNode (previous: LinkedListNode<T> | null = null, current = this.headNode) {
+    if (current && current.getNextNode() && previous === null) {
+      this.headNode = null
+      this.nodeCount = this.nodeCount - 1
+    } else if (current && current.getNextNode() && previous) {
+      previous.setNextNode(null)
+      this.nodeCount = this.nodeCount - 1
+    } else if (current) {
+      this.removeLastNode(current, current.getNextNode())
+    }
+  }
+
+  /**
    * @returns a linked list node
    */
   find (value: T, current = this.headNode): LinkedListNode<T> | null {
@@ -116,14 +164,8 @@ class LinkedList<T> {
   }
 
   /**
-   * updates the head node value
+   * Convenience methods
    */
-  updateHeadNode (value: T): void {
-    this.headNode = this.headNode
-      ? new LinkedListNode(this.headNode.getNodeValue())
-      : new LinkedListNode(value)
-    this.nodeCount = this.nodeCount + 1
-  }
 
   /**
    * @returns the headNode
