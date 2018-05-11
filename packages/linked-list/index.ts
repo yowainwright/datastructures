@@ -1,23 +1,24 @@
-/*
-  LINKED LIST ⛓
-  ----
-  The Linked List Node is a Linear Structure of Nodes. Each node is a seperate object.
+/**
+ * LINKED LIST ⛓
+ * The Linked List Node is a Linear Structure of Nodes. Each node is a seperate object
+ * Credits: This project directly inherits from eyas-ranjous/datastructures-js 🙏
+ */
 
-  Credits: This project directly inherits from eyas-ranjous/datastructures-js 🙏
-  ----
-  <T> Generics = is used instead of typescript's 'any'
-  - https://www.typescriptlang.org/docs/handbook/generics.html
-  - <T> (a Generic) insures an 'any' type is of the same type!
-*/
+/**
+ * Linked List Node
+ * represents a node containing information called a value
+ * it may also provide information about the next node (sibling node)
+ */
 class LinkedListNode<T> {
-  /*
-    value
-    - the value of the node
-    - (the current LinkedListNode)
-    nextNode
-    - the next LinkedListNode || or null
-    - it is null if it is the last LinkedListNode
-  */
+  /**
+   * @param value
+   * the value of the linked list node
+   */
+  /**
+   * @param nextNode
+   * the next LinkedListNode || or null
+   * it is null if it is the last LinkedListNode
+   */
   private value: T
   private nextNode: LinkedListNode<T> | null
 
@@ -26,65 +27,117 @@ class LinkedListNode<T> {
     this.nextNode = nextNode
   }
 
-  // gets value of the current node
+  /**
+   * @returns the linked list node value
+   */
   getNodeValue (): T {
     return this.value
   }
 
-  // :void means that there will be no return value
-  // sets the value of the current LinkedListNode
-  setValue (value: T): void {
+  /**
+   * sets the linked list node value
+   */
+  setNodeValue (value: T): void {
     this.value = value
   }
 
-  // gets the next Linkded
+  /**
+   * @returns the next list node
+   */
   getNextNode (): LinkedListNode<T> | null {
     return this.nextNode
   }
 
-  // sets the next node
+  /**
+   * sets the linked list node value
+   */
   setNextNode (nextNode: LinkedListNode<T>): void {
     this.nextNode = nextNode
   }
 }
 
-// /*
-//   Linked List ⛓
-//   ----
-
-//   The Linked List Class inheritis the Linked List Node Class as a child
-// */
+/**
+ * Linked List
+ * represents a list of nodes containing information (values)
+ */
 class LinkedList<T> {
-  /*
-    headNode
-    - the initial node
-    - is a LinkedListNode
-    - a class
-    nodeCount
-    - number
-    - the number of nodes
-  */
+  /**
+   * @param headNode
+   * the value of the first linked list node
+   */
+  /**
+   * @param nodeCount
+   * the number of nodes within the Linked List
+   */
   private headNode: LinkedListNode<T> | null
   private nodeCount: number
 
-  constructor (nodeCount: number, headNode: LinkedListNode<T> | null = null) {
+  constructor (
+    nodeCount: number | 0,
+    headNode: LinkedListNode<T> | null = null,
+  ) {
     this.nodeCount = nodeCount
     this.headNode = headNode
   }
 
-  // get the initial node
-  getHeadNode () {
+  /**
+   * @param value value
+   * adds a new node to the beginning of the linkedList
+   */
+  addFirstNode (value: T) {
+    this.headNode = this.headNode
+      ? new LinkedListNode(this.headNode.getNodeValue())
+      : new LinkedListNode(value)
+    this.nodeCount = this.nodeCount + 1
+  }
+
+  /**
+   * @param value of node
+   * @param LinkedListNode
+   * addLast adds a Linked List Node last
+   */
+  addLast (value: T, lastNode = this.headNode): void {
+    if (lastNode === null) {
+      this.headNode = new LinkedListNode(value)
+      this.nodeCount = this.nodeCount + 1
+    } else if (lastNode.getNextNode() === null) {
+      lastNode.setNextNode(new LinkedListNode(value))
+      this.nodeCount = this.nodeCount + 1
+    } else this.addLast(value, lastNode.getNextNode())
+  }
+
+  /**
+   * @returns a linked list node
+   */
+  find (value: T, current = this.headNode): LinkedListNode<T> | null {
+    if (current === null) return null
+    else if (current.getNodeValue() === value) return current
+    else return this.find(value, current.getNextNode())
+  }
+
+  /**
+   * updates the head node value
+   */
+  updateHeadNode (value: T): void {
+    this.headNode = this.headNode
+      ? new LinkedListNode(this.headNode.getNodeValue())
+      : new LinkedListNode(value)
+    this.nodeCount = this.nodeCount + 1
+  }
+
+  /**
+   * @returns the headNode
+   */
+  getHeadNode (): LinkedListNode<T> | null {
     return this.headNode
   }
 
-  // get the number of nodes in a Linked List
-  getNodeCount () {
+  /**
+   * @returns the node code
+   */
+  getNodeCount (): number {
     return this.nodeCount
   }
-
 }
 
-export {
-  LinkedListNode,
-  LinkedList
-}
+export { LinkedListNode, LinkedList }
