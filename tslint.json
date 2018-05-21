@@ -4,6 +4,10 @@
   ],
   "rules": {
     "no-unnecessary-type-assertion": false,
-    "trailing-comma": false
+    "trailing-comma": false,
+    "semicolon": [
+      true,
+      "never"
+    ]
   }
 }
