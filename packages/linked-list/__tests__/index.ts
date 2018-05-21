@@ -12,12 +12,12 @@ test('Jest is working, LinkedListNode is imported', () => {
 test('LinkedListNode init', function testLinkedListNodeInit () {
   const node = new LinkedListNode('foo')
   expect(typeof node).toEqual('object')
-  expect(node.value).toEqual('foo')
+  expect(node.getNodeValue()).toEqual('foo')
   expect(node.nextNode).toEqual(null)
 })
 
 // test LinkedListNode .getNodeValue()
-test('LinkedListNode getValue', function testLinkedListNodeGetValue () {
+test('LinkedListNode getNodeValue', function testLinkedListNodeGetValue () {
   const node = new LinkedListNode('foo')
   expect(node.getNodeValue()).toEqual('foo')
 })
@@ -26,5 +26,15 @@ test('LinkedListNode getValue', function testLinkedListNodeGetValue () {
 test('LinkedListNode setNodeValue', function testLinkedListNodeSetValue () {
   const node = new LinkedListNode('foo')
   node.setNodeValue('bar')
-  expect(node.value).toEqual('bar')
+  expect(node.getNodeValue()).toEqual('bar')
+})
+
+// test LinkedListNode .setNodeValue()
+test('LinkedListNode setNextNode', function testLinkedListNextNode () {
+  const node = new LinkedListNode('foo')
+  const otherNode = new LinkedListNode('bar')
+  node.setNextNode(otherNode)
+  const nextNode = node.getNextNode()
+  expect(typeof node.getNextNode()).toBe('object')
+  expect(nextNode.getNodeValue()).toEqual('bar')
 })

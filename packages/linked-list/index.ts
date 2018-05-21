@@ -1,4 +1,5 @@
 /**
+ * @ingore
  * LINKED LIST ⛓
  * The Linked List Node is a Linear Structure of Nodes. Each node is a seperate object
  * Credits: This project directly inherits from eyas-ranjous/datastructures-js 🙏
