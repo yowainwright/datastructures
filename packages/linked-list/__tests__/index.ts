@@ -38,3 +38,12 @@ test('LinkedListNode setNextNode', function testLinkedListNextNode () {
   expect(typeof node.getNextNode()).toBe('object')
   expect(nextNode.getNodeValue()).toEqual('bar')
 })
+
+// test LinkedListNode .setNodeValue()
+test('LinkedList setNextNode', function testLinkedList () {
+  const node = new LinkedListNode('foo')
+  const otherNode = new LinkedListNode('bar')
+  const list = new LinkedList(1, node)
+  expect(list.headNode.value).toBe('foo')
+
+})
