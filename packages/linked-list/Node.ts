@@ -14,10 +14,10 @@ class Node<T> {
    * the next LinkedListNode || or null
    * it is null if it is the last LinkedListNode
    */
-  private value: T
-  private nextNode: Node<T> | null
+  public value: T
+  public nextNode: Node<T> | null
 
-  constructor(value: T, nextNode: Node<T> | null = null) {
+  constructor (value: T, nextNode: Node<T> | null = null) {
     this.value = value
     this.nextNode = nextNode
   }
@@ -25,28 +25,28 @@ class Node<T> {
   /**
    * @returns the linked list node value
    */
-  getNodeValue(): T {
+  getNodeValue (): T {
     return this.value
   }
 
   /**
    * @returns the next list node
    */
-  getNextNode(): Node<T> | null {
+  getNextNode (): Node<T> | null {
     return this.nextNode
   }
 
   /**
    * sets the linked list node value
    */
-  setNodeValue(value: T): void {
+  setNodeValue (value: T): void {
     this.value = value
   }
 
   /**
    * sets the linked list node value
    */
-  setNextNode(nextNode: Node<T> | null): void {
+  setNextNode (nextNode: Node<T> | null): void {
     this.nextNode = nextNode
   }
 }

@@ -7,7 +7,7 @@
  * ----
  * represents a list of nodes containing information (values)
  */
-import { Node } from './node'
+import { Node } from './Node'
 class LinkedList<T> {
   /**
    * @param headNode
@@ -17,8 +17,8 @@ class LinkedList<T> {
    * @param nodeCount
    * the number of nodes within the Linked List
    */
-  private headNode: Node<T> | null
-  private nodeCount: number
+  public headNode: Node<T> | null
+  public nodeCount: number
 
   constructor (
     nodeCount: number | 0,
@@ -48,15 +48,45 @@ class LinkedList<T> {
    * @param Node
    * addLast adds a Linked List Node last
    */
-  addLast (value: T, lastNode = this.headNode): void {
+  addLastNode (value: T, lastNode = this.headNode): void {
     if (lastNode === null) {
       this.headNode = new Node(value)
       this.nodeCount = this.nodeCount + 1
     } else if (lastNode.getNextNode() === null) {
       lastNode.setNextNode(new Node(value))
       this.nodeCount = this.nodeCount + 1
-    } else this.addLast(value, lastNode.getNextNode())
+    } else this.addLastNode(value, lastNode.getNextNode())
   }
+
+  /**
+   * @param value => value of current node
+   * @param newValue => value of new node
+   * @param current => the current node
+   * addLast adds a Linked List Node last
+   */
+  addAfterNode (nodeValueMatch: T, newValue: T, current = this.headNode) {
+    if (current === null) {
+      throw new Error(`LinkedList:node ${nodeValueMatch} not found`)
+    } else if (current.getNodeValue() === nodeValueMatch) {
+      current.setNextNode(new Node(newValue, current.getNextNode()))
+      this.nodeCount = this.nodeCount + 1
+    } else {
+      this.addAfterNode(nodeValueMatch, newValue, current.getNextNode())
+    }
+  }
+
+  /**
+   * @param value => existing node value
+   * @param newValue => value of new node
+   * @param previous => previous node
+   * @param current => the current node
+   * addLast adds a Linked List Node last
+   */
+  addBeforeNode(value: T, newValue: T, previous: Node<T> | null = null, current = this.headNode) {
+    if (current === null) throw new Error(`node ${value} not found`)
+    this.addBeforeNode(value, newValue, previous, current)
+  }
+
 
   /**
    * @param value
@@ -103,12 +133,22 @@ class LinkedList<T> {
   }
 
   /**
+   * @param a callback
+   * @param the current first node
+   */
+  traverseLinkedList (cb: (nodeValue: T) => void, current = this.headNode) {
+    if (current === null) return
+    cb(current.getNodeValue())
+    this.traverseLinkedList(cb, current.getNextNode())
+  }
+
+  /**
    * @returns a linked list node
    */
-  find (value: T, current = this.headNode): Node<T> | null {
+  findNode (value: T, current = this.headNode): Node<T> | null {
     if (current === null) return null
     else if (current.getNodeValue() === value) return current
-    else return this.find(value, current.getNextNode())
+    else return this.findNode(value, current.getNextNode())
   }
 
   /**
@@ -126,6 +166,13 @@ class LinkedList<T> {
    * @returns the node code
    */
   getNodeCount (): number {
+    return this.nodeCount
+  }
+
+  /**
+   * @returns the Linked List Length
+   */
+  length () {
     return this.nodeCount
   }
 }
