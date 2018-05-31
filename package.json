@@ -6,13 +6,12 @@
   "scripts": {
     "build": "npm run build:ts",
     "build:ts": "tsc -p tsconfig.json",
-    "lint": "npm run lint:grammar && npm run lint:grammar && npm run lint:ts",
-    "lint:grammar": "write-good *.md --no-passive",
+    "lint": "npm run lint:grammar && npm run lint:md && npm run lint:ts",
+    "lint:grammar": "write-good ./packages/**/*.md --no-passive",
     "lint:md": "markdownlint *.md",
     "lint:ts": "tslint -c tslint.json 'src/**/*.{ts}'",
     "start": "nvm i && npm i",
-    "test": "npm run test:unit && npm run test:es-check",
-    "test:es-check": "es-check es5 !./packages/node_modules/* ./packages/index.js",
+    "test": "npm run test:unit",
     "test:unit": "jest --coverage"
   },
   "repository": {

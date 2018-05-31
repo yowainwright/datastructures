@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Linked List Data Structure in TypeScript",
   "main": "index.js",
+  "unpkg": "index.js",
   "scripts": {
     "test": "test"
   },
@@ -13,7 +14,10 @@
   "keywords": [
     "data-structures",
     "datastructures",
-    "typescript"
+    "typescript",
+    "linked list",
+    "linkedlist",
+    "linked-list"
   ],
   "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
   "license": "MIT"
