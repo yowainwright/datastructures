@@ -18,17 +18,6 @@ save_cache: &save_cache
     paths:
       - node_modules
 
-# restore_ci_cache: &restore_ci_cache
-#   restore_cache:
-#     keys:
-#       - ci-{{ .Environment.CIRCLE_WORKFLOW_WORKSPACE_ID }}
-
-# save_ci_cache: &save_ci_cache
-#   save_cache:
-#     key: ci-{{ .Environment.CIRCLE_WORKFLOW_WORKSPACE_ID }}
-#     paths:
-#       - .env
-
 version: 2
 jobs:
   test-build:
@@ -38,11 +27,10 @@ jobs:
       - run: npm install
       - *restore_cache
       - run: npm install
-      - run: npm run eslint
+      - run: npm run lint
       - run: npm run build
-      - run: npm run es-check
       - run: npm test
-      - *save_cachee
+      - *save_cache
 
 workflows:
   version: 2
