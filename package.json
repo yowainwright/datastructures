@@ -38,9 +38,9 @@
     "es-check": "^2.0.4",
     "jest": "^22.4.3",
     "lerna": "^2.5.1",
-    "markdownlint-cli": "^0.8.1",
+    "markdownlint-cli": "^0.10.0",
     "rollup": "^0.58.2",
-    "ts-jest": "^22.4.4",
+    "ts-jest": "^22.4.6",
     "tslint": "^5.9.1",
     "tslint-config-dollarshaveclub": "^1.0.2",
     "typedoc": "^0.11.1",
@@ -56,5 +56,8 @@
       "ts",
       "js"
     ]
+  },
+  "quokka": {
+    "babel": true
   }
 }
