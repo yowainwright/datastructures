@@ -9,7 +9,7 @@
  */
 import { Node } from './Node';
 class LinkedList {
-    constructor(nodeCount, headNode = null) {
+    constructor(nodeCount: number, headNode = null) {
         this.nodeCount = nodeCount;
         this.headNode = headNode;
     }
