@@ -1,3 +1,6 @@
+declare function test (msg: string, test: Function)
+declare function expect (result: any)
+
 import { Node } from '../Node'
 
 /*

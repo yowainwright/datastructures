@@ -21,7 +21,7 @@ class LinkedList<T> {
   public nodeCount: number
 
   constructor (
-    nodeCount: number | 0,
+    nodeCount: number | 0 = 0,
     headNode: Node<T> | null = null,
   ) {
     this.nodeCount = nodeCount
