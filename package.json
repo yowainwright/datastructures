@@ -14,10 +14,7 @@
     "test": "npm run test:unit",
     "test:unit": "jest --coverage"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yowainwright/datastructures.ts.git"
-  },
+  "repository": "git+https://github.com/yowainwright/datastructures.ts.git",
   "keywords": [
     "TypeScript",
     "TS",
