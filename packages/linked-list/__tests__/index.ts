@@ -1,4 +1,4 @@
-declare function test (msg: string, test: Function)
+declare function test(msg: string, test: Function)
 declare function expect (result: any)
 
 import { LinkedList } from '../index.ts'
@@ -48,4 +48,13 @@ test('LinkedList addAfterNode', function addAfterNode () {
   list.addLastNode('bar')
   list.addAfterNode('foo', 'biz')
   expect(list.nodeCount).toEqual(3)
+})
+
+// test LinkedListNode .addBeforeNode()
+test('LinkedList addBeforeNode', function addBeforeNode () {
+  const list = new LinkedList()
+  list.addFirstNode('foo')
+  expect(list.nodeCount).toEqual(1)
+  list.addBeforeNode('foo', 'bar')
+  expect(list.nodeCount).toEqual(2)
 })
