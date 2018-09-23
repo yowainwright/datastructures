@@ -1,23 +1,25 @@
 {
   "compilerOptions": {
-    "outDir": ".",
-    "target": "es6",
+    "allowJs": false,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
     "lib": [
       "es6",
       "es2016.array.include",
       "es2017",
       "dom"
     ],
-    "sourceMap": true,
-    "allowJs": true,
-    "rootDir": ".",
-    "forceConsistentCasingInFileNames": true,
+    "module": "umd",
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "strictNullChecks": true
+    "outDir": "dist/",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "rootDir": ".",
+    "target": "es5"
   },
   "exclude": [
     "coverage",

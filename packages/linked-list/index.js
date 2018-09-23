@@ -20,7 +20,7 @@ class LinkedList {
      * @param value value
      * adds a new node to the beginning of the linkedList
      */
-    addFirstNode(value) {
+    addFirstNode (value) {
         this.headNode = this.headNode
             ? new Node(this.headNode.getNodeValue())
             : new Node(value);
@@ -31,17 +31,16 @@ class LinkedList {
      * @param Node
      * addLast adds a Linked List Node last
      */
-    addLastNode(value, lastNode = this.headNode) {
-        if (lastNode === null) {
-            this.headNode = new Node(value);
-            this.nodeCount = this.nodeCount + 1;
-        }
-        else if (lastNode.getNextNode() === null) {
-            lastNode.setNextNode(new Node(value));
-            this.nodeCount = this.nodeCount + 1;
-        }
-        else
-            this.addLastNode(value, lastNode.getNextNode());
+    addLastNode (value, lastNode = this.headNode) {
+      if (lastNode === null) {
+        this.headNode = new Node(value);
+        this.nodeCount = this.nodeCount + 1;
+      } else if (lastNode.getNextNode() === null) {
+        lastNode.setNextNode(new Node(value));
+        this.nodeCount = this.nodeCount + 1;
+      } else
+        this.addLastNode(value, lastNode.getNextNode());
+      }
     }
     /**
      * @param value => value of current node
