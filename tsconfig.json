@@ -10,15 +10,14 @@
       "dom"
     ],
     "module": "umd",
+    "moduleResolution": "node",
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
-    "outDir": "dist/",
     "sourceMap": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "rootDir": ".",
     "target": "es5"
   },
   "exclude": [

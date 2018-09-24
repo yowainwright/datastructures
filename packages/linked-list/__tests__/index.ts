@@ -1,7 +1,7 @@
 declare function test(msg: string, test: Function)
 declare function expect (result: any)
 
-import { LinkedList } from '../index.ts'
+import { LinkedList } from '..'
 import { Node } from '../Node'
 
 /*
