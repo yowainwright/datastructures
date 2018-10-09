@@ -46,7 +46,8 @@ class LinkedList<T> {
 
   /**
    * traverseList
-   * @param {callback} function
+   * TODO: better name
+   * @param {function} callback
    */
   traverseList (callback: Function) {
     if (!callback || typeof callback !== 'function') {
@@ -61,7 +62,7 @@ class LinkedList<T> {
 
   /**
    * appendNodeAt
-   * @param {nodePosition} number
+   * @param {number} nodePosition
    * @param {value} value
    */
   appendNodeAt(nodePosition: number, value: T) {
@@ -115,6 +116,13 @@ class LinkedList<T> {
   }
 
   /**
+   * getNodePosition
+   * gets the position (number) of a node with a certian value
+   * @param {value} value
+   */
+  getNodePosition (value: T) {}
+
+  /**
    * getHeadNode
    * @returns {headNode} Node
    */
@@ -154,6 +162,26 @@ class LinkedList<T> {
       this.removeNode(nextNode.value)
     }
     this.removeNode(this.headNode.value)
+  }
+
+  /**
+   * removeDuplicateNodes
+   * removes duplicateNodes
+   */
+  removeDuplicateNodes () {
+    let currentNode = this.headNode
+    let temp = []
+    let previousNode = null
+    while (currentNode.nextNode) {
+      previousNode = currentNode
+      currentNode = currentNode.nextNode
+      if (!temp.includes(currentNode.value)) {
+        temp.push(currentNode.value)
+      } else {
+        previousNode.nextNode = currentNode.nextNode
+        currentNode = previousNode
+      }
+    }
   }
 }
 

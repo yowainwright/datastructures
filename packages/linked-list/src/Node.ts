@@ -4,7 +4,7 @@
 class Node<T> {
   /**
    * @param {value} value
-   * @param {nextNode} nexNode
+   * @param {Node} nexNode
    */
   public value: T
   public nextNode: Node<T> | null
