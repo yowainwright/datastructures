@@ -4,8 +4,8 @@
   "description": "Data Structures in TypeScript",
   "main": "build/data-structures.js",
   "scripts": {
-    "build": "npm run build:ts",
-    "build:ts": "tsc -p tsconfig.json",
+    "build": "npm run build:linkedlist",
+    "build:linkedlist": "tsc -p ./packages/linked-list/tsconfig.linkedlist.json",
     "lint": "npm run lint:grammar && npm run lint:md && npm run lint:ts",
     "lint:grammar": "write-good ./packages/**/*.md --no-passive",
     "lint:md": "markdownlint *.md",
@@ -44,6 +44,7 @@
     "write-good": "^0.11.3"
   },
   "jest": {
+    "testURL": "https://localhost/",
     "transform": {
       "^.+\\.ts?$": "ts-jest"
     },

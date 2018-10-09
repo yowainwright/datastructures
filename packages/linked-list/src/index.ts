@@ -9,14 +9,6 @@
  */
 import { Node } from './Node'
 class LinkedList<T> {
-  /**
-   * @param headNode
-   * the value of the first linked list node
-   */
-  /**
-   * @param nodeCount
-   * the number of nodes within the Linked List
-   */
   public headNode: Node<T> | null
   public nodeCount: number
 
@@ -26,6 +18,13 @@ class LinkedList<T> {
   ) {
     this.nodeCount = nodeCount
     this.headNode = headNode
+  }
+
+  appendNode (value: T) {
+    let current = this.headNode
+    if (!current) return new Node(value)
+    while (current.nextNode) current = current.nextNode
+    return new Node(value)
   }
 
   /**
@@ -83,8 +82,19 @@ class LinkedList<T> {
    * addLast adds a Linked List Node last
    */
   addBeforeNode(value: T, newValue: T, previous: Node<T> | null = null, current = this.headNode) {
-    if (current === null) throw new Error(`node ${value} not found`)
-    this.addBeforeNode(value, newValue, previous, current)
+    if (current === null) {
+      throw new Error(`node ${value} not found`)
+    }
+    const currentNodeValue = current.getNodeValue()
+    const isCurrentNode = currentNodeValue === value
+    if (isCurrentNode && previous === null) {
+      this.addFirstNode(newValue)
+    } else if (isCurrentNode && previous) {
+      previous.setNextNode(new Node(newValue, current))
+      this.nodeCount = this.nodeCount + 1
+    } else {
+      this.addBeforeNode(value, newValue, current, current.getNextNode())
+    }
   }
 
 
@@ -166,13 +176,6 @@ class LinkedList<T> {
    * @returns the node code
    */
   getNodeCount (): number {
-    return this.nodeCount
-  }
-
-  /**
-   * @returns the Linked List Length
-   */
-  length () {
     return this.nodeCount
   }
 }
