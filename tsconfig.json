@@ -11,18 +11,11 @@
     ],
     "module": "umd",
     "moduleResolution": "node",
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
     "sourceMap": true,
-    "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
     "target": "es5"
   },
   "exclude": [
     "coverage",
-    "node_modules",
     "**/__tests__/*"
   ]
 }

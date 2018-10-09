@@ -1,182 +1,159 @@
+import * as Debug from 'debug'
+
+import { Node } from './Node'
+
+const error = Debug('Error:LinkedList:')
+
 /**
- * @ingore
  * LINKED LIST ⛓
  * ----
  * The Linked List Node is a Linear Structure of Nodes. Each node is a seperate object
- * Credits: This project directly inherits from eyas-ranjous/datastructures-js 🙏
- * ----
  * represents a list of nodes containing information (values)
  */
-import { Node } from './Node'
 class LinkedList<T> {
   public headNode: Node<T> | null
-  public nodeCount: number
 
-  constructor (
-    nodeCount: number | 0 = 0,
-    headNode: Node<T> | null = null,
-  ) {
-    this.nodeCount = nodeCount
+  constructor (headNode: Node<T> | null = null) {
     this.headNode = headNode
   }
 
+  /**
+   * appendNode
+   * @param {value} value
+   */
   appendNode (value: T) {
-    let current = this.headNode
-    if (!current) return new Node(value)
-    while (current.nextNode) current = current.nextNode
+    let currentNode = this.headNode
+    if (!currentNode) return new Node(value)
+    while (currentNode.nextNode) currentNode = currentNode.nextNode
     return new Node(value)
   }
 
   /**
-   * Add methods
+   * removeNode
+   * @param {value} value
    */
-
-  /**
-   * @param value value
-   * adds a new node to the beginning of the linkedList
-   */
-  addFirstNode (value: T) {
-    this.headNode = this.headNode
-      ? new Node(this.headNode.getNodeValue())
-      : new Node(value)
-    this.nodeCount = this.nodeCount + 1
-  }
-
-  /**
-   * @param value of node
-   * @param Node
-   * addLast adds a Linked List Node last
-   */
-  addLastNode (value: T, lastNode = this.headNode): void {
-    if (lastNode === null) {
-      this.headNode = new Node(value)
-      this.nodeCount = this.nodeCount + 1
-    } else if (lastNode.getNextNode() === null) {
-      lastNode.setNextNode(new Node(value))
-      this.nodeCount = this.nodeCount + 1
-    } else this.addLastNode(value, lastNode.getNextNode())
-  }
-
-  /**
-   * @param value => value of current node
-   * @param newValue => value of new node
-   * @param current => the current node
-   * addLast adds a Linked List Node last
-   */
-  addAfterNode (nodeValueMatch: T, newValue: T, current = this.headNode) {
-    if (current === null) {
-      throw new Error(`LinkedList:node ${nodeValueMatch} not found`)
-    } else if (current.getNodeValue() === nodeValueMatch) {
-      current.setNextNode(new Node(newValue, current.getNextNode()))
-      this.nodeCount = this.nodeCount + 1
-    } else {
-      this.addAfterNode(nodeValueMatch, newValue, current.getNextNode())
+  removeNode (value: T) {
+    if (!value) return error('removeNode requires a value')
+    let currentNode = this.headNode
+    while (currentNode !== null) {
+      let previousNode = currentNode
+      currentNode = currentNode.nextNode
+      if (currentNode.value === value) {
+        previousNode.nextNode = currentNode.nextNode
+      }
     }
   }
 
   /**
-   * @param value => existing node value
-   * @param newValue => value of new node
-   * @param previous => previous node
-   * @param current => the current node
-   * addLast adds a Linked List Node last
+   * traverseList
+   * @param {callback} function
    */
-  addBeforeNode(value: T, newValue: T, previous: Node<T> | null = null, current = this.headNode) {
-    if (current === null) {
-      throw new Error(`node ${value} not found`)
+  traverseList (callback: Function) {
+    if (!callback || typeof callback !== 'function') {
+      return error('traverse requires a callback')
     }
-    const currentNodeValue = current.getNodeValue()
-    const isCurrentNode = currentNodeValue === value
-    if (isCurrentNode && previous === null) {
-      this.addFirstNode(newValue)
-    } else if (isCurrentNode && previous) {
-      previous.setNextNode(new Node(newValue, current))
-      this.nodeCount = this.nodeCount + 1
-    } else {
-      this.addBeforeNode(value, newValue, current, current.getNextNode())
-    }
-  }
-
-
-  /**
-   * @param value
-   * @param  previous node
-   * @param current node
-   * removes a node by its value from the linkedlist
-   */
-  removeNode (value: T, previous: Node<T> | null, current = this.headNode) {
-    if (current && previous === null && current.getNodeValue()) {
-      this.removeFirstNode()
-    } else if (current && previous && current.getNodeValue()) {
-      previous.setNextNode(current.getNextNode())
-      this.nodeCount = this.nodeCount - 1
-    } else if (current) {
-      this.removeNode(value, current, current.getNextNode())
+    let current = this.headNode
+    while (current !== null) {
+      callback(current)
+      current = current.nextNode
     }
   }
 
   /**
-   * removes the first node
+   * appendNodeAt
+   * @param {nodePosition} number
+   * @param {value} value
    */
-  removeFirstNode () {
-    if (this.headNode === null) return
-    this.headNode = this.headNode.getNextNode() === null ?
-      null :
-      this.headNode.getNextNode()
-    this.nodeCount = this.nodeCount - 1
-  }
-
-  /**
-   * @param  previous node
-   * @param current node
-   */
-  removeLastNode (previous: Node<T> | null = null, current = this.headNode) {
-    if (current && current.getNextNode() && previous === null) {
-      this.headNode = null
-      this.nodeCount = this.nodeCount - 1
-    } else if (current && current.getNextNode() && previous) {
-      previous.setNextNode(null)
-      this.nodeCount = this.nodeCount - 1
-    } else if (current) {
-      this.removeLastNode(current, current.getNextNode())
+  appendNodeAt(nodePosition: number, value: T) {
+    if (nodePosition >= this.length()) {
+      return error('appendNodeAt requires an in-range position')
+    }
+    let counter = 0
+    let current = this.headNode
+    let newNode = new Node(value)
+    while (current.nextNode !== null) {
+      if (counter === nodePosition) {
+        newNode.nextNode = current.nextNode
+        current.nextNode = newNode
+      }
+      current = current.nextNode
+      counter += 1
     }
   }
 
   /**
-   * @param a callback
-   * @param the current first node
+   * reverseList
    */
-  traverseLinkedList (cb: (nodeValue: T) => void, current = this.headNode) {
-    if (current === null) return
-    cb(current.getNodeValue())
-    this.traverseLinkedList(cb, current.getNextNode())
+  reverseList () {
+    let current = this.headNode.nextNode
+    let previousNode = null
+    let nextNode
+    while (current !== null) {
+      nextNode = current.nextNode
+      current.nextNode = previousNode
+      previousNode = current
+      current = nextNode
+    }
+    this.headNode.nextNode = previousNode
   }
 
   /**
-   * @returns a linked list node
+   * findNode
+   * @param {value} value
    */
-  findNode (value: T, current = this.headNode): Node<T> | null {
-    if (current === null) return null
-    else if (current.getNodeValue() === value) return current
-    else return this.findNode(value, current.getNextNode())
+  findNode (value: T) {
+    let currentNode = this.headNode.nextNode
+    let counter = 0
+
+    while (currentNode) {
+      if (currentNode.value === value) {
+        return counter
+      }
+      currentNode = currentNode.nextNode
+      counter += 1
+    }
   }
 
   /**
-   * Convenience methods
-   */
-
-  /**
-   * @returns the headNode
+   * getHeadNode
+   * @returns {headNode} Node
    */
   getHeadNode (): Node<T> | null {
     return this.headNode
   }
 
   /**
-   * @returns the node code
+   * toArray
+   * presents a linkedList as an array
    */
-  getNodeCount (): number {
-    return this.nodeCount
+  toArray () {
+    let currentNode = this.headNode
+    let nodes = []
+    while (currentNode !== null) {
+      nodes.push(currentNode.value)
+      currentNode = currentNode.nextNode
+    }
+    return nodes
+  }
+
+  /**
+   * length
+   * returns the length of a linkedList
+   */
+  length () {
+    return this.toArray().length
+  }
+
+  /**
+   * clear
+   * clears a linkedList
+   */
+  clear () {
+    const { nextNode } = this.headNode
+    while (nextNode !== null) {
+      this.removeNode(nextNode.value)
+    }
+    this.removeNode(this.headNode.value)
   }
 }
 

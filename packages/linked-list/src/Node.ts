@@ -1,18 +1,10 @@
 /**
  * Linked List Node
- * ----
- * represents a node containing information called a value
- * it may also provide information about the next node (sibling node)
  */
 class Node<T> {
   /**
-   * @param value
-   * the value of the linked list node
-   */
-  /**
-   * @param nextNode
-   * the next LinkedListNode || or null
-   * it is null if it is the last LinkedListNode
+   * @param {value} value
+   * @param {nextNode} nexNode
    */
   public value: T
   public nextNode: Node<T> | null
@@ -23,28 +15,28 @@ class Node<T> {
   }
 
   /**
-   * @returns the linked list node value
+   * @returns {value} value
    */
   getNodeValue (): T {
     return this.value
   }
 
   /**
-   * @returns the next list node
+   * @returns {Node} this.nextNode
    */
   getNextNode (): Node<T> | null {
     return this.nextNode
   }
 
   /**
-   * sets the linked list node value
+   * @param {value} value
    */
   setNodeValue (value: T): void {
     this.value = value
   }
 
   /**
-   * sets the linked list node value
+   * @returns {Node} this.nextNode
    */
   setNextNode (nextNode: Node<T> | null): void {
     this.nextNode = nextNode

@@ -30,7 +30,10 @@
   },
   "homepage": "https://github.com/yowainwright/datastructures.ts#readme",
   "devDependencies": {
+    "@types/debug": "^0.0.31",
     "@types/jest": "^22.2.3",
+    "@types/node": "^10.11.5",
+    "debug": "^4.1.0",
     "es-check": "^2.0.4",
     "jest": "^22.4.3",
     "lerna": "^2.5.1",
