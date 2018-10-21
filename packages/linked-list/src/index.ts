@@ -160,19 +160,12 @@ class LinkedList<T> {
    * removes duplicateNodes
    */
   removeDuplicateNodes () {
-    let currentNode = this.headNode
-    let temp = []
-    let previousNode = null
-    while (currentNode.nextNode) {
-      previousNode = currentNode
-      currentNode = currentNode.nextNode
-      if (!temp.includes(currentNode.value)) {
-        temp.push(currentNode.value)
-      } else {
-        previousNode.nextNode = currentNode.nextNode
-        currentNode = previousNode
-      }
-    }
+    const nodes = this.toArray()
+    const nodesObjectValues = {}
+    return nodes
+      .filter(nodeValues => nodesObjectValues.hasOwnProperty(nodeValues)
+        ? false
+        : (nodesObjectValues[nodeValues] = true))
   }
 }
 
