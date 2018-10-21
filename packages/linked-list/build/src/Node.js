@@ -2,9 +2,6 @@
 exports.__esModule = true;
 /**
  * Linked List Node
- * ----
- * represents a node containing information called a value
- * it may also provide information about the next node (sibling node)
  */
 var Node = /** @class */ (function () {
     function Node(value, nextNode) {
@@ -13,25 +10,25 @@ var Node = /** @class */ (function () {
         this.nextNode = nextNode;
     }
     /**
-     * @returns the linked list node value
+     * @returns {value} value
      */
     Node.prototype.getNodeValue = function () {
         return this.value;
     };
     /**
-     * @returns the next list node
+     * @returns {Node} this.nextNode
      */
     Node.prototype.getNextNode = function () {
         return this.nextNode;
     };
     /**
-     * sets the linked list node value
+     * @param {value} value
      */
     Node.prototype.setNodeValue = function (value) {
         this.value = value;
     };
     /**
-     * sets the linked list node value
+     * @returns {Node} this.nextNode
      */
     Node.prototype.setNextNode = function (nextNode) {
         this.nextNode = nextNode;

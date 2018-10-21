@@ -3,15 +3,7 @@ declare function expect (result: any)
 
 import { Node } from '../Node'
 
-/*
-   Node Tests
-*/
-test('Jest is working, LinkedListNode is imported', () => {
-  expect(typeof Node).toBe('function')
-})
-
-// test LinkedListNode init
-test('LinkedListNode init', function testLinkedListNodeInit () {
+test('Node init', function testNodeInit () {
   const node = new Node('foo')
   expect(typeof node).toEqual('object')
   expect(node.getNodeValue()).toEqual('foo')
@@ -25,14 +17,14 @@ test('Node getNodeValue', function testNodeGetValue () {
 })
 
 // test Node .setNodeValue()
-test('Node setNodeValue', function testNodeSetValue () {
+test('Node setNodeValue', function testSetNodeValue () {
   const node = new Node('foo')
   node.setNodeValue('bar')
   expect(node.getNodeValue()).toEqual('bar')
 })
 
-// test Node .setNodeValue()
-test('Node setNextNode', function testNode () {
+// test Node .setNodeValue() .getNextNode()
+test('Node setNextNode and getNextNode', function testSetGetNextNode () {
   const node = new Node('foo')
   const otherNode = new Node('bar')
   node.setNextNode(otherNode)
