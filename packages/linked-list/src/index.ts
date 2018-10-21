@@ -22,10 +22,10 @@ class LinkedList<T> {
    * @param {value} value
    */
   appendNode (value: T) {
+    if (!this.headNode) return this.headNode = new Node(value)
     let currentNode = this.headNode
-    if (!currentNode) return new Node(value)
     while (currentNode.nextNode) currentNode = currentNode.nextNode
-    return new Node(value)
+    return currentNode.nextNode = new Node(value)
   }
 
   /**
@@ -65,21 +65,17 @@ class LinkedList<T> {
    * @param {number} nodePosition
    * @param {value} value
    */
-  appendNodeAt(nodePosition: number, value: T) {
+  appendNodeAt (nodePosition: number, value: T) {
     if (nodePosition >= this.length()) {
       return error('appendNodeAt requires an in-range position')
     }
     let counter = 0
     let current = this.headNode
-    let newNode = new Node(value)
-    while (current.nextNode !== null) {
-      if (counter === nodePosition) {
-        newNode.nextNode = current.nextNode
-        current.nextNode = newNode
-      }
+    while (counter !== nodePosition) {
       current = current.nextNode
       counter += 1
     }
+    return current.nextNode = new Node(value)
   }
 
   /**
@@ -87,7 +83,7 @@ class LinkedList<T> {
    */
   reverseList () {
     let current = this.headNode.nextNode
-    let previousNode = null
+    let previousNode
     let nextNode
     while (current !== null) {
       nextNode = current.nextNode
@@ -104,15 +100,10 @@ class LinkedList<T> {
    */
   findNode (value: T) {
     let currentNode = this.headNode.nextNode
-    let counter = 0
-
-    while (currentNode) {
-      if (currentNode.value === value) {
-        return counter
-      }
+    while (currentNode.value !== value) {
       currentNode = currentNode.nextNode
-      counter += 1
     }
+    return currentNode
   }
 
   /**
