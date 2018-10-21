@@ -1,6 +1,9 @@
 # Linked List ⛓
 
-> The Linked List collection of data items in an unknown order. Instead, each data item to the next.
+> The Linked List is a datastructure for storing a list collection of data items in an unknown order.
+
+Each data item is made with a relationsip to its nextNode.
+This creates a nested data structure versus an array-like structure for containing a list of data items.
 
 This is the Linked List Package of **Data Structures TS**.
 
