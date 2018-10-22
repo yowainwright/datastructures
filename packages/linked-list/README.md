@@ -5,7 +5,7 @@
 Each data item is made with a relationsip to its nextNode.
 This creates a nested data structure versus an array-like structure for containing a list of data items.
 
-This is the Linked List Package of **Data Structures TS**.
+This is the Linked List Package of [**Data Structures TS**](https://github.com/yowainwright/datastructures-ts).
 
 ----
 
