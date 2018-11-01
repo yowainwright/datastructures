@@ -21,7 +21,7 @@ test('LinkedList appendNode', function appendNode () {
 })
 
 // test LinkedListNode .findNode(value)
-test('LinkedList addLastNode', function addLastNode () {
+test('LinkedList findNode', function findNode () {
   const list = new LinkedList()
   list.appendNode('foo')
   expect(list.length()).toEqual(1)
@@ -32,22 +32,28 @@ test('LinkedList addLastNode', function addLastNode () {
   expect(lastNode.value).toEqual('bar')
 })
 
-// // test LinkedListNode .addAfterNode()
-// test('LinkedList addAfterNode', function addAfterNode () {
-//   const list = new LinkedList()
-//   list.addFirstNode('foo')
-//   expect(list.nodeCount).toEqual(1)
-//   expect(list.headNode.value).toEqual('foo')
-//   list.addLastNode('bar')
-//   list.addAfterNode('foo', 'biz')
-//   expect(list.nodeCount).toEqual(3)
-// })
+// test LinkedListNode .removeNode(value)
+test('LinkedList removeNode', function removeNode () {
+  const list = new LinkedList()
+  list.appendNode('foo')
+  expect(list.length()).toEqual(1)
+  expect(list.headNode.value).toEqual('foo')
+  list.appendNode('bar')
+  expect(list.length()).toEqual(2)
+  list.removeNode('bar')
+  expect(list.length()).toEqual(1)
+  expect(list.headNode.value).toEqual('foo')
+})
 
-// // test LinkedListNode .addBeforeNode()
-// test('LinkedList addBeforeNode', function addBeforeNode () {
-//   const list = new LinkedList()
-//   list.addFirstNode('foo')
-//   expect(list.nodeCount).toEqual(1)
-//   list.addBeforeNode('foo', 'bar')
-//   expect(list.nodeCount).toEqual(2)
-// })
+// test LinkedListNode .traverseList()
+test('LinkedList traverseList', function traverseList () {
+  const list = new LinkedList()
+  list.appendNode('foo')
+  list.appendNode('bar')
+  expect(list.length()).toEqual(2)
+  const addZzzToValue = (node) => node.value = `${node.value}zzz`
+  list.traverseList(addZzzToValue)
+  expect(list.headNode.value).toEqual('foozzz')
+  const barzzz = list.findNode('barzzz')
+  expect(barzzz.value).toEqual('barzzz')
+})

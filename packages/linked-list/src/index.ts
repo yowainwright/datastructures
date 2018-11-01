@@ -20,6 +20,7 @@ class LinkedList<T> {
   /**
    * appendNode
    * @param {value} value
+   * @returns {Node} Node
    */
   appendNode (value: T) {
     if (!this.headNode) return this.headNode = new Node(value)
@@ -32,13 +33,14 @@ class LinkedList<T> {
    * removeNode
    * @param {value} value
    */
+
   removeNode (value: T) {
     if (!value) return error('removeNode requires a value')
     let currentNode = this.headNode
     while (currentNode !== null) {
       let previousNode = currentNode
       currentNode = currentNode.nextNode
-      if (currentNode.value === value) {
+      if (currentNode && currentNode.value === value) {
         previousNode.nextNode = currentNode.nextNode
       }
     }
@@ -46,7 +48,6 @@ class LinkedList<T> {
 
   /**
    * traverseList
-   * TODO: better name
    * @param {function} callback
    */
   traverseList (callback: Function) {
