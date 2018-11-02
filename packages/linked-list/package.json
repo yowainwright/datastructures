@@ -1,6 +1,6 @@
 {
   "name": "@datastructures-ts/linked-list",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Linked List Data Structure in TypeScript",
   "main": "dist/index.js",
   "unpkg": "dist/index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/babel/babel/tree/master/packages/linked-list"
+    "url": "https://github.com/yowainwright/datastructures-ts/linked-list"
   },
   "keywords": [
     "data-structures",
