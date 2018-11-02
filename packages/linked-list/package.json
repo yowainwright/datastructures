@@ -1,6 +1,6 @@
 {
   "name": "@datastructures/linked-list",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Linked List Data Structure in TypeScript",
   "main": "dist/index.js",
   "unpkg": "dist/index.js",
