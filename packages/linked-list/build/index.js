@@ -16,16 +16,16 @@ var LinkedList = /** @class */ (function () {
     }
     /**
      * appendNode
-     * @param {value} value
+     * @param {string} name
      * @returns {Node} Node
      */
-    LinkedList.prototype.appendNode = function (value) {
+    LinkedList.prototype.appendNode = function (name) {
         if (!this.headNode) {
-            this.headNode = new Node_1.Node(value);
+            this.headNode = new Node_1.Node(name);
             this.tailNode = this.headNode;
         }
         else {
-            var newNode = new Node_1.Node(value);
+            var newNode = new Node_1.Node(name);
             var tailNode = this.tailNode.nextNode;
             this.tailNode.nextNode = newNode;
             this.tailNode = this.tailNode.nextNode;
@@ -33,18 +33,18 @@ var LinkedList = /** @class */ (function () {
     };
     /**
      * removeNode
-     * @param {value} value
+     * @param {string} name
      */
-    LinkedList.prototype.removeNode = function (value) {
-        if (!value)
+    LinkedList.prototype.removeNode = function (name) {
+        if (!name)
             return error('removeNode requires a value');
         var currentNode = this.headNode;
         while (currentNode !== null) {
             var previousNode = currentNode;
             currentNode = currentNode.nextNode;
-            if (currentNode && currentNode.value === value) {
+            if (currentNode && currentNode.name === name) {
                 previousNode.nextNode = currentNode.nextNode;
-                if (currentNode.value === this.tailNode.value) {
+                if (currentNode.name === this.tailNode.name) {
                     this.tailNode = previousNode;
                 }
             }
@@ -64,28 +64,28 @@ var LinkedList = /** @class */ (function () {
             currentNode = currentNode.nextNode;
         }
     };
-    LinkedList.prototype.appendNodeAt = function (nodePosition, value) {
+    LinkedList.prototype.appendNodeAt = function (nodePosition, name) {
         if (nodePosition >= this.length()) {
             return error('appendNodeAt requires an in-range position');
         }
         var nodeArray = this.toArray();
-        nodeArray.splice(nodePosition, 0, value);
-        return this.constructNewList(nodeArray);
+        nodeArray.splice(nodePosition, 0, name);
+        this.constructNewList(nodeArray);
     };
     /**
      * reverseList
      */
     LinkedList.prototype.reverseList = function () {
         var reversedListArray = this.toArray().reverse();
-        return this.constructNewList(reversedListArray);
+        this.constructNewList(reversedListArray);
     };
     /**
      * findNode
      * @param {value} value
      */
-    LinkedList.prototype.findNode = function (value) {
+    LinkedList.prototype.findNode = function (name) {
         var currentNode = this.headNode.nextNode;
-        while (currentNode.value !== value) {
+        while (currentNode.name !== name) {
             currentNode = currentNode.nextNode;
         }
         return currentNode;
@@ -98,14 +98,14 @@ var LinkedList = /** @class */ (function () {
         var currentNode = this.headNode;
         var nodes = [];
         while (currentNode !== null) {
-            nodes.push(currentNode.value);
+            nodes.push(currentNode.name);
             currentNode = currentNode.nextNode;
         }
         return nodes;
     };
-    LinkedList.prototype.getIndexOfNode = function (value) {
+    LinkedList.prototype.getIndexOfNode = function (name) {
         var list = this.toArray();
-        return list.indexOf(value);
+        return list.indexOf(name);
     };
     /**
      * length
@@ -129,15 +129,15 @@ var LinkedList = /** @class */ (function () {
         var nodeArray = this.toArray();
         var nodes = {};
         var filteredNodeArray = nodeArray
-            .filter(function (values) { return nodes.hasOwnProperty(values)
+            .filter(function (names) { return nodes.hasOwnProperty(names)
             ? false
-            : (nodes[values] = true); });
+            : (nodes[names] = true); });
         return this.constructNewList(filteredNodeArray);
     };
-    LinkedList.prototype.constructNewList = function (values) {
+    LinkedList.prototype.constructNewList = function (names) {
         var _this = this;
         this.clear();
-        return values.forEach(function (value) { return _this.appendNode(value); });
+        return names.forEach(function (name) { return _this.appendNode(name); });
     };
     return LinkedList;
 }());

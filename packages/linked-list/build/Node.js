@@ -4,16 +4,16 @@ exports.__esModule = true;
  * Linked List Node
  */
 var Node = /** @class */ (function () {
-    function Node(value, nextNode) {
+    function Node(name, nextNode) {
         if (nextNode === void 0) { nextNode = null; }
-        this.value = value;
+        this.name = name;
         this.nextNode = nextNode;
     }
     /**
      * @returns {value} value
      */
     Node.prototype.getNodeValue = function () {
-        return this.value;
+        return this.name;
     };
     /**
      * @returns {Node} this.nextNode
@@ -24,8 +24,8 @@ var Node = /** @class */ (function () {
     /**
      * @param {value} value
      */
-    Node.prototype.setNodeValue = function (value) {
-        this.value = value;
+    Node.prototype.setNodeValue = function (name) {
+        this.name = name;
     };
     /**
      * @returns {Node} this.nextNode
