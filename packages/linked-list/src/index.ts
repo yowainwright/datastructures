@@ -20,15 +20,15 @@ class LinkedList<T> {
 
   /**
    * appendNode
-   * @param {value} value
+   * @param {string} name
    * @returns {Node} Node
    */
-  appendNode (value: T): void {
+  appendNode (name: string): void {
     if (!this.headNode) {
-      this.headNode = new Node(value)
+      this.headNode = new Node(name)
       this.tailNode = this.headNode
     } else {
-      const newNode = new Node(value)
+      const newNode = new Node(name)
       const tailNode = this.tailNode.nextNode
       this.tailNode.nextNode = newNode
       this.tailNode = this.tailNode.nextNode
@@ -37,17 +37,17 @@ class LinkedList<T> {
 
   /**
    * removeNode
-   * @param {value} value
+   * @param {string} name
    */
-  removeNode (value: T) {
-    if (!value) return error('removeNode requires a value')
+  removeNode (name: string): void {
+    if (!name) return error('removeNode requires a value')
     let currentNode = this.headNode
     while (currentNode !== null) {
       let previousNode = currentNode
       currentNode = currentNode.nextNode
-      if (currentNode && currentNode.value === value) {
+      if (currentNode && currentNode.name === name) {
         previousNode.nextNode = currentNode.nextNode
-        if (currentNode.value === this.tailNode.value) {
+        if (currentNode.name === this.tailNode.name) {
           this.tailNode = previousNode
         }
       }
@@ -58,7 +58,7 @@ class LinkedList<T> {
    * traverseList
    * @param {function} callback
    */
-  traverseList (callback: Function) {
+  traverseList (callback: Function): void {
     if (!callback || typeof callback !== 'function') {
       return error('traverse requires a callback')
     }
@@ -69,30 +69,30 @@ class LinkedList<T> {
     }
   }
 
-  appendNodeAt (nodePosition: number, value: T) {
+  appendNodeAt (nodePosition: number, name: string): void {
     if (nodePosition >= this.length()) {
       return error('appendNodeAt requires an in-range position')
     }
     const nodeArray = this.toArray()
-    nodeArray.splice(nodePosition, 0, value)
-    return this.constructNewList(nodeArray)
+    nodeArray.splice(nodePosition, 0, name)
+    this.constructNewList(nodeArray)
   }
 
   /**
    * reverseList
    */
-  reverseList () {
+  reverseList (): void {
     const reversedListArray = this.toArray().reverse()
-    return this.constructNewList(reversedListArray)
+    this.constructNewList(reversedListArray)
   }
 
   /**
    * findNode
    * @param {value} value
    */
-  findNode (value: T) {
+  findNode (name: string): Node<T> {
     let currentNode = this.headNode.nextNode
-    while (currentNode.value !== value) {
+    while (currentNode.name !== name) {
       currentNode = currentNode.nextNode
     }
     return currentNode
@@ -106,15 +106,15 @@ class LinkedList<T> {
     let currentNode = this.headNode
     let nodes = []
     while (currentNode !== null) {
-      nodes.push(currentNode.value)
+      nodes.push(currentNode.name)
       currentNode = currentNode.nextNode
     }
     return nodes
   }
 
-  getIndexOfNode (value: T): number {
+  getIndexOfNode (name: string): number {
     const list = this.toArray()
-    return list.indexOf(value)
+    return list.indexOf(name)
   }
 
   /**
@@ -141,15 +141,15 @@ class LinkedList<T> {
     const nodeArray = this.toArray()
     const nodes = {}
     const filteredNodeArray = nodeArray
-      .filter(values => nodes.hasOwnProperty(values)
+      .filter(names => nodes.hasOwnProperty(names)
         ? false
-        : (nodes[values] = true))
+        : (nodes[names] = true))
     return this.constructNewList(filteredNodeArray)
   }
 
-  constructNewList (values: Array<T>) {
+  constructNewList (names: string[]) {
     this.clear()
-    return values.forEach(value => this.appendNode(value))
+    return names.forEach(name => this.appendNode(name))
   }
 }
 

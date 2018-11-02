@@ -9,9 +9,12 @@ This is the Linked List Package of [**Data Structures TS**](https://github.com/y
 
 ----
 
+## Resources
+
 The list below provides links to other helpful tools for understanding the Linked List data structure.
 
-- Linked List via [Data Structures with JS — Linked Lists](https://medium.com/dev-blogs/ds-with-js-linked-lists-db5138ff139f) by [Gaurav Mehla](https://medium.com/@gauravmehla)
+- [datastructures-js](https://github.com/datastructures-js/linked-list) by [Eyas Ranjous](https://github.com/eyas-ranjous)
+- [coding-interview-university](https://github.com/jwasham/coding-interview-university#linked-lists) by [John Washam](https://github.com/jwasham)
 - [Linked List](https://en.wikipedia.org/wiki/Linked_list) via Wikipedia
 
 ----

@@ -6,19 +6,19 @@ class Node<T> {
    * @param {value} value
    * @param {Node} nexNode
    */
-  public value: T
+  public name: string
   public nextNode: Node<T> | null
 
-  constructor (value: T, nextNode: Node<T> | null = null) {
-    this.value = value
+  constructor (name: string, nextNode: Node<T> | null = null) {
+    this.name = name
     this.nextNode = nextNode
   }
 
   /**
    * @returns {value} value
    */
-  getNodeValue (): T {
-    return this.value
+  getNodeValue (): string {
+    return this.name
   }
 
   /**
@@ -31,8 +31,8 @@ class Node<T> {
   /**
    * @param {value} value
    */
-  setNodeValue (value: T): void {
-    this.value = value
+  setNodeValue (name: string): void {
+    this.name = name
   }
 
   /**

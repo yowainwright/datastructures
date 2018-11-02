@@ -21,7 +21,7 @@ test('Node getNextNode', function testGetNextNode () {
   const node = new Node('foo')
   const nextNode = new Node('bar')
   node.setNextNode(nextNode)
-  expect(node.getNextNode().value).toEqual('bar')
+  expect(node.getNextNode().name).toEqual('bar')
 })
 
 // test Node .setNodeValue()
