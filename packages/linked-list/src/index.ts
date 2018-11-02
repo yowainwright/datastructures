@@ -33,7 +33,6 @@ class LinkedList<T> {
    * removeNode
    * @param {value} value
    */
-
   removeNode (value: T) {
     if (!value) return error('removeNode requires a value')
     let currentNode = this.headNode
@@ -54,45 +53,28 @@ class LinkedList<T> {
     if (!callback || typeof callback !== 'function') {
       return error('traverse requires a callback')
     }
-    let current = this.headNode
-    while (current !== null) {
-      callback(current)
-      current = current.nextNode
+    let currentNode = this.headNode
+    while (currentNode !== null) {
+      callback(currentNode)
+      currentNode = currentNode.nextNode
     }
   }
 
-  /**
-   * appendNodeAt
-   * @param {number} nodePosition
-   * @param {value} value
-   */
   appendNodeAt (nodePosition: number, value: T) {
     if (nodePosition >= this.length()) {
       return error('appendNodeAt requires an in-range position')
     }
-    let counter = 0
-    let current = this.headNode
-    while (counter !== nodePosition) {
-      current = current.nextNode
-      counter += 1
-    }
-    return current.nextNode = new Node(value)
+    const nodeArray = this.toArray()
+    nodeArray.splice(nodePosition, 0, value)
+    return this.constructNewList(nodeArray)
   }
 
   /**
    * reverseList
    */
   reverseList () {
-    let current = this.headNode.nextNode
-    let previousNode
-    let nextNode
-    while (current !== null) {
-      nextNode = current.nextNode
-      current.nextNode = previousNode
-      previousNode = current
-      current = nextNode
-    }
-    this.headNode.nextNode = previousNode
+    const reversedListArray = this.toArray().reverse()
+    return this.constructNewList(reversedListArray)
   }
 
   /**
@@ -105,21 +87,6 @@ class LinkedList<T> {
       currentNode = currentNode.nextNode
     }
     return currentNode
-  }
-
-  /**
-   * getNodePosition
-   * gets the position (number) of a node with a certian value
-   * @param {value} value
-   */
-  getNodePosition (value: T) {}
-
-  /**
-   * getHeadNode
-   * @returns {headNode} Node
-   */
-  getHeadNode (): Node<T> | null {
-    return this.headNode
   }
 
   /**
@@ -136,6 +103,11 @@ class LinkedList<T> {
     return nodes
   }
 
+  getIndexOfNode (value: T) {
+    const list = this.toArray()
+    return list.indexOf(value)
+  }
+
   /**
    * length
    * returns the length of a linkedList
@@ -149,11 +121,7 @@ class LinkedList<T> {
    * clears a linkedList
    */
   clear () {
-    const { nextNode } = this.headNode
-    while (nextNode !== null) {
-      this.removeNode(nextNode.value)
-    }
-    this.removeNode(this.headNode.value)
+    this.headNode = null
   }
 
   /**
@@ -161,12 +129,18 @@ class LinkedList<T> {
    * removes duplicateNodes
    */
   removeDuplicateNodes () {
-    const nodes = this.toArray()
-    const nodesObjectValues = {}
-    return nodes
-      .filter(nodeValues => nodesObjectValues.hasOwnProperty(nodeValues)
+    const nodeArray = this.toArray()
+    const nodes = {}
+    const filteredNodeArray = nodeArray
+      .filter(values => nodes.hasOwnProperty(values)
         ? false
-        : (nodesObjectValues[nodeValues] = true))
+        : (nodes[values] = true))
+    return this.constructNewList(filteredNodeArray)
+  }
+
+  constructNewList (values: Array<T>) {
+    this.clear()
+    return values.forEach(value => this.appendNode(value))
   }
 }
 

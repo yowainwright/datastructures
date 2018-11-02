@@ -1,4 +1,4 @@
-declare function test (msg: string, test: Function)
+declare function test(msg: string, test: Function)
 declare function expect (result: any)
 
 import { Node } from '../Node'
@@ -14,6 +14,14 @@ test('Node init', function testNodeInit () {
 test('Node getNodeValue', function testNodeGetValue () {
   const node = new Node('foo')
   expect(node.getNodeValue()).toEqual('foo')
+})
+
+// test Node .getNextNode()
+test('Node getNextNode', function testGetNextNode () {
+  const node = new Node('foo')
+  const nextNode = new Node('bar')
+  node.setNextNode(nextNode)
+  expect(node.getNextNode().value).toEqual('bar')
 })
 
 // test Node .setNodeValue()
