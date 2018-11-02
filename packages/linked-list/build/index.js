@@ -20,12 +20,16 @@ var LinkedList = /** @class */ (function () {
      * @returns {Node} Node
      */
     LinkedList.prototype.appendNode = function (value) {
-        if (!this.headNode)
-            return this.headNode = new Node_1.Node(value);
-        var currentNode = this.headNode;
-        while (currentNode.nextNode)
-            currentNode = currentNode.nextNode;
-        return currentNode.nextNode = new Node_1.Node(value);
+        if (!this.headNode) {
+            this.headNode = new Node_1.Node(value);
+            this.tailNode = this.headNode;
+        }
+        else {
+            var newNode = new Node_1.Node(value);
+            var tailNode = this.tailNode.nextNode;
+            this.tailNode.nextNode = newNode;
+            this.tailNode = this.tailNode.nextNode;
+        }
     };
     /**
      * removeNode
@@ -40,6 +44,9 @@ var LinkedList = /** @class */ (function () {
             currentNode = currentNode.nextNode;
             if (currentNode && currentNode.value === value) {
                 previousNode.nextNode = currentNode.nextNode;
+                if (currentNode.value === this.tailNode.value) {
+                    this.tailNode = previousNode;
+                }
             }
         }
     };

@@ -12,6 +12,7 @@ const error = Debug('Error:LinkedList:')
  */
 class LinkedList<T> {
   public headNode: Node<T> | null
+  public tailNode: Node<T> | null
 
   constructor (headNode: Node<T> | null = null) {
     this.headNode = headNode
@@ -22,11 +23,16 @@ class LinkedList<T> {
    * @param {value} value
    * @returns {Node} Node
    */
-  appendNode (value: T) {
-    if (!this.headNode) return this.headNode = new Node(value)
-    let currentNode = this.headNode
-    while (currentNode.nextNode) currentNode = currentNode.nextNode
-    return currentNode.nextNode = new Node(value)
+  appendNode (value: T): void {
+    if (!this.headNode) {
+      this.headNode = new Node(value)
+      this.tailNode = this.headNode
+    } else {
+      const newNode = new Node(value)
+      const tailNode = this.tailNode.nextNode
+      this.tailNode.nextNode = newNode
+      this.tailNode = this.tailNode.nextNode
+    }
   }
 
   /**
@@ -41,6 +47,9 @@ class LinkedList<T> {
       currentNode = currentNode.nextNode
       if (currentNode && currentNode.value === value) {
         previousNode.nextNode = currentNode.nextNode
+        if (currentNode.value === this.tailNode.value) {
+          this.tailNode = previousNode
+        }
       }
     }
   }
@@ -103,7 +112,7 @@ class LinkedList<T> {
     return nodes
   }
 
-  getIndexOfNode (value: T) {
+  getIndexOfNode (value: T): number {
     const list = this.toArray()
     return list.indexOf(value)
   }
@@ -112,7 +121,7 @@ class LinkedList<T> {
    * length
    * returns the length of a linkedList
    */
-  length () {
+  length (): number {
     return this.toArray().length
   }
 
@@ -120,7 +129,7 @@ class LinkedList<T> {
    * clear
    * clears a linkedList
    */
-  clear () {
+  clear (): void {
     this.headNode = null
   }
 
