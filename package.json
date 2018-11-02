@@ -14,7 +14,7 @@
     "test": "npm run test:unit",
     "test:unit": "jest --coverage"
   },
-  "repository": "git+https://github.com/yowainwright/datastructures.ts.git",
+  "repository": "git+https://github.com/yowainwright/datastructures-ts.git",
   "keywords": [
     "TypeScript",
     "TS",
@@ -26,9 +26,9 @@
   "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yowainwright/datastructures.ts/issues"
+    "url": "https://github.com/yowainwright/datastructures-ts/issues"
   },
-  "homepage": "https://github.com/yowainwright/datastructures.ts#readme",
+  "homepage": "https://github.com/yowainwright/datastructures-ts#readme",
   "devDependencies": {
     "@types/debug": "^0.0.31",
     "@types/jest": "^23.3.9",
