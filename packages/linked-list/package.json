@@ -1,6 +1,6 @@
 {
-  "name": "@datastructures-ts/linked-list",
-  "version": "0.0.8",
+  "name": "@dsts/linked-list",
+  "version": "0.0.10",
   "description": "Linked List Data Structure in TypeScript",
   "main": "dist/index.js",
   "unpkg": "dist/index.js",
@@ -26,7 +26,6 @@
   ],
   "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
   "license": "MIT",
-  "gitHead": "d93abd1b1b440d3e73161e40d09af6ed9b591942",
   "publishConfig": {
     "access": "public"
   }
