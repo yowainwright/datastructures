@@ -1,6 +1,6 @@
 {
-  "name": "datastructures-ts",
-  "version": "0.0.1",
+  "name": "datastructures",
+  "version": "0.0.2",
   "description": "Data Structures in TypeScript",
   "main": "build/data-structures.js",
   "scripts": {
