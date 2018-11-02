@@ -1,6 +1,14 @@
 {
   "compilerOptions": {
     "outDir": "build",
-    "rootDir": "."
-  }
+    "rootDir": "src"
+  },
+  "include": [
+    "src/index.ts",
+    "src/Node.ts"
+  ],
+  "exclude": [
+    "coverage",
+    "**/__tests__/*"
+  ]
 }
