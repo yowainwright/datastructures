@@ -1,5 +1,5 @@
 {
-  "name": "datastructures",
+  "name": "@datastructures-ts/structures",
   "version": "0.0.2",
   "description": "Data Structures in TypeScript",
   "main": "build/data-structures.js",
