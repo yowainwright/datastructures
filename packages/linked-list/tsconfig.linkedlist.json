@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "outDir": "build",
-    "rootDir": "src"
+    "rootDirs": ["src", "../../utils/"]
   },
   "include": [
     "src/index.ts",
-    "src/Node.ts"
+    "src/Node.ts",
+    "../../utils/warn.ts"
   ],
   "exclude": [
     "coverage",

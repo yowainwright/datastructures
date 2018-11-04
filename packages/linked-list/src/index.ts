@@ -1,3 +1,4 @@
+import warn from '../../../utils/warn'
 import * as Debug from 'debug'
 
 import { Node } from './Node'
@@ -13,9 +14,11 @@ const error = Debug('Error:LinkedList:')
 class LinkedList<T> {
   public headNode: Node<T> | null
   public tailNode: Node<T> | null
+  public debug: boolean
 
-  constructor (headNode: Node<T> | null = null) {
+  constructor (headNode: Node<T> | null = null, debug: boolean = false) {
     this.headNode = headNode
+    this.debug = debug
   }
 
   /**
@@ -40,7 +43,7 @@ class LinkedList<T> {
    * @param {string} name
    */
   removeNode (name: string): void {
-    if (!name) return error('removeNode requires a value')
+    if (this.debug && !name) return warn('removeNode requires a value')
     let currentNode = this.headNode
     while (currentNode !== null) {
       let previousNode = currentNode
@@ -59,8 +62,8 @@ class LinkedList<T> {
    * @param {function} callback
    */
   traverseList (callback: Function): void {
-    if (!callback || typeof callback !== 'function') {
-      return error('traverse requires a callback')
+    if (this.debug && !callback || typeof callback !== 'function') {
+      return warn('traverse requires a callback')
     }
     let currentNode = this.headNode
     while (currentNode !== null) {
@@ -70,8 +73,8 @@ class LinkedList<T> {
   }
 
   appendNodeAt (nodePosition: number, name: string): void {
-    if (nodePosition >= this.length()) {
-      return error('appendNodeAt requires an in-range position')
+    if (this.debug && nodePosition >= this.length()) {
+      return warn('appendNodeAt requires an in-range position')
     }
     const nodeArray = this.toArray()
     nodeArray.splice(nodePosition, 0, name)
