@@ -19,4 +19,4 @@ The list below provides links to other helpful tools for understanding the Linke
 
 ----
 
-Insights are welcomed.
+Insights are welcomed. 😊
