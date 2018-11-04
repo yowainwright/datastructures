@@ -2,26 +2,39 @@
  * Linked List Node
  */
 class Node<T> {
-  /**
-   * @param {value} value
-   * @param {Node} nexNode
-   */
   public name: string
   public nextNode: Node<T> | null
+  public data: object | null
 
-  constructor (name: string, nextNode: Node<T> | null = null) {
+  /**
+   * @param {string} name
+   * @param {object} data
+   */
+  constructor (name: string, data: object | null = null, nextNode: Node<T> | null = null) {
     this.name = name
+    this.data = data
     this.nextNode = nextNode
   }
 
   /**
-   * @returns {value} value
+   * @returns {string} value
    */
   getNodeValue (): string {
     return this.name
   }
 
   /**
+   * getNodeData
+   * returns the data of a Node
+   * @returns {object} data
+   */
+  getNodeData (): object {
+    return this.data
+  }
+
+  /**
+   * getNextNode
+   * returns nextNode
    * @returns {Node} this.nextNode
    */
   getNextNode (): Node<T> | null {
@@ -29,6 +42,8 @@ class Node<T> {
   }
 
   /**
+   * setNodeValue
+   * sets a Node value
    * @param {value} value
    */
   setNodeValue (name: string): void {
@@ -36,7 +51,14 @@ class Node<T> {
   }
 
   /**
-   * @returns {Node} this.nextNode
+   * @param {object} data
+   */
+  setNodeData (data: object): void {
+    this.data = data
+  }
+
+  /**
+   * @param {Node} nextNode
    */
   setNextNode (nextNode: Node<T> | null): void {
     this.nextNode = nextNode
