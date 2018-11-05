@@ -1,9 +1,5 @@
 import warn from '../../../utils/warn'
-import * as Debug from 'debug'
-
 import { Node } from './Node'
-
-const error = Debug('Error:LinkedList:')
 
 /**
  * LINKED LIST ⛓
@@ -26,12 +22,12 @@ class LinkedList<T> {
    * @param {string} name
    * @returns {Node} Node
    */
-  appendNode (name: string): void {
+  appendNode (name: string, data?: object | null): void {
+    const newNode = new Node(name, data || null)
     if (!this.headNode) {
-      this.headNode = new Node(name)
+      this.headNode = newNode
       this.tailNode = this.headNode
     } else {
-      const newNode = new Node(name)
       const tailNode = this.tailNode.nextNode
       this.tailNode.nextNode = newNode
       this.tailNode = this.tailNode.nextNode
@@ -72,7 +68,7 @@ class LinkedList<T> {
     }
   }
 
-  appendNodeAt (nodePosition: number, name: string): void {
+  appendNodeAt (nodePosition: number, name: string, data?: object | null): void {
     if (this.debug && nodePosition >= this.length()) {
       return warn('appendNodeAt requires an in-range position')
     }
@@ -109,7 +105,7 @@ class LinkedList<T> {
     let currentNode = this.headNode
     let nodes = []
     while (currentNode !== null) {
-      nodes.push(currentNode.name)
+      nodes.push(currentNode)
       currentNode = currentNode.nextNode
     }
     return nodes
@@ -117,7 +113,7 @@ class LinkedList<T> {
 
   getIndexOfNode (name: string): number {
     const list = this.toArray()
-    return list.indexOf(name)
+    return list.map(o => o.name).indexOf(name)
   }
 
   /**
@@ -150,9 +146,9 @@ class LinkedList<T> {
     return this.constructNewList(filteredNodeArray)
   }
 
-  constructNewList (names: string[]) {
+  constructNewList (nodes: Node<T>[]) {
     this.clear()
-    return names.forEach(name => this.appendNode(name))
+    return nodes.forEach(({ name, data }) => this.appendNode(name, data || null))
   }
 }
 

@@ -1,5 +1,5 @@
 declare function test(msg: string, test: Function)
-declare function expect (result: any)
+declare function expect(result: any)
 
 import { LinkedList } from '..'
 import { Node } from '../Node'
@@ -69,7 +69,53 @@ test('LinkedList appendNodeAt', function appendNodeAt () {
   list.appendNode('biz')
   list.appendNodeAt(2, 'baz')
   const result = list.toArray()
-  expect(result).toEqual(['foo', 'bar', 'baz', 'biz'])
+  const expected = [
+    {
+      data: null,
+      name: "foo",
+      nextNode: {
+        data: null,
+        name: "bar",
+        nextNode: {
+          data: null,
+          name: undefined,
+          nextNode: {
+            data: null,
+            name: "biz",
+            nextNode: null,
+          },
+        },
+      },
+    },
+    {
+      data: null,
+      name: "bar",
+      nextNode: {
+        data: null,
+        name: undefined,
+        nextNode: {
+          data: null,
+          name: "biz",
+          nextNode: null,
+        },
+      },
+    },
+    {
+      data: null,
+      name: undefined,
+      nextNode: {
+        data: null,
+        name: "biz",
+        nextNode: null,
+      },
+    },
+    {
+      data: null,
+      name: "biz",
+      nextNode: null,
+    },
+  ]
+  expect(result).toEqual(expected)
 })
 
 // test LinkedListNode .reverseList()
@@ -80,7 +126,36 @@ test('LinkedList reverseList', function reverseList () {
   list.appendNode('biz')
   list.reverseList()
   const reversed = list.toArray()
-  expect(reversed).toEqual(['biz', 'bar', 'foo'])
+  const expected = [
+    {
+      data: null,
+      name: "biz",
+      nextNode: {
+        data: null,
+        name: "bar",
+        nextNode: {
+          data: null,
+          name: "foo",
+          nextNode: null
+        }
+      },
+    },
+    {
+      data: null,
+      name: "bar",
+      nextNode: {
+        data: null,
+        name: "foo",
+        nextNode: null
+      },
+    },
+    {
+      data: null,
+      name: "foo",
+      nextNode: null,
+    },
+  ]
+  expect(reversed).toEqual(expected)
 })
 
 // test LinkedListNode .toArray()
@@ -90,17 +165,36 @@ test('LinkedList toArray', function toArray () {
   list.appendNode('bar')
   list.appendNode('biz')
   const array = list.toArray()
-  expect(array).toEqual(['foo', 'bar', 'biz'])
-})
-
-// test LinkedListNode .toArray()
-test('LinkedList toArray', function toArray () {
-  const list = new LinkedList()
-  list.appendNode('foo')
-  list.appendNode('bar')
-  list.appendNode('biz')
-  const array = list.toArray()
-  expect(array).toEqual(['foo', 'bar', 'biz'])
+  const expected = [
+    {
+      data: null,
+      name: "foo",
+      nextNode: {
+        data: null,
+        name: "bar",
+        nextNode: {
+          data: null,
+          name: "biz",
+          nextNode: null,
+        }
+      }
+    },
+    {
+      data: null,
+      name: "bar",
+      nextNode: {
+        data: null,
+        name: "biz",
+        nextNode: null
+      }
+    },
+    {
+      data: null,
+      name: "biz",
+      nextNode: null,
+    }
+  ]
+  expect(array).toEqual(expected)
 })
 
 // test LinkedListNode .getIndexOfNode()
@@ -148,7 +242,14 @@ test('LinkedList removeDuplicateNodes', function removeDuplicateNodes () {
   list.appendNode('bar')
   list.appendNode('foo')
   list.removeDuplicateNodes()
-  expect(list.toArray()).toEqual(['foo', 'bar'])
+  const expected = [
+    {
+      data: null,
+      name: "foo",
+      nextNode: null,
+    }
+  ]
+  expect(list.toArray()).toEqual(expected)
 })
 
 test('LinkedList constructNewList', function removeDuplicateNodes() {
@@ -158,5 +259,34 @@ test('LinkedList constructNewList', function removeDuplicateNodes() {
   const names = list.toArray()
   names.push('biz')
   list.constructNewList(names)
-  expect(list.toArray()).toEqual(['foo', 'bar', 'biz'])
+  const expected = [
+    {
+      data: null,
+      name: "foo",
+      nextNode: {
+        data: null,
+        name: "bar",
+        nextNode: {
+          data: null,
+          name: undefined,
+          nextNode: null,
+        }
+      }
+    },
+    {
+      data: null,
+      name: "bar",
+      nextNode: {
+        data: null,
+        name: undefined,
+        nextNode: null
+      }
+    },
+    {
+      data: null,
+      name: undefined,
+      nextNode: null
+    }
+  ]
+  expect(list.toArray()).toEqual(expected)
 })
