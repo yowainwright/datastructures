@@ -1,9 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var warn_1 = require("../../../utils/warn");
-var Debug = require("debug");
 var Node_1 = require("./Node");
-var error = Debug('Error:LinkedList:');
 /**
  * LINKED LIST ⛓
  * ----
@@ -22,13 +20,13 @@ var LinkedList = /** @class */ (function () {
      * @param {string} name
      * @returns {Node} Node
      */
-    LinkedList.prototype.appendNode = function (name) {
+    LinkedList.prototype.appendNode = function (name, data) {
+        var newNode = new Node_1.Node(name, data || null);
         if (!this.headNode) {
-            this.headNode = new Node_1.Node(name);
+            this.headNode = newNode;
             this.tailNode = this.headNode;
         }
         else {
-            var newNode = new Node_1.Node(name);
             var tailNode = this.tailNode.nextNode;
             this.tailNode.nextNode = newNode;
             this.tailNode = this.tailNode.nextNode;
@@ -67,7 +65,7 @@ var LinkedList = /** @class */ (function () {
             currentNode = currentNode.nextNode;
         }
     };
-    LinkedList.prototype.appendNodeAt = function (nodePosition, name) {
+    LinkedList.prototype.appendNodeAt = function (nodePosition, name, data) {
         if (this.debug && nodePosition >= this.length()) {
             return warn_1["default"]('appendNodeAt requires an in-range position');
         }
@@ -101,14 +99,14 @@ var LinkedList = /** @class */ (function () {
         var currentNode = this.headNode;
         var nodes = [];
         while (currentNode !== null) {
-            nodes.push(currentNode.name);
+            nodes.push(currentNode);
             currentNode = currentNode.nextNode;
         }
         return nodes;
     };
     LinkedList.prototype.getIndexOfNode = function (name) {
         var list = this.toArray();
-        return list.indexOf(name);
+        return list.map(function (o) { return o.name; }).indexOf(name);
     };
     /**
      * length
@@ -137,10 +135,13 @@ var LinkedList = /** @class */ (function () {
             : (nodes[names] = true); });
         return this.constructNewList(filteredNodeArray);
     };
-    LinkedList.prototype.constructNewList = function (names) {
+    LinkedList.prototype.constructNewList = function (nodes) {
         var _this = this;
         this.clear();
-        return names.forEach(function (name) { return _this.appendNode(name); });
+        return nodes.forEach(function (_a) {
+            var name = _a.name, data = _a.data;
+            return _this.appendNode(name, data || null);
+        });
     };
     return LinkedList;
 }());
