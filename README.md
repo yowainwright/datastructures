@@ -1,4 +1,6 @@
-# Datastructures TS
+![DataStructures TS](https://jeffry.in/assets/datastructures-ts/datastructures-ts.svg)
+
+----
 
 > **Data Structures in TypeScript:** if learning Types wasn't enough, I'm adding datastructures to it. 😳
 
