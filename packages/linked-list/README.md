@@ -1,3 +1,6 @@
+![DataStructures TS](https://jeffry.in/assets/datastructures-ts/datastructures-ts.svg)
+![Linked List](https://jeffry.in/assets/datastructures-ts/linked-list.svg)
+
 # Linked List ⛓
 
 > The Linked List is a datastructure for storing a list collection of data items
