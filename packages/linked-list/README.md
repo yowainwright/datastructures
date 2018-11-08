@@ -11,6 +11,62 @@ This is the Linked List Package of [**Data Structures TS**](https://github.com/y
 
 ----
 
+## Setup
+
+The commmands below provide package manager install instructions. Unpk support will be added momentarily.
+
+### NPM
+
+```sh
+
+npm i @dsts/linked-list -D
+
+```
+
+### Yarn
+
+```sh
+
+yarn add @dsts/linked-list -D
+
+```
+
+----
+
+## Usage
+
+New Linked Lists can be created by importing the Linked List and setting them up similarily to the example below.
+
+```javascript
+
+import LinkedList from '@dsts/linked-list'
+
+const List = new LinkedList()
+List.appendNode('foo')
+List.appendNode('bar')
+
+```
+
+Furthermore, the Linked List accepts nodes with a `name` and `data`. This creates the ability to find Nodes and also contain useful data with them.
+
+```javascript
+
+import LinkedList from '@dsts/linked-list'
+
+const List = new LinkedList()
+List.apendNode('foo', { ..,stuff})
+List.apendNode('foo', { ..,otherStuff})
+
+```
+
+----
+
+## API
+
+![Linked List Illustration](https://jeffry.in/assets/datastructures-ts/linked-list-il.svg)
+
+----
+
 ## Resources
 
 The list below provides links to other helpful tools for understanding the Linked List data structure.
