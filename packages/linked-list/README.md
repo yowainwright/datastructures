@@ -54,8 +54,8 @@ Furthermore, the Linked List accepts nodes with a `name` and `data`. This create
 import LinkedList from '@dsts/linked-list'
 
 const List = new LinkedList()
-List.apendNode('foo', { ..,stuff})
-List.apendNode('foo', { ..,otherStuff})
+List.apendNode('foo', { .., data})
+List.apendNode('foo', { .., otherdata})
 
 ```
 
