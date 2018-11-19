@@ -14,15 +14,10 @@ Each list item provides links to help go from **"what the f\**k?"** to **"Duh, o
 
 ----
 
-### Linked List
+## Linked List
 
  > The [Link List](/packages/linked-list/) is one of the most common Data Structures. Ask any developer about it if you would like to instantly feel like an idiot.
 
-The [Linked List](/packages/linked-list/) is a Linear Structure of Nodes. Each node is a seperate object.
+![Linked List Illustration](https://jeffry.in/assets/datastructures-ts/linked-list-il.svg)
 
-#### Examples and reading
-
-Listed below are links to articles and other code examples of Linked Lists.
-
-- [Linked List Node, dataStructures-js](https://github.com/eyas-ranjous/datastructures-js/blob/master/lib/linkedList/linkedListNode.js)
-- [Linked List Data Structure, Medium by Gaurav Mehla](https://medium.com/dev-blogs/ds-with-js-linked-lists-db5138ff139f)
+The [Linked List](/packages/linked-list/) is a Linear Structure of Nodes. Each Node is a seperate object. Go to [DataStructures TS, Linked List](/packages/linked-list/) for more detail.
