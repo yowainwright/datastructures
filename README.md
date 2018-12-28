@@ -2,15 +2,17 @@
 
 ----
 
-> **Data Structures in TypeScript:** if learning Types wasn't enough, I'm adding datastructures to it. 😳
+> **Data Structures in TypeScript:** if learning Types wasn't enough, the repo adds datastructures to it. 😳 But, hopefully, it is for the better.
 
-This project is built with little understanding of Data Structures or TypeScript. Have fun with those facts!
-Most commits were done after looking at repos such as [this](https://github.com/eyas-ranjous/datastructures-js/) by Eyas Ranjous, then crying a bit.
+This project builds Data Structures with TypeScript. Each modules is it's own datastructure and can be used in the wild. **Please** feel free to submit pull requests for more usable datastructures.
+
+Most initial commits were done  looking at repos such as [this](https://github.com/eyas-ranjous/datastructures-js/) by Eyas Ranjous, then crying a bit. Then trying to figued out how to best create and use a datastructure in JavaScript and how to best define that datastructure with TypeScript.
 
 ## Data Structures
 
 The list below contains common Data Structures.
-Each list item provides links to help go from **"what the f\**k?"** to **"Duh, obviously simply trivial."**.
+
+Each list item provides links to help go from **"what the f\**k?"** to **"Duh, obviously simply trivial."**. Kidding. Each list item provides a bit of context, links to code, references, and finally—a usable module for each data structure.
 
 ----
 
