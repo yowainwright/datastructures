@@ -12,7 +12,7 @@ class LinkedList<T> {
   public tailNode: any
   public debug: boolean
 
-  constructor (headNode: Node | null = null, debug: boolean = false) {
+  constructor (headNode: any | null = null, debug: boolean = false) {
     this.headNode = headNode
     this.debug = debug
   }
@@ -89,7 +89,7 @@ class LinkedList<T> {
    * findNode
    * @param {value} value
    */
-  findNode (name: string): Node {
+  findNode (name: string) {
     let currentNode = this.headNode.nextNode
     while (currentNode.name !== name) {
       currentNode = currentNode.nextNode
