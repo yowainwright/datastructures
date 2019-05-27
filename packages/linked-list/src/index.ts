@@ -1,5 +1,5 @@
 import warn from '../../../utils/warn'
-import { Node } from './Node'
+import { Node, NodeInterface } from './Node'
 
 /**
  * LINKED LIST ⛓
@@ -8,11 +8,11 @@ import { Node } from './Node'
  * represents a list of nodes containing information (values)
  */
 class LinkedList<T> {
-  public headNode: Node<T> | null
-  public tailNode: Node<T> | null
+  public headNode: any
+  public tailNode: any
   public debug: boolean
 
-  constructor (headNode: Node<T> | null = null, debug: boolean = false) {
+  constructor (headNode: Node | null = null, debug: boolean = false) {
     this.headNode = headNode
     this.debug = debug
   }
@@ -23,7 +23,7 @@ class LinkedList<T> {
    * @returns {Node} Node
    */
   appendNode (name: string, data?: object | null): void {
-    const newNode = new Node(name, data || null)
+    const newNode = Node(name, data)
     if (!this.headNode) {
       this.headNode = newNode
       this.tailNode = this.headNode
@@ -89,7 +89,7 @@ class LinkedList<T> {
    * findNode
    * @param {value} value
    */
-  findNode (name: string): Node<T> {
+  findNode (name: string): Node {
     let currentNode = this.headNode.nextNode
     while (currentNode.name !== name) {
       currentNode = currentNode.nextNode
@@ -146,7 +146,7 @@ class LinkedList<T> {
     return this.constructNewList(filteredNodeArray)
   }
 
-  constructNewList (nodes: Node<T>[]) {
+  constructNewList (nodes: any) {
     this.clear()
     return nodes.forEach(({ name, data }) => this.appendNode(name, data || null))
   }

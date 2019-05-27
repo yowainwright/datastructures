@@ -1,8 +1,13 @@
 /**
  * Linked List Node
  */
-export const Node = (name: string, nextNode: object | null = null, data: object | null = null) => ({
+export interface NodeInterface {
+  name: string,
+  data: object,
+  nextNode: object,
+}
+export const Node = (name: string, data: object | null = null, nextNode: object | null = null): NodeInterface => ({
   name,
-  nextNode,
   data,
+  nextNode,
 })

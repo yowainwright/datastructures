@@ -21,7 +21,7 @@ var LinkedList = /** @class */ (function () {
      * @returns {Node} Node
      */
     LinkedList.prototype.appendNode = function (name, data) {
-        var newNode = new Node_1.Node(name, data || null);
+        var newNode = Node_1.Node(name, data || null);
         if (!this.headNode) {
             this.headNode = newNode;
             this.tailNode = this.headNode;

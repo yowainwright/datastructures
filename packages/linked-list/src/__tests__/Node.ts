@@ -7,5 +7,5 @@ test('Node init', function testNodeInit () {
   const node = Node('foo')
   expect(typeof node).toEqual('object')
   expect(node.name).toEqual('foo')
-  expect(node.nextNode).toEqual(null)
+  expect(node.data).toEqual(null)
 })
