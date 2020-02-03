@@ -1,5 +1,5 @@
 import warn from '../../../utils/warn'
-import { Node, NodeInterface } from './Node'
+import { Node, NodeObject } from './Node'
 
 /**
  * LINKED LIST ⛓
@@ -7,12 +7,12 @@ import { Node, NodeInterface } from './Node'
  * The Linked List Node is a Linear Structure of Nodes. Each node is a seperate object
  * represents a list of nodes containing information (values)
  */
-class LinkedList<T> {
-  public headNode: any
-  public tailNode: any
+class LinkedList {
+  public headNode: NodeObject
+  public tailNode: NodeObject
   public debug: boolean
 
-  constructor (headNode: any | null = null, debug: boolean = false) {
+  constructor (headNode: NodeObject = null, debug: boolean = false) {
     this.headNode = headNode
     this.debug = debug
   }
@@ -28,7 +28,6 @@ class LinkedList<T> {
       this.headNode = newNode
       this.tailNode = this.headNode
     } else {
-      const tailNode = this.tailNode.nextNode
       this.tailNode.nextNode = newNode
       this.tailNode = this.tailNode.nextNode
     }
@@ -68,7 +67,7 @@ class LinkedList<T> {
     }
   }
 
-  appendNodeAt (nodePosition: number, name: string, data?: object | null): void {
+  appendNodeAt (nodePosition: number, name: string): void {
     if (this.debug && nodePosition >= this.length()) {
       return warn('appendNodeAt requires an in-range position')
     }
@@ -146,10 +145,10 @@ class LinkedList<T> {
     return this.constructNewList(filteredNodeArray)
   }
 
-  constructNewList (nodes: any) {
+  constructNewList (nodes: NodeObject[]) {
     this.clear()
-    return nodes.forEach(({ name, data }) => this.appendNode(name, data || null))
+    return Array.from(nodes, ({ name, data }) => this.appendNode(name, data))
   }
 }
 
-export { LinkedList }
+export { LinkedList, Node }

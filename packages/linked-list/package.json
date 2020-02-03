@@ -1,6 +1,6 @@
 {
   "name": "@dsts/linked-list",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Linked List Data Structure in TypeScript",
   "main": "dist/index.js",
   "unpkg": "dist/index.js",
@@ -10,7 +10,9 @@
     "src"
   ],
   "scripts": {
-    "test": "test"
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "tsc": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
