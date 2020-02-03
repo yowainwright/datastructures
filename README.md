@@ -2,6 +2,8 @@
 
 ----
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/yowainwright/datastructures-ts.svg)](https://greenkeeper.io/)
+
 > **Data Structures in TypeScript:** if learning Types wasn't enough, the repo adds datastructures to it. 😳 But, hopefully, it is for the better.
 
 This project builds Data Structures with TypeScript. Each modules is it's own datastructure and can be used in the wild. **Please** feel free to submit pull requests for more usable datastructures.
