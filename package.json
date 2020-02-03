@@ -2,12 +2,9 @@
   "name": "@dsts/root",
   "version": "0.0.1",
   "description": "Data Structures in TypeScript",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "build": "lerna run build --stream --parallel",
+    "build": "yarn build:linkedlist",
+    "build:linkedlist": "tsc -p ./packages/linked-list/tsconfig.linkedlist.json",
     "chore:delete-changelog-branch": "if git show-ref --quiet refs/heads/chore-changelog; then git branch -D chore-changelog; fi",
     "chore:branch": "git checkout -b chore-changelog",
     "chore:changelog": "conventional-changelog -p eslint -i CHANGELOG.md -s -r 0",
@@ -60,7 +57,7 @@
     "tslint": "^5.9.1",
     "tslint-config-dollarshaveclub": "^1.0.2",
     "typedoc": "^0.13.0",
-    "typescript": "^3.1.6",
+    "typescript": "^3.7.0",
     "write-good": "^0.13.1"
   },
   "jest": {

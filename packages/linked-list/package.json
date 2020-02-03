@@ -2,21 +2,16 @@
   "name": "@dsts/linked-list",
   "version": "0.0.16",
   "description": "Linked List Data Structure in TypeScript",
-  "main": "dist/index.js",
+  "main": "dist/",
   "unpkg": "dist/index.js",
   "module": "dist/index.js",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "scripts": {
-    "build": "tsc",
-    "clean": "rimraf dist",
-    "tsc": "tsc --noEmit"
+  "types": "index.ts",
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yowainwright/datastructures-ts/tree/master/packages/linked-list"
+    "url": "https://github.com/yowainwright/datastructures-ts/"
   },
   "keywords": [
     "data-structures",
@@ -27,8 +22,5 @@
     "linked-list"
   ],
   "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  }
+  "license": "MIT"
 }
