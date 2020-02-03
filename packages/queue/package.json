@@ -1,0 +1,21 @@
+{
+  "name": "@dollarshaveclub/queue",
+  "version": "0.0.1",
+  "description": "Queue Data Structure in TypeScript",
+  "main": "dist/",
+  "unpkg": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "index.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yowainwright/datastructures-ts.git"
+  },
+  "keywords": [
+    "Queue"
+  ],
+  "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
+  "license": "MIT"
+}
