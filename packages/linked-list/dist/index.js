@@ -1,16 +1,23 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var Node_1 = require("./Node");
-exports.Node = Node_1.Node;
-var warn = function (msg) {
-    return console.warn('%c ⚠️ DataStructures TS: ', 'background: blue, color: white', msg);
-};
 /**
  * LINKED LIST ⛓
  * ----
  * The Linked List Node is a Linear Structure of Nodes. Each node is a seperate object
  * represents a list of nodes containing information (values)
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+var warn = function (msg) {
+    return console.warn('%c ⚠️ DataStructures TS: ', 'background: blue, color: white', msg);
+};
+exports.Node = function (name, data, nextNode) {
+    if (data === void 0) { data = null; }
+    if (nextNode === void 0) { nextNode = null; }
+    return ({
+        name: name,
+        data: data,
+        nextNode: nextNode,
+    });
+};
 var LinkedList = /** @class */ (function () {
     function LinkedList(headNode, debug) {
         if (headNode === void 0) { headNode = null; }
@@ -24,7 +31,7 @@ var LinkedList = /** @class */ (function () {
      * @returns {Node} Node
      */
     LinkedList.prototype.appendNode = function (name, data) {
-        var newNode = Node_1.Node(name, data);
+        var newNode = exports.Node(name, data);
         if (!this.headNode) {
             this.headNode = newNode;
             this.tailNode = this.headNode;
@@ -137,6 +144,10 @@ var LinkedList = /** @class */ (function () {
             : (nodes[names] = true); });
         return this.constructNewList(filteredNodeArray);
     };
+    /**
+     * constructNewList
+     * constructs a New List from Node Objects
+     */
     LinkedList.prototype.constructNewList = function (nodes) {
         var _this = this;
         this.clear();

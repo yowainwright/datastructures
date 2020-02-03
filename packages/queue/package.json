@@ -1,7 +1,7 @@
 {
-  "name": "@dsts/linked-list",
-  "version": "0.0.18",
-  "description": "Linked List Data Structure in TypeScript",
+  "name": "@dollarshaveclub/queue",
+  "version": "0.0.1",
+  "description": "Queue Data Structure in TypeScript",
   "main": "dist/",
   "unpkg": "dist/index.js",
   "module": "dist/index.js",
@@ -14,9 +14,7 @@
     "url": "git@github.com:yowainwright/datastructures-ts.git"
   },
   "keywords": [
-    "linked list",
-    "linkedlist",
-    "linked-list"
+    "Queue"
   ],
   "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
   "license": "MIT"
