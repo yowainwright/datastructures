@@ -1,4 +1,19 @@
-import { Node, NodeObject } from './Node'
+/**
+ * LINKED LIST ⛓
+ * ----
+ * The Linked List Node is a Linear Structure of Nodes. Each node is a seperate object
+ * represents a list of nodes containing information (values)
+ */
+
+
+/**
+ * Linked List Node
+ */
+export type NodeObject = {
+  name: string,
+  data?: object | null,
+  nextNode?: NodeObject | null,
+} | null
 
 const warn = (msg: string): void => {
   return console.warn(
@@ -8,12 +23,13 @@ const warn = (msg: string): void => {
   )
 }
 
-/**
- * LINKED LIST ⛓
- * ----
- * The Linked List Node is a Linear Structure of Nodes. Each node is a seperate object
- * represents a list of nodes containing information (values)
- */
+
+export const Node = (name: string, data: object | null = null, nextNode: NodeObject = null): NodeObject => ({
+  name,
+  data,
+  nextNode,
+})
+
 class LinkedList {
   public headNode: NodeObject
   public tailNode: NodeObject
@@ -152,10 +168,15 @@ class LinkedList {
     return this.constructNewList(filteredNodeArray)
   }
 
+  /**
+   * constructNewList
+   * constructs a New List from Node Objects
+   */
+
   constructNewList (nodes: NodeObject[]) {
     this.clear()
     return Array.from(nodes, ({ name, data }) => this.appendNode(name, data))
   }
 }
 
-export { LinkedList, Node }
+export { LinkedList }
