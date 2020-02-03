@@ -1,12 +1,14 @@
 /**
  * Linked List Node
  */
-export interface NodeInterface {
+export type NodeObject = {
   name: string,
-  data: object,
-  nextNode: object,
-}
-export const Node = (name: string, data: object | null = null, nextNode: object | null = null): NodeInterface => ({
+  data?: object | null,
+  nextNode?: NodeObject | null,
+} | null
+
+
+export const Node = (name: string, data: object | null = null, nextNode: NodeObject = null): NodeObject => ({
   name,
   data,
   nextNode,

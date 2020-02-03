@@ -4,8 +4,8 @@
 
 ----
 
-The Linked List is a linear sttructure of Nodes. Each node is a seperate object.
-Each data item (Node) is made with a relationsip to its nextNode.
+The Linked List is a linear structure of Nodes. Each node is a seperate object.
+Each data item (Node) is made with a relationship to its `nextNode`.
 
 This is the Linked List Package of [**Data Structures TS**](https://github.com/yowainwright/datastructures-ts).
 
@@ -13,7 +13,7 @@ This is the Linked List Package of [**Data Structures TS**](https://github.com/y
 
 ## Setup
 
-The commmands below provide package manager install instructions. Unpk support will be added momentarily.
+The commmands below provide package manager install instructions. 
 
 ### NPM
 
@@ -35,7 +35,7 @@ yarn add @dsts/linked-list -D
 
 ## Usage
 
-New Linked Lists can be created by importing the Linked List and setting them up similarily to the example below.
+New Linked Lists can be created by importing the Linked List and setting them up similarly to the example below.
 
 ```javascript
 
@@ -51,11 +51,11 @@ Furthermore, the Linked List accepts nodes with a `name` and `data`. This create
 
 ```javascript
 
-import LinkedList from '@dsts/linked-list'
+import { LinkedList } from '@dsts/linked-list'
 
 const List = new LinkedList()
-List.apendNode('foo', { .., data})
-List.apendNode('foo', { .., otherdata})
+List.appendNode('foo', data)
+List.appendNode('foo', data)
 
 ```
 
@@ -64,6 +64,55 @@ List.apendNode('foo', { .., otherdata})
 ## API
 
 ![Linked List Illustration](https://jeffry.in/assets/datastructures-ts/linked-list-il.svg)
+
+Listed below is the Linked List API. This Linked List utility is built as a calss
+
+#### `Node Arguments`
+
+**`name`:** when adding a Node a `string` is always **required**
+> **ex:** `const List = LinkedList(); List.appendNode('foo')`
+
+**`data`:** a data `{object}` for containing useful data with a Node
+> **ex:** `const List = LinkedList(); List.appendNode('foo', { name: 'foo' })`
+
+
+#### `Methods`
+
+**`appendNode(name, data)`:** adds a Node with a `name` and an optional `data` `{object}` to the List.
+> **ex:** `List.appendNode('foo')`
+
+**`removeNode(name)`:** removes a Node by `name` from the List
+> **ex:** `List.removeNode('foo')`
+
+**`traverseList(fn)`:** envokes a callback function (`fn`) on each node within a list
+> **ex:** `const fn = (node) => console.log("This node's name is ", node.name); List.removeNode(fn)`
+
+**`appendNodeAt(index, name)`:** moves a pre-existing node to a certain position within the list by `index` and `name`
+> **ex:** `List.appendNodeAt(2, 'foo')`
+
+**`reverseList`:** reverses the order of Nodes within a List
+> **ex:** `List.reverseList()`
+
+**`findNode(name)`:** finds a Node within a List based on Node `name`
+> **ex:** `List.findNode('foo')`
+
+**`toArray`:** returns a List as an array
+> **ex:** `List.toArray()`
+
+**`getIndexOfNode(name)`:** returns the `index` of Node with a list based on Node `name`
+> **ex:** `List.getIndexOfNode('foo')`
+
+**`length`:** returns the length of the List
+> **ex:** `List.length()`
+
+**`clear`:** clears the List
+> **ex:** `List.clear()`
+
+**`removeDuplicateNodes`:** removes nodes that have the same `name`
+> **ex:** `List.removeDuplicateNodes()`
+
+**`constructNewList`:** creates a new List with an array of Nodes
+> **ex:** `const nodes = [{ name: 'foo' }, { name: 'bar' }];List.constructNewList(nodes)`
 
 ----
 

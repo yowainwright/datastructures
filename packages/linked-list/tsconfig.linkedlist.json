@@ -1,15 +1,10 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "build",
-    "rootDirs": ["src", "../../utils/"]
+    "outDir": "./dist",
   },
   "include": [
-    "src/index.ts",
-    "src/Node.ts",
-    "../../utils/warn.ts"
-  ],
-  "exclude": [
-    "coverage",
-    "**/__tests__/*"
+    "src",
   ]
 }
+
