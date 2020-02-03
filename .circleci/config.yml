@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: ~/code
   docker:
-    - image: circleci/node:10
+    - image: circleci/node:12
       environment:
         NPM_CONFIG_LOGLEVEL: error # make npm commands less noisy
         JOBS: max # https://gist.github.com/ralphtheninja/f7c45bdee00784b41fed
@@ -9,12 +9,11 @@ defaults: &defaults
 restore_cache: &restore_cache
   restore_cache:
     keys:
-      - code-{{ .Branch }}-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}
-      - code-master-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}
+      - code-{{ .Branch }}-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
 
 save_cache: &save_cache
   save_cache:
-    key: code-{{ .Branch }}-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}
+    key: code-{{ .Branch }}-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
     paths:
       - node_modules
 
@@ -24,12 +23,12 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - run: npm install
+      - run: yarn
       - *restore_cache
-      - run: npm install
-      - run: npm run lint
-      - run: npm run build
-      - run: npm test
+      - run: yarn
+      - run: yarn lint
+      - run: yarn build
+      - run: yarn test
       - *save_cache
 
 workflows:
