@@ -7,7 +7,6 @@ import { Node } from '../Node'
 // test LinkedListNode(node)
 test('LinkedList init', function testLinkedList () {
   const node = Node('foo')
-  const otherNode = Node('bar')
   const list = new LinkedList(node)
   expect(list.headNode.name).toEqual('foo')
 })

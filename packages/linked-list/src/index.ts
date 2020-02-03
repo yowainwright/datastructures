@@ -1,5 +1,12 @@
-import warn from '../../../utils/warn'
 import { Node, NodeObject } from './Node'
+
+const warn = (msg: string): void => {
+  return console.warn(
+    '%c ⚠️ DataStructures TS: ',
+    'background: blue, color: white',
+    msg
+  )
+}
 
 /**
  * LINKED LIST ⛓
