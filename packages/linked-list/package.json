@@ -1,6 +1,6 @@
 {
   "name": "@dsts/linked-list",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Linked List Data Structure in TypeScript",
   "main": "dist/",
   "unpkg": "dist/index.js",
