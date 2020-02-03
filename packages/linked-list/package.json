@@ -5,6 +5,9 @@
   "main": "dist/index.js",
   "unpkg": "dist/index.js",
   "module": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist",
     "src"
