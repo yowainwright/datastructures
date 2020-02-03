@@ -172,7 +172,6 @@ class LinkedList {
    * constructNewList
    * constructs a New List from Node Objects
    */
-
   constructNewList (nodes: NodeObject[]) {
     this.clear()
     return Array.from(nodes, ({ name, data }) => this.appendNode(name, data))

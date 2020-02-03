@@ -39,7 +39,7 @@ New Linked Lists can be created by importing the Linked List and setting them up
 
 ```javascript
 
-import LinkedList from '@dsts/linked-list'
+import { LinkedList } from '@dsts/linked-list'
 
 const List = new LinkedList()
 List.appendNode('foo')
@@ -123,3 +123,8 @@ The list below provides links to other helpful tools for understanding the Linke
 - [datastructures-js](https://github.com/datastructures-js/linked-list) by [Eyas Ranjous](https://github.com/eyas-ranjous)
 - [coding-interview-university](https://github.com/jwasham/coding-interview-university#linked-lists) by [John Washam](https://github.com/jwasham)
 - [Linked List](https://en.wikipedia.org/wiki/Linked_list) via Wikipedia
+
+## Code Examples
+
+- [Functional Linked List in Array form](https://codepen.io/yowainwright/pen/eYmqeWo)
+- [Class Linked List](https://codepen.io/yowainwright/pen/gObVeGG)
