@@ -1,7 +1,11 @@
 {
   "name": "@dsts/root",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Data Structures in TypeScript",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "yarn build:linkedlist",
     "build:linkedlist": "tsc -p ./packages/linked-list/tsconfig.linkedlist.json",
@@ -25,7 +29,7 @@
     "test": "yarn test:unit",
     "test:unit": "jest --coverage"
   },
-  "repository": "git+https://github.com/yowainwright/datastructures-ts.git",
+  "repository": "git@github.com:yowainwright/datastructures-ts.git",
   "keywords": [
     "TypeScript",
     "TS",
