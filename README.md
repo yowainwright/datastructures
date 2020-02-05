@@ -4,17 +4,20 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/yowainwright/datastructures-ts.svg)](https://greenkeeper.io/)
 
-> **Data Structures in TypeScript:** if learning Types wasn't enough, the repo adds datastructures to it. 😳 But, hopefully, it is for the better.
+> **Data Structures in TypeScript:** This monorepo project implements common data structures using TypeScript. 
 
-This project builds Data Structures with TypeScript. Each modules is it's own datastructure and can be used in the wild. **Please** feel free to submit pull requests for more usable datastructures.
+Each package of the monorepo contains a common data structure. **Please** submit pull requests for more usable data structures.
 
-Most initial commits were done  looking at repos such as [this](https://github.com/eyas-ranjous/datastructures-js/) by Eyas Ranjous, then crying a bit. Then trying to figued out how to best create and use a datastructure in JavaScript and how to best define that datastructure with TypeScript.
+There are many popular repositories which demonstrate data structures in JavaScript. Here are a few:
+
+- **[datastructures-js](https://github.com/eyas-ranjous/datastructures-js/)** by [Eyas Ranjous](https://github.com/eyas-ranjous), [JS Shelf](https://github.com/js-shelf)
+- **[Itsy Bitsy Data Structures](https://github.com/jamiebuilds/itsy-bitsy-data-structures/)** by [James Kyle](https://github.com/jamiebuilds)
 
 ## Data Structures
 
-The list below contains common Data Structures.
+The list below contains common Data Structures provided by this Repository in separate packages.
 
-Each list item provides links to help go from **"what the f\**k?"** to **"Duh, obviously simply trivial."**. Kidding. Each list item provides a bit of context, links to code, references, and finally—a usable module for each data structure.
+Each list item links to a package of a data structure which will hopefully help you go from **"what the f\**k?"** to **"Duh, obviously simply trivial."**. Kidding. Each list item provides a bit of context, links to package of data structure containing references and, finally, a usable module which you can review and use to understand the data structure.
 
 ----
 
