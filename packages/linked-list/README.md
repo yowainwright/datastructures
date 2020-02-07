@@ -19,7 +19,7 @@ The commmands below provide package manager install instructions.
 
 ```sh
 
-npm i @dsts/linked-list -D
+npm i @datastructures/linked-list -D
 
 ```
 
@@ -27,7 +27,7 @@ npm i @dsts/linked-list -D
 
 ```sh
 
-yarn add @dsts/linked-list -D
+yarn add @datastructures/linked-list -D
 
 ```
 
@@ -39,7 +39,7 @@ New Linked Lists can be created by importing the Linked List and setting them up
 
 ```javascript
 
-import { LinkedList } from '@dsts/linked-list'
+import { LinkedList } from '@datastructures/linked-list'
 
 const List = new LinkedList()
 List.appendNode('foo')
@@ -51,7 +51,7 @@ Furthermore, the Linked List accepts nodes with a `name` and `data`. This create
 
 ```javascript
 
-import { LinkedList } from '@dsts/linked-list'
+import { LinkedList } from '@datastructures/linked-list'
 
 const List = new LinkedList()
 List.appendNode('foo', data)
