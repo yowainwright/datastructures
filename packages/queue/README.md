@@ -15,7 +15,7 @@ The commmands below provide package manager install instructions.
 
 ```sh
 
-npm i @dsts/queue -D
+npm i @datastructures/queue -D
 
 ```
 
@@ -23,7 +23,7 @@ npm i @dsts/queue -D
 
 ```sh
 
-yarn add @dsts/queue -D
+yarn add @datastructures/queue -D
 
 ```
 
@@ -35,7 +35,7 @@ yarn add @dsts/queue -D
 
 ```javascript
 
-import { Queue } from '@dsts/queue'
+import { Queue } from '@datastructures/queue'
 
 
 ```
