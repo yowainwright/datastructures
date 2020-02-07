@@ -1,5 +1,5 @@
 {
-  "name": "@dsts/linked-list",
+  "name": "@datastructures/linked-list",
   "version": "0.0.18",
   "description": "Linked List Data Structure in TypeScript",
   "main": "dist/",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:yowainwright/datastructures-ts.git"
+    "url": "git@github.com:yowainwright/datastructures.git"
   },
   "keywords": [
     "linked list",

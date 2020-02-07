@@ -19,7 +19,7 @@ The commmands below provide package manager install instructions.
 
 ```sh
 
-npm i @dsts/linked-list -D
+npm i @datastructures/linked-list -D
 
 ```
 
@@ -27,7 +27,7 @@ npm i @dsts/linked-list -D
 
 ```sh
 
-yarn add @dsts/linked-list -D
+yarn add @datastructures/linked-list -D
 
 ```
 
