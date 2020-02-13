@@ -1,13 +1,13 @@
-![DataStructures TS](https://jeffry.in/assets/datastructures-ts/datastructures-ts.svg)
+![DataStructures TS](https://jeffry.in/assets/datastructures/datastructures.svg)
 
-![Linked List](https://jeffry.in/assets/datastructures-ts/linked-list.svg)
+![Linked List](https://jeffry.in/assets/datastructures/linked-list.svg)
 
 ----
 
 The Linked List is a linear structure of Nodes. Each node is a seperate object.
 Each data item (Node) is made with a relationship to its `nextNode`.
 
-This is the Linked List Package of [**Data Structures TS**](https://github.com/yowainwright/datastructures-ts).
+This is the Linked List Package of [**Data Structures TS**](https://github.com/yowainwright/datastructures).
 
 ----
 
