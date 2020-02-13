@@ -1,9 +1,9 @@
-![DataStructures TS](https://jeffry.in/assets/datastructures-ts/datastructures-ts.svg)
+![DataStructures TS](https://jeffry.in/assets/datastructures-ts/datastructures.svg)
 
 ----
 
 
-This is the Queue Package of [**Data Structures TS**](https://github.com/yowainwright/datastructures-ts).
+This is the Queue Package of [**Data Structures**](https://github.com/yowainwright/datastructures).
 
 ----
 

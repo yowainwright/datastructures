@@ -1,4 +1,4 @@
-![DataStructures TS](https://jeffry.in/assets/datastructures-ts/datastructures-ts.svg)
+![DataStructures](https://jeffry.in/assets/datastructures/datastructures.svg)
 
 ----
 
@@ -25,6 +25,6 @@ Each list item links to a package of a data structure which will hopefully help 
 
  > The [Link List](/packages/linked-list/) is one of the most common Data Structures. Ask any developer about it if you would like to instantly feel like an idiot.
 
-![Linked List Illustration](https://jeffry.in/assets/datastructures-ts/linked-list-il.svg)
+![Linked List Illustration](https://jeffry.in/assets/datastructures/linked-list-il.svg)
 
 The [Linked List](/packages/linked-list/) is a Linear Structure of Nodes. Each Node is a seperate object. Go to [DataStructures TS, Linked List](/packages/linked-list/) for more detail.
