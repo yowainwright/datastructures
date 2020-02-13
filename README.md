@@ -2,7 +2,7 @@
 
 ----
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/yowainwright/datastructures-ts.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/yowainwright/datastructures.svg)](https://greenkeeper.io/)
 
 > **Data Structures in TypeScript:** This monorepo project implements common data structures using TypeScript. 
 
