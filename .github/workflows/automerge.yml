@@ -14,7 +14,7 @@ on:
   pull_request_review:
     types:
       - submitted
-  check_suite: 
+  check_suite:
     types:
       - completed
   status: {}
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: automerge
-        uses: "pascalgn/automerge-action@135f0bdb927d9807b5446f7ca9ecc2c51de03c4a"
+        uses: 'pascalgn/automerge-action@135f0bdb927d9807b5446f7ca9ecc2c51de03c4a'
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_METHOD: "squash"
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          MERGE_METHOD: 'squash'
