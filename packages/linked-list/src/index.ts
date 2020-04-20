@@ -29,7 +29,7 @@ class LinkedList {
   public tailNode: NodeObject
   public debug: boolean
 
-  constructor(headNode: NodeObject = null, debug: boolean = false) {
+  constructor(headNode: NodeObject = null, debug = false) {
     this.headNode = headNode
     this.debug = debug
   }
@@ -58,7 +58,7 @@ class LinkedList {
     if (this.debug && !name) return warn('removeNode requires a value')
     let currentNode = this.headNode
     while (currentNode !== null) {
-      let previousNode = currentNode
+      const previousNode = currentNode
       currentNode = currentNode.nextNode
       if (currentNode && currentNode.name === name) {
         previousNode.nextNode = currentNode.nextNode
@@ -119,7 +119,7 @@ class LinkedList {
    */
   toArray() {
     let currentNode = this.headNode
-    let nodes = []
+    const nodes = []
     while (currentNode !== null) {
       nodes.push(currentNode)
       currentNode = currentNode.nextNode
@@ -155,9 +155,8 @@ class LinkedList {
   removeDuplicateNodes() {
     const nodeArray = this.toArray()
     const nodes = {}
-    const filteredNodeArray = nodeArray.filter((names) =>
-      Object.prototype.hasOwnProperty.call(nodes, names) ? false : (nodes[names] = true),
-    )
+    // eslint-disable-next-line no-prototype-builtins
+    const filteredNodeArray = nodeArray.filter((names) => (nodes.hasOwnProperty(names) ? false : (nodes[names] = true)))
     return this.constructNewList(filteredNodeArray)
   }
 
