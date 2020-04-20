@@ -1,8 +1,6 @@
-![DataStructures](https://jeffry.in/assets/datastructures/datastructures.svg)
+# Data Structures 🦄
 
----
-
-> **Data Structures:** This project contains common data structures built TypeScript.
+> This project contains common data structures built TypeScript.
 
 Each package of Data Structures contains a common data structure.<br />
 There are many other repositories demonstrating data structures. Here are a few:
@@ -17,15 +15,11 @@ Listed below are implemented Data Structure packages.
 | --- | --- |
 | Name | Description |
 | --- | --- |
-| Linked List | A Linear Structure of Nodes |
+| **[Linked List](./packages/linked-list/)** | A Linear Structure of Nodes |
 
 ---
 
-## Linked List
+## Linked List ⛓
 
-> The [Link List](/packages/linked-list/) is common Data Structure.
-
-![Linked List Illustration](https://jeffry.in/assets/datastructures/linked-list-il.svg)
-
-The [Linked List](/packages/linked-list/) is a linear structure of nodes.<br >
-Each node is a seperate object. Go to [DataStructures TS, Linked List](/packages/linked-list/) for more detail.
+The [Linked List](./packages/linked-list/) is a linear structure of nodes. Each node is a seperate object.
+Go to the [Linked List](./packages/linked-list/) package for more detail.

@@ -1,6 +1,6 @@
 {
   "name": "@datastructures/linked-list",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Class Linked List Data Structure in",
   "main": "dist/index.js",
   "unpkg": "dist/index.js",
