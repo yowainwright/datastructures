@@ -1,17 +1,13 @@
-![DataStructures TS](https://jeffry.in/assets/datastructures/datastructures.svg)
-
-![Linked List](https://jeffry.in/assets/datastructures/linked-list.svg)
-
----
+# @datastructures/linked-list 🦄⛓
 
 The Linked List is a linear structure of Nodes. Each node is a seperate object.
 Each data item (Node) is made with a relationship to its `nextNode`.
 
+**Note:** This structure will be updates to a Factory momentarily (4/20/20)
+
 ---
 
-## Setup
-
-Install
+## Install
 
 ```sh
 
@@ -64,6 +60,10 @@ Listed below is the Linked List API.
 **`data`:** a data `{object}` for containing useful data with a Node
 
 > **ex:** `const List = LinkedList(); List.appendNode('foo', { name: 'foo' })`
+
+**`nextNode`:** the next node of the data structure
+
+---
 
 #### `Methods`
 
@@ -132,4 +132,4 @@ The list below provides links to other helpful tools for understanding the Linke
 
 ---
 
-This is the Linked List Package of [**Data Structures TS**](../../).
+View other [**Data Structures**](../../).
