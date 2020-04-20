@@ -1,11 +1,22 @@
 {
   "name": "@datastructures/linked-list",
   "version": "0.0.20",
-  "description": "Linked List Data Structure in TypeScript",
-  "main": "dist/",
+  "description": "Class Linked List Data Structure in",
+  "main": "dist/index.js",
   "unpkg": "dist/index.js",
   "module": "dist/index.js",
-  "types": "index.ts",
+  "types": "dist/index.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "tsc": "tsc --noEmit"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -19,5 +30,20 @@
     "linked-list"
   ],
   "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
-  "license": "MIT"
+  "license": "MIT",
+  "jest": {
+    "name": "@datastructures/linked-list",
+    "projects": [
+      "<rootDir>/packages/*"
+    ],
+    "resetMocks": true,
+    "rootDir": "./",
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.(ts)$": "ts-jest"
+    }
+  }
 }
