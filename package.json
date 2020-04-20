@@ -24,7 +24,7 @@
     "deploy:all": "lerna publish --ignore-scripts",
     "lint": "yarn lint:cmd --fix",
     "lint:ci": "yarn lint:cmd",
-    "lint:cmd": "eslint . --ext '.ts,.tsx,.js,.json,.snap' --cache",
+    "lint:cmd": "eslint . --ext '.md,.ts,.tsx,.js,.json,.snap' --cache",
     "postpublish": "git tag $npm_package_version && git push origin --tags && npm run chore",
     "pre-commit-msg": "Echo 'Running pre-commit checks...' && exit 0",
     "prepush": "yarn run build && npm test",
