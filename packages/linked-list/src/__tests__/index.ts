@@ -1,9 +1,6 @@
-declare function test(msg: string, test: Function)
-declare function expect(result: any)
-
 import { LinkedList, Node } from '..'
 
-test('Node init', function testNodeInit () {
+test('Node init', function testNodeInit() {
   const node = Node('foo')
   expect(typeof node).toEqual('object')
   expect(node.name).toEqual('foo')
@@ -11,14 +8,14 @@ test('Node init', function testNodeInit () {
 })
 
 // test LinkedListNode(node)
-test('LinkedList init', function testLinkedList () {
+test('LinkedList init', function testLinkedList() {
   const node = Node('foo')
   const list = new LinkedList(node)
   expect(list.headNode.name).toEqual('foo')
 })
 
 // test LinkedListNode .appendNode(name)
-test('LinkedList appendNode', function appendNode () {
+test('LinkedList appendNode', function appendNode() {
   const list = new LinkedList()
   list.appendNode('foo')
   expect(list.length()).toEqual(1)
@@ -29,7 +26,7 @@ test('LinkedList appendNode', function appendNode () {
 })
 
 // test LinkedListNode .findNode(name)
-test('LinkedList findNode', function findNode () {
+test('LinkedList findNode', function findNode() {
   const list = new LinkedList()
   list.appendNode('foo')
   expect(list.length()).toEqual(1)
@@ -41,7 +38,7 @@ test('LinkedList findNode', function findNode () {
 })
 
 // test LinkedListNode .removeNode(name)
-test('LinkedList removeNode', function removeNode () {
+test('LinkedList removeNode', function removeNode() {
   const list = new LinkedList()
   list.appendNode('foo')
   expect(list.length()).toEqual(1)
@@ -54,12 +51,12 @@ test('LinkedList removeNode', function removeNode () {
 })
 
 // test LinkedListNode .traverseList()
-test('LinkedList traverseList', function traverseList () {
+test('LinkedList traverseList', function traverseList() {
   const list = new LinkedList()
   list.appendNode('foo')
   list.appendNode('bar')
   expect(list.length()).toEqual(2)
-  const addZzzToname = (node) => node.name = `${node.name}zzz`
+  const addZzzToname = (node) => (node.name = `${node.name}zzz`)
   list.traverseList(addZzzToname)
   expect(list.headNode.name).toEqual('foozzz')
   const barzzz = list.findNode('barzzz')
@@ -67,7 +64,7 @@ test('LinkedList traverseList', function traverseList () {
 })
 
 // test LinkedListNode .appendNodeAt()
-test('LinkedList appendNodeAt', function appendNodeAt () {
+test('LinkedList appendNodeAt', function appendNodeAt() {
   const list = new LinkedList()
   list.appendNode('foo')
   list.appendNode('bar')
@@ -77,16 +74,16 @@ test('LinkedList appendNodeAt', function appendNodeAt () {
   const expected = [
     {
       data: null,
-      name: "foo",
+      name: 'foo',
       nextNode: {
         data: null,
-        name: "bar",
+        name: 'bar',
         nextNode: {
           data: null,
           name: undefined,
           nextNode: {
             data: null,
-            name: "biz",
+            name: 'biz',
             nextNode: null,
           },
         },
@@ -94,13 +91,13 @@ test('LinkedList appendNodeAt', function appendNodeAt () {
     },
     {
       data: null,
-      name: "bar",
+      name: 'bar',
       nextNode: {
         data: null,
         name: undefined,
         nextNode: {
           data: null,
-          name: "biz",
+          name: 'biz',
           nextNode: null,
         },
       },
@@ -110,13 +107,13 @@ test('LinkedList appendNodeAt', function appendNodeAt () {
       name: undefined,
       nextNode: {
         data: null,
-        name: "biz",
+        name: 'biz',
         nextNode: null,
       },
     },
     {
       data: null,
-      name: "biz",
+      name: 'biz',
       nextNode: null,
     },
   ]
@@ -124,7 +121,7 @@ test('LinkedList appendNodeAt', function appendNodeAt () {
 })
 
 // test LinkedListNode .reverseList()
-test('LinkedList reverseList', function reverseList () {
+test('LinkedList reverseList', function reverseList() {
   const list = new LinkedList()
   list.appendNode('foo')
   list.appendNode('bar')
@@ -134,29 +131,29 @@ test('LinkedList reverseList', function reverseList () {
   const expected = [
     {
       data: null,
-      name: "biz",
+      name: 'biz',
       nextNode: {
         data: null,
-        name: "bar",
+        name: 'bar',
         nextNode: {
           data: null,
-          name: "foo",
-          nextNode: null
-        }
+          name: 'foo',
+          nextNode: null,
+        },
       },
     },
     {
       data: null,
-      name: "bar",
+      name: 'bar',
       nextNode: {
         data: null,
-        name: "foo",
-        nextNode: null
+        name: 'foo',
+        nextNode: null,
       },
     },
     {
       data: null,
-      name: "foo",
+      name: 'foo',
       nextNode: null,
     },
   ]
@@ -164,7 +161,7 @@ test('LinkedList reverseList', function reverseList () {
 })
 
 // test LinkedListNode .toArray()
-test('LinkedList toArray', function toArray () {
+test('LinkedList toArray', function toArray() {
   const list = new LinkedList()
   list.appendNode('foo')
   list.appendNode('bar')
@@ -173,37 +170,37 @@ test('LinkedList toArray', function toArray () {
   const expected = [
     {
       data: null,
-      name: "foo",
+      name: 'foo',
       nextNode: {
         data: null,
-        name: "bar",
+        name: 'bar',
         nextNode: {
           data: null,
-          name: "biz",
+          name: 'biz',
           nextNode: null,
-        }
-      }
+        },
+      },
     },
     {
       data: null,
-      name: "bar",
+      name: 'bar',
       nextNode: {
         data: null,
-        name: "biz",
-        nextNode: null
-      }
+        name: 'biz',
+        nextNode: null,
+      },
     },
     {
       data: null,
-      name: "biz",
+      name: 'biz',
       nextNode: null,
-    }
+    },
   ]
   expect(array).toEqual(expected)
 })
 
 // test LinkedListNode .getIndexOfNode()
-test('LinkedList getIndexOfNode', function getIndexOfNode () {
+test('LinkedList getIndexOfNode', function getIndexOfNode() {
   const list = new LinkedList()
   list.appendNode('foo')
   list.appendNode('bar')
@@ -241,7 +238,7 @@ test('LinkedList clear', function clear() {
   expect(list.headNode).toEqual(null)
 })
 
-test('LinkedList removeDuplicateNodes', function removeDuplicateNodes () {
+test('LinkedList removeDuplicateNodes', function removeDuplicateNodes() {
   const list = new LinkedList()
   list.appendNode('foo')
   list.appendNode('bar')
@@ -250,9 +247,9 @@ test('LinkedList removeDuplicateNodes', function removeDuplicateNodes () {
   const expected = [
     {
       data: null,
-      name: "foo",
+      name: 'foo',
       nextNode: null,
-    }
+    },
   ]
   expect(list.toArray()).toEqual(expected)
 })
@@ -267,31 +264,31 @@ test('LinkedList constructNewList', function removeDuplicateNodes() {
   const expected = [
     {
       data: null,
-      name: "foo",
+      name: 'foo',
       nextNode: {
         data: null,
-        name: "bar",
+        name: 'bar',
         nextNode: {
           data: null,
           name: undefined,
           nextNode: null,
-        }
-      }
+        },
+      },
     },
     {
       data: null,
-      name: "bar",
+      name: 'bar',
       nextNode: {
         data: null,
         name: undefined,
-        nextNode: null
-      }
+        nextNode: null,
+      },
     },
     {
       data: null,
       name: undefined,
-      nextNode: null
-    }
+      nextNode: null,
+    },
   ]
   expect(list.toArray()).toEqual(expected)
 })

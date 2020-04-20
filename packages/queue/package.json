@@ -9,6 +9,11 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "tsc": "tsc --noEmit"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:yowainwright/datastructures-ts.git"
@@ -17,5 +22,20 @@
     "Queue"
   ],
   "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
-  "license": "MIT"
+  "license": "MIT",
+  "jest": {
+    "name": "@datastructures/queue",
+    "projects": [
+      "<rootDir>/packages/*"
+    ],
+    "resetMocks": true,
+    "rootDir": "./",
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.(ts)$": "ts-jest"
+    }
+  }
 }
