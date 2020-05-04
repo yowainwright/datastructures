@@ -8,6 +8,9 @@ enum ETreeState {
   balanced = 'balanced',
 }
 
+/**
+ * AVL Tree Node
+ */
 export class AvlTreeNode {
   value: NodeValue
   left: NodeObject
@@ -24,6 +27,11 @@ export class AvlTreeNode {
   }
 
   // Balancing Methods
+
+  /**
+   * balance
+   * Determins which balance method to use, and calls that method
+   */
   balance(): void {
     const treeState = this.getTreeState()
 
@@ -42,6 +50,10 @@ export class AvlTreeNode {
     }
   }
 
+  /**
+   * leftRotation
+   * performs leftRotation on 'this' AvlTreeNode
+   */
   leftRotation(): void {
     // when performing a right rotation on node a:
     //     a
@@ -67,6 +79,10 @@ export class AvlTreeNode {
     this.parent = newRoot
   }
 
+  /**
+   * rightRotation
+   * performs rightRotation on 'this' AvlTreeNode
+   */
   rightRotation(): void {
     //     c (this)
     //    /
@@ -91,6 +107,11 @@ export class AvlTreeNode {
     this.parent = newRoot
   }
 
+  /**
+   * replaceRoot
+   * helper method that replaces 'this' AvlTreeNode's position with the param AvlTreeNode
+   * @param {AvlTreeNode} newRoot
+   */
   replaceRoot(newRoot): void {
     if (!this.parent) {
       // 'this' node is the current head of the tree
@@ -106,6 +127,10 @@ export class AvlTreeNode {
     newRoot.parent = this.parent
   }
 
+  /**
+   * leftRightRotation
+   * performs leftRightRotation on 'this' AvlTreeNode
+   */
   leftRightRotation(): void {
     // right rotate tree on left child
     this.right.rightRotation()
@@ -113,6 +138,10 @@ export class AvlTreeNode {
     this.leftRotation()
   }
 
+  /**
+   * rightLeftRotation
+   * performs rightLeftRotation on 'this' AvlTreeNode
+   */
   rightLeftRotation(): void {
     // left rotate tree on left child
     this.left.leftRotation()
@@ -121,6 +150,13 @@ export class AvlTreeNode {
   }
 
   // Support properties and methods
+
+  /**
+   * getMaxChildHeight
+   * returns the height of the left or right child node, whichever is greater
+   * @param {AvlTreeNode} node
+   * @returns {number} maxChildHeight
+   */
   getMaxChildHeight(node: AvlTreeNode): number {
     if (!node) {
       return 0
@@ -128,14 +164,29 @@ export class AvlTreeNode {
     return 1 + Math.max(this.getMaxChildHeight(node.left), this.getMaxChildHeight(node.right))
   }
 
+  /**
+   * getLeftHeight
+   * returns left height of Node (how deep the children go to the left)
+   * @returns {number} leftHeight
+   */
   getLeftHeight(): number {
     return this.getMaxChildHeight(this.left)
   }
 
+  /**
+   * getRightHeight
+   * returns right height of Node (how deep the children go to the right)
+   * @returns {number} rightHeight
+   */
   getRightHeight(): number {
     return this.getMaxChildHeight(this.right)
   }
 
+  /**
+   * getTreeState
+   * returns string to denote whether Node is rightHeavy, leftHeavy, or balanced
+   * @returns {ETreeState} treeState
+   */
   getTreeState(): ETreeState {
     const balanceFactor = this.getBalanceFactor()
     if (balanceFactor > 1) {
@@ -146,7 +197,11 @@ export class AvlTreeNode {
     return ETreeState.balanced
   }
 
-  // difference between right child and left child nodes' heights
+  /**
+   * getBalanceFactor
+   * returns difference between right child and left child nodes' heights
+   * @returns {number} balanceFactor
+   */
   getBalanceFactor(): number {
     return this.getRightHeight() - this.getLeftHeight()
   }

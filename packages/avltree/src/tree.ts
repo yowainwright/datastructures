@@ -1,9 +1,23 @@
+/**
+ * AVL TREE
+ * ----
+ * The AVL Tree is a Binary Search Tree that self balances when the right or left side becomes > 1 deeper than the other
+ * The self-balancing ensures that time complexity of the search method stays close to O(NlogN)
+ * Each node is a seperate object; an instance of AvlTreeNode
+ * AvlTree currently only handles numbers, but could be converted to a Generic to handle strings as well
+ */
+
 import { AvlTreeNode, NodeValue, NodeObject } from './node'
 
 export class AvlTree {
   head: NodeObject
   private _count = 0
 
+  /**
+   * remove
+   * Add a node to the tree, and perform self-balancing
+   * @param {NodeValue} value
+   */
   add(value: NodeValue): void {
     this._count++
     let newNode: AvlTreeNode
@@ -41,6 +55,12 @@ export class AvlTree {
     this.balanceFromNode(newNode)
   }
 
+  /**
+   * remove
+   * Remove a node from the tree, and perform self-balancing
+   * @param {NodeValue} value
+   * @returns {NodeValue} NodeValue
+   */
   remove(value: NodeValue): NodeValue {
     // Start by finding the node to remove and its parent (if it has a parent)
     let toRemove: AvlTreeNode = null
@@ -139,7 +159,12 @@ export class AvlTree {
     return toRemove.value
   }
 
-  // balance the tree on each node all the way up to the head
+  /**
+   * balanceFromNode
+   * calls 'balance' method on the AvlTreeNode passed in as a param,
+   * and each parent node, in ascending order, all the way to the tree's head
+   * @param {AvlTreeNode} node
+   */
   balanceFromNode(node: AvlTreeNode): void {
     // balance the tree on each node all the way up to the head
     let nodeToBalance = node
@@ -149,6 +174,11 @@ export class AvlTree {
     }
   }
 
+  /**
+   * search
+   * searches for a value the tree, returns the value if it is found, null if it is not
+   * @param {NodeValue} value
+   */
   search(value: NodeValue): NodeValue {
     let current = this.head
 
@@ -165,10 +195,21 @@ export class AvlTree {
     return null
   }
 
+  /**
+   * preOrderTraversalRecursive
+   * recursive method that performs action on each AvlTreeNode, in 'preOrder'
+   * @param {(n: NodeValue) => void} action
+   */
   preOrderTraversalRecursive(action: (n: NodeValue) => void): void {
     this.preOrderTraversalRecursiveHelper(action, this.head)
   }
 
+  /**
+   * preOrderTraversalRecursiveHelper
+   * helper method used by preOrderTraversalRecursive to perform action on AvlTreeNodes
+   * @param {(n: NodeValue) => void} action
+   * @param {AvlTreeNode} node
+   */
   preOrderTraversalRecursiveHelper(action: (n: NodeValue) => void, node: AvlTreeNode): void {
     if (node) {
       action(node.value)
@@ -177,10 +218,21 @@ export class AvlTree {
     }
   }
 
+  /**
+   * postOrderTraversalRecursive
+   * recursive method that performs action on each AvlTreeNode, in 'postOrder'
+   * @param {(n: NodeValue) => void} action
+   */
   postOrderTraversalRecursive(action: (n: NodeValue) => void): void {
     this.postOrderTraversalRecursiveHelper(action, this.head)
   }
 
+  /**
+   * postOrderTraversalRecursiveHelper
+   * helper method used by postOrderTraversalRecursive to perform action on AvlTreeNodes
+   * @param {(n: NodeValue) => void} action
+   * @param {AvlTreeNode} node
+   */
   postOrderTraversalRecursiveHelper(action: (n: NodeValue) => void, node: AvlTreeNode): void {
     if (node) {
       this.postOrderTraversalRecursiveHelper(action, node.left)
@@ -189,10 +241,21 @@ export class AvlTree {
     }
   }
 
+  /**
+   * inOrderTraversalRecursive
+   * recursive method that performs action on each AvlTreeNode, in increasing order of node value
+   * @param {(n: NodeValue) => void} action
+   */
   inOrderTraversalRecursive(action: (n: NodeValue) => void): void {
     this.inOrderTraversalRecursiveHelper(action, this.head)
   }
 
+  /**
+   * inOrderTraversalRecursiveHelper
+   * helper method used by inOrderTraversalRecursive to perform action on AvlTreeNodes
+   * @param {(n: NodeValue) => void} action
+   * @param {AvlTreeNode} node
+   */
   inOrderTraversalRecursiveHelper(action: (n: NodeValue) => void, node: AvlTreeNode): void {
     if (node) {
       this.inOrderTraversalRecursiveHelper(action, node.left)
@@ -201,7 +264,12 @@ export class AvlTree {
     }
   }
 
-  // nonrecursive; safer for production environments, since callstack limits will not be approached
+  /**
+   * inOrderTraversal
+   * Iterative method that performs action on each AvlTreeNode, in increasing order of node value
+   * Safer for production environments than inOrderTraversalRecursive, since callstack limits will not be approached
+   * @param {(n: NodeValue) => void} action
+   */
   inOrderTraversal(action: (n: NodeValue) => void): void {
     if (!this.head) {
       return
@@ -244,10 +312,19 @@ export class AvlTree {
     }
   }
 
+  /**
+   * count
+   * Returns number of nodes in the tree
+   * @returns {number} count
+   */
   count(): number {
     return this._count
   }
 
+  /**
+   * clear
+   * Removes all nodes from tree so they are garbage collected
+   */
   clear(): void {
     this._count = 0
     this.head = null
