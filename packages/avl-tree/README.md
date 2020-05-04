@@ -99,4 +99,4 @@ The list below provides links to other helpful tools for understanding the Linke
 
 ---
 
-View other [**Data Structures**](../../).
+View other [**Data Structures**](../).
