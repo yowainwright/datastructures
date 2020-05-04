@@ -26,21 +26,21 @@ yarn add @datastructures/avl-tree -D
 New AVL Trees can be created by importing the AvlTree class and setting them up similarly to the example below.
 
 ```javascript
-import { LinkedList } from '@datastructures/avl-tree'
-
-const List = new LinkedList()
-List.appendNode('foo')
-List.appendNode('bar')
-```
-
-Furthermore, the Linked List accepts nodes with a `name` and `data`. This creates the ability to find Nodes and contain useful data with them.
-
-```javascript
 import { AvlTree } from '@datastructures/avl-tree'
 
 const tree = new AvlTree()
 tree.add(2)
 tree.add(1)
+
+console.log(tree.count()) // 2
+console.log(tree.search(2)) // 2
+console.log(tree.search(3)) // null
+
+tree.inOrderTraversal(node => console.log('This node has value:', node.value))
+/*
+This node has value: 1
+This node has value: 2
+*/
 ```
 
 ---
@@ -57,11 +57,11 @@ Listed below is the AVL Tree API.
 
 **`remove(value)`:** removes a AvlTreeNode by `value` from the tree. Rebalancing is performed automatically after the AvlTreeNode is removed.
 
-> **ex:** `List.removeNode('foo')`
+> **ex:** `tree.remove(1)`
 
 **`search(value)`:** searches for an existing AvlTreeNode by `value`. If one is found, the value is returned. The tree is not modified.
 
-> **ex:** `if (tree.search(value)) { // do something about it }`
+> **ex:** `if (tree.search(value)) { /* do something about it */ }`
 
 **`preOrderTraversalRecursive(fn)`:** envokes a callback function (`fn`) on each node within a tree, using "preOrder traversal" order
 
@@ -83,7 +83,7 @@ Listed below is the AVL Tree API.
 
 > **ex:** `const count = tree.count()`
 
-**`clear`:** removes all AvlTreeNodes from tree
+**`clear`:** removes all AvlTreeNodes from tree and allows them to be garbage collected
 
 > **ex:** `tree.clear()`
 
@@ -93,7 +93,7 @@ Listed below is the AVL Tree API.
 
 The list below provides links to other helpful tools for understanding the Linked List data structure.
 
-- [Linked List](https://en.wikipedia.org/wiki/AVL_tree) via Wikipedia
+- [AVL Tree](https://en.wikipedia.org/wiki/AVL_tree) via Wikipedia
 
 ## Code Examples
 
