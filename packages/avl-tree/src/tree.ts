@@ -14,8 +14,8 @@ export class AvlTree {
   private _count = 0
 
   /**
-   * remove
-   * Add a node to the tree, and perform self-balancing
+   * add
+   * Add a NodeValue to the tree, and perform self-balancing
    * @param {NodeValue} value
    */
   add(value: NodeValue): void {
@@ -165,7 +165,7 @@ export class AvlTree {
    * and each parent node, in ascending order, all the way to the tree's head
    * @param {AvlTreeNode} node
    */
-  balanceFromNode(node: AvlTreeNode): void {
+  private balanceFromNode(node: AvlTreeNode): void {
     // balance the tree on each node all the way up to the head
     let nodeToBalance = node
     while (nodeToBalance) {
@@ -210,7 +210,7 @@ export class AvlTree {
    * @param {(n: NodeValue) => void} action
    * @param {AvlTreeNode} node
    */
-  preOrderTraversalRecursiveHelper(action: (n: NodeValue) => void, node: AvlTreeNode): void {
+  private preOrderTraversalRecursiveHelper(action: (n: NodeValue) => void, node: AvlTreeNode): void {
     if (node) {
       action(node.value)
       this.preOrderTraversalRecursiveHelper(action, node.left)
@@ -233,7 +233,7 @@ export class AvlTree {
    * @param {(n: NodeValue) => void} action
    * @param {AvlTreeNode} node
    */
-  postOrderTraversalRecursiveHelper(action: (n: NodeValue) => void, node: AvlTreeNode): void {
+  private postOrderTraversalRecursiveHelper(action: (n: NodeValue) => void, node: AvlTreeNode): void {
     if (node) {
       this.postOrderTraversalRecursiveHelper(action, node.left)
       this.postOrderTraversalRecursiveHelper(action, node.right)
@@ -256,7 +256,7 @@ export class AvlTree {
    * @param {(n: NodeValue) => void} action
    * @param {AvlTreeNode} node
    */
-  inOrderTraversalRecursiveHelper(action: (n: NodeValue) => void, node: AvlTreeNode): void {
+  private inOrderTraversalRecursiveHelper(action: (n: NodeValue) => void, node: AvlTreeNode): void {
     if (node) {
       this.inOrderTraversalRecursiveHelper(action, node.left)
       action(node.value)
