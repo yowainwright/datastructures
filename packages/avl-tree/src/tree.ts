@@ -284,10 +284,8 @@ export class AvlTree {
       if (goLeft) {
         // find leftmost child of current node (this allows us to process the lowest # first)
         while (current.left) {
-          if (current.left) {
-            // if current node has a left child, add current node to stack to process later
-            stack.push(current)
-          }
+          // add current node to stack to process later (after the child, which will have a lower value)
+          stack.push(current)
           // keep traversing left
           current = current.left
         }
