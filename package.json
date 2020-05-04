@@ -94,6 +94,7 @@
         "always",
         [
           "root",
+          "avl-tree",
           "linked-list",
           "queue"
         ]
