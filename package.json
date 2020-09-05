@@ -65,7 +65,7 @@
     "prettier": "^2.0.4",
     "ts-jest": "^25.1.0",
     "tslib": "^2.0.0",
-    "typedoc": "^0.17.6",
+    "typedoc": "^0.19.1",
     "typescript": "^3.7.0",
     "write-good": "^1.0.2"
   },
