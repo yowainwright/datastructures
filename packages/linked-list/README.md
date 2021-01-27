@@ -1,26 +1,20 @@
 # @datastructures/linked-list 🦄⛓
 
-The Linked List is a linear structure of Nodes. Each node is a seperate object.
-Each data item (Node) is made with a relationship to its `nextNode`.
+![Typed with TypeScript](https://flat.badgen.net/badge/icon/Typed?icon=typescript&label&labelColor=blue&color=555555)
+[![npm version](https://badge.fury.io/js/%40datastructures%2Flinked-list.svg)](https://badge.fury.io/js/%40datastructures%2Flinked-list)
 
-**Note:** This structure will be updates to a Factory momentarily (4/20/20)
+The Linked List is a linear structure of Nodes. Each node is a seperate object.
+Each Node is made with a relationship to its nextNode.
 
 ---
 
 ## Install
 
 ```sh
-
-npm i @datastructures/linked-list -D
-
-# or
-
 yarn add @datastructures/linked-list -D
-
 ```
 
 ---
-
 ## Usage
 
 New Linked Lists can be created by importing the Linked List and setting them up similarly to the example below.
@@ -47,9 +41,7 @@ List.appendNode('foo', data)
 
 ## API
 
-![Linked List Illustration](https://jeffry.in/assets/datastructures-ts/linked-list-il.svg)
-
-Listed below is the Linked List API.
+DataStructures Linked List API
 
 #### `Node Arguments`
 
@@ -125,7 +117,7 @@ The list below provides links to other helpful tools for understanding the Linke
 - [coding-interview-university](https://github.com/jwasham/coding-interview-university#linked-lists) by [John Washam](https://github.com/jwasham)
 - [Linked List](https://en.wikipedia.org/wiki/Linked_list) via Wikipedia
 
-## Code Examples
+## Examples
 
 - [Functional Linked List in Array form](https://codepen.io/yowainwright/pen/eYmqeWo)
 - [Class Linked List](https://codepen.io/yowainwright/pen/gObVeGG)

@@ -1,7 +1,7 @@
 {
   "name": "@datastructures/root",
   "version": "0.0.2",
-  "description": "Data Structures in TypeScript",
+  "description": "Data Structures in TypeScript 🦄",
   "private": true,
   "workspaces": [
     "packages/*"
@@ -15,25 +15,14 @@
     "chore:pr": "git add . && git commit -m '[chore] updates changelog' --no-verify && git push origin chore-changelog -f",
     "chore:setup-changelog": "git checkout master && git pull",
     "chore": "yarn chore:delete-changelog-branch && yarn chore:branch && yarn chore:changelog && yarn chore:pr && yarn chore:setup-next-work",
-    "ci": "run-s lint:ci tsc test:ci",
     "clean": "lerna clean",
-    "commit": "git-cz",
-    "commit:retry": "git-cz --retry",
-    "commitmsg": "commitlint -e",
-    "deploy": "lerna publish from-package --ignore-scripts",
-    "deploy:all": "lerna publish --ignore-scripts",
-    "lint": "yarn lint:cmd --fix",
-    "lint:ci": "yarn lint:cmd",
-    "lint:cmd": "eslint . --ext '.ts,' --cache",
-    "postpublish": "git tag $npm_package_version && git push origin --tags && npm run chore",
+    "deploy": "yarn build && lerna publish from-package --ignore-scripts",
+    "lint": "eslint . --ext '.ts,' --cache --fix",
+    "lint:ci": "eslint . --ext '.ts,' --cache",
+    "postpublish": "git tag $npm_package_version && git push origin --tags && yarn chore",
     "pre-commit-msg": "Echo 'Running pre-commit checks...' && exit 0",
-    "prepush": "yarn run build && npm test",
-    "refresh": "lerna clean",
-    "rebuild": "rm -rf yarn.lock && yarn",
-    "start": "nvm i && yarn",
-    "test": "yarn test:cmd",
-    "test:ci": "yarn test:cmd --ci",
-    "test:cmd": "jest --coverage",
+    "test": "jest --coverage",
+    "test:ci": "yarn test--ci",
     "tsc": "tsc -p ./tsconfig.test.json"
   },
   "repository": "git@github.com:yowainwright/datastructures.git",
@@ -120,15 +109,12 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "post-checkout": "if [[ $HUSKY_GIT_PARAMS =~ 1$ ]]; then yarn; fi",
-      "post-merge": "yarn",
-      "post-rewrite": "yarn",
-      "pre-commit": "yarn tsc && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json,md}": [
-      "yarn lint",
-      "git add"
+      "eslint --ext '.ts,'"
     ],
     "*.{ts,tsx}": [
       "jest --bail --findRelatedTests"
