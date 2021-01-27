@@ -22,7 +22,7 @@
     "postpublish": "git tag $npm_package_version && git push origin --tags && yarn chore",
     "pre-commit-msg": "Echo 'Running pre-commit checks...' && exit 0",
     "test": "jest --coverage",
-    "test:ci": "yarn test--ci",
+    "test:ci": "yarn test --ci",
     "tsc": "tsc -p ./tsconfig.test.json"
   },
   "repository": "git@github.com:yowainwright/datastructures.git",
