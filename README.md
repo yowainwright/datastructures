@@ -1,33 +1,19 @@
 # Data Structures 🦄
 
-Data structures built with TypeScript offering more clarity into each structure.
+![Typed with TypeScript](https://flat.badgen.net/badge/icon/Typed?icon=typescript&label&labelColor=blue&color=555555)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
----
-
-[Packages](#packages) | [Gloassary](#glossary) | [Cites](#cites)
-
----
+Data structures built with TypeScript offering more clarity into each structure
 
 ## Packages
 
-Each package contains a common data structure.
+Each package contains a common data structure
 
 | Name                                      | Description                 |
 | ----------------------------------------- | --------------------------- |
 | **[Linked List](/packages/linked-list/)** | A Linear Structure of Nodes |
 
 ---
-
-## Glossary
-
-Below are sectioned descriptions of eact implemented structure.
-
-### Linked List ⛓
-
-The [Linked List](/packages/linked-list/) is a linear structure of nodes. Each node is a seperate object.
-
----
-
 ## Cites
 
 There are many other repositories demonstrating data structures. Here are a few:

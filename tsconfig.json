@@ -22,11 +22,5 @@
     "sourceMap": true,
     "target": "es5"
   },
-  "exclude": [
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "packages/*/dist/**",
-    "**/__tests__/**",
-    "*.js"
-  ]
+  "exclude": ["**/*.test.ts", "**/*.test.tsx", "packages/*/dist/**", "**/__tests__/**", "*.js"]
 }

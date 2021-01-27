@@ -1,44 +1,32 @@
 /**
  * LINKED LIST ⛓
  * ----
- * The Linked List Node is a Linear Structure of Nodes. Each node is a seperate object
- * represents a list of nodes containing information (values)
+ * @description a Linear Structure of Nodes
  */
 
-/**
- * Linked List Node
- */
 export type NodeObject = {
   name: string
   data?: object | null
   nextNode?: NodeObject | null
 } | null
 
-const warn = (msg: string): void => {
-  return console.warn('%c ⚠️ DataStructures TS: ', 'background: blue, color: white', msg)
+export function Node(name: string, data: object | null = null, nextNode: NodeObject = null): NodeObject {
+  return {
+    name,
+    data,
+    nextNode,
+  }
 }
-
-export const Node = (name: string, data: object | null = null, nextNode: NodeObject = null): NodeObject => ({
-  name,
-  data,
-  nextNode,
-})
 
 class LinkedList {
   public headNode: NodeObject
   public tailNode: NodeObject
   public debug: boolean
 
-  constructor(headNode: NodeObject = null, debug = false) {
+  constructor(headNode: NodeObject = null) {
     this.headNode = headNode
-    this.debug = debug
   }
 
-  /**
-   * appendNode
-   * @param {string} name
-   * @returns {Node} Node
-   */
   appendNode(name: string, data?: object | null): void {
     const newNode = Node(name, data)
     if (!this.headNode) {
@@ -50,12 +38,7 @@ class LinkedList {
     }
   }
 
-  /**
-   * removeNode
-   * @param {string} name
-   */
   removeNode(name: string): void {
-    if (this.debug && !name) return warn('removeNode requires a value')
     let currentNode = this.headNode
     while (currentNode !== null) {
       const previousNode = currentNode
@@ -69,14 +52,7 @@ class LinkedList {
     }
   }
 
-  /**
-   * traverseList
-   * @param {function} callback
-   */
   traverseList(callback: Function): void {
-    if ((this.debug && !callback) || typeof callback !== 'function') {
-      return warn('traverse requires a callback')
-    }
     let currentNode = this.headNode
     while (currentNode !== null) {
       callback(currentNode)
@@ -85,26 +61,16 @@ class LinkedList {
   }
 
   appendNodeAt(nodePosition: number, name: string): void {
-    if (this.debug && nodePosition >= this.length()) {
-      return warn('appendNodeAt requires an in-range position')
-    }
     const nodeArray = this.toArray()
     nodeArray.splice(nodePosition, 0, name)
     this.constructNewList(nodeArray)
   }
 
-  /**
-   * reverseList
-   */
   reverseList(): void {
     const reversedListArray = this.toArray().reverse()
     this.constructNewList(reversedListArray)
   }
 
-  /**
-   * findNode
-   * @param {value} value
-   */
   findNode(name: string) {
     let currentNode = this.headNode.nextNode
     while (currentNode.name !== name) {
@@ -113,10 +79,6 @@ class LinkedList {
     return currentNode
   }
 
-  /**
-   * toArray
-   * presents a linkedList as an array
-   */
   toArray() {
     let currentNode = this.headNode
     const nodes = []
@@ -132,26 +94,14 @@ class LinkedList {
     return list.map((o) => o.name).indexOf(name)
   }
 
-  /**
-   * length
-   * returns the length of a linkedList
-   */
   length(): number {
     return this.toArray().length
   }
 
-  /**
-   * clear
-   * clears a linkedList
-   */
   clear(): void {
     this.headNode = null
   }
 
-  /**
-   * removeDuplicateNodes
-   * removes duplicateNodes
-   */
   removeDuplicateNodes() {
     const nodeArray = this.toArray()
     const nodes = {}
@@ -160,10 +110,6 @@ class LinkedList {
     return this.constructNewList(filteredNodeArray)
   }
 
-  /**
-   * constructNewList
-   * constructs a New List from Node Objects
-   */
   constructNewList(nodes: NodeObject[]) {
     this.clear()
     return Array.from(nodes, ({ name, data }) => this.appendNode(name, data))
