@@ -3,8 +3,10 @@
 ![Typed with TypeScript](https://flat.badgen.net/badge/icon/Typed?icon=typescript&label&labelColor=blue&color=555555)
 [![npm version](https://badge.fury.io/js/%40datastructures%2Flinked-list.svg)](https://badge.fury.io/js/%40datastructures%2Flinked-list)
 
-The Linked List is a linear structure of Nodes. Each node is a seperate object.
-Each Node is made with a relationship to its nextNode.
+A minimal functional typed implementation of a linked list.
+
+Linked lists are a linear structure of items. Each item is a seperate object.
+Each item is made with a relationship to its next item.
 
 ---
 
@@ -17,99 +19,28 @@ yarn add @datastructures/linked-list -D
 ---
 ## Usage
 
-New Linked Lists can be created by importing the Linked List and setting them up similarly to the example below.
+Create a list.
 
 ```javascript
-import { LinkedList } from '@datastructures/linked-list'
+import { list } from '@datastructures/linked-list'
 
-const List = new LinkedList()
-List.appendNode('foo')
-List.appendNode('bar')
-```
-
-Furthermore, the Linked List accepts nodes with a `name` and `data`. This creates the ability to find Nodes and contain useful data with them.
-
-```javascript
-import { LinkedList } from '@datastructures/linked-list'
-
-const List = new LinkedList()
-List.appendNode('foo', data)
-List.appendNode('foo', data)
+const items = [ { name: 'foo',  data: { foo: 'bar'} }, { name: 'bar', data: { biz: 'baz', }}]
+const tree = list.create(items)
+const arrayList = list.toArray(tree)
 ```
 
 ---
 
 ## API
 
-DataStructures Linked List API
-
-#### `Node Arguments`
-
-**`name`:** when adding a Node a `string` is always **required**
-
-> **ex:** `const List = LinkedList(); List.appendNode('foo')`
-
-**`data`:** a data `{object}` for containing useful data with a Node
-
-> **ex:** `const List = LinkedList(); List.appendNode('foo', { name: 'foo' })`
-
-**`nextNode`:** the next node of the data structure
-
----
-
+Data Structures Linked List API
 #### `Methods`
 
-**`appendNode(name, data)`:** adds a Node with a `name` and an optional `data` `{object}` to the List.
+**`create(items)`:** adds an array of items with a `name` and an optional `data` `{object}`.
 
-> **ex:** `List.appendNode('foo')`
-
-**`removeNode(name)`:** removes a Node by `name` from the List
-
-> **ex:** `List.removeNode('foo')`
-
-**`traverseList(fn)`:** envokes a callback function (`fn`) on each node within a list
-
-> **ex:** `const fn = (node) => console.log("This node's name is ", node.name); List.removeNode(fn)`
-
-**`appendNodeAt(index, name)`:** moves a pre-existing node to a certain position within the list by `index` and `name`
-
-> **ex:** `List.appendNodeAt(2, 'foo')`
-
-**`reverseList`:** reverses the order of Nodes within a List
-
-> **ex:** `List.reverseList()`
-
-**`findNode(name)`:** finds a Node within a List based on Node `name`
-
-> **ex:** `List.findNode('foo')`
-
-**`toArray`:** returns a List as an array
-
-> **ex:** `List.toArray()`
-
-**`getIndexOfNode(name)`:** returns the `index` of Node with a list based on Node `name`
-
-> **ex:** `List.getIndexOfNode('foo')`
-
-**`length`:** returns the length of the List
-
-> **ex:** `List.length()`
-
-**`clear`:** clears the List
-
-> **ex:** `List.clear()`
-
-**`removeDuplicateNodes`:** removes nodes that have the same `name`
-
-> **ex:** `List.removeDuplicateNodes()`
-
-**`constructNewList`:** creates a new List with an array of Nodes
-
-> **ex:** `const nodes = [{ name: 'foo' }, { name: 'bar' }];List.constructNewList(nodes)`
+> **ex:** `list.create()`
 
 ---
-
-## Resources
 
 The list below provides links to other helpful tools for understanding the Linked List data structure.
 

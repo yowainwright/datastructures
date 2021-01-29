@@ -1,119 +1,81 @@
 /**
- * LINKED LIST ⛓
+ * Linked List ⛓
  * ----
  * @description a Linear Structure of Nodes
+ * @summary a typed functional Linked List
+ * @note if you desire to add more functionality
+ * - to this minimal Linked List,
+ * - submit a pull request
  */
 
 export type NodeObject = {
   name: string
-  data?: object | null
-  nextNode?: NodeObject | null
+  data?: unknown
+  nextItem?: NodeObject
 } | null
 
-export function Node(name: string, data: object | null = null, nextNode: NodeObject = null): NodeObject {
-  return {
-    name,
-    data,
-    nextNode,
-  }
-}
+export type List = {
+  item: NodeObject
+  nextItem: List
+} | null
 
-class LinkedList {
-  public headNode: NodeObject
-  public tailNode: NodeObject
-  public debug: boolean
+/**
+ * item 🙋
+ * @param name
+ * @param data
+ * @param nextItem
+ * constructs an object describing a linked list item
+ */
+export const item = (name: string, data: unknown = null, nextItem: NodeObject = null): NodeObject => ({
+  name,
+  data,
+  nextItem,
+})
 
-  constructor(headNode: NodeObject = null) {
-    this.headNode = headNode
-  }
+/**
+ * link 🔗
+ * @param nextItem
+ * @param  item
+ * a function which constructs a list of item from items
+ */
+export const link = (nextItem: NodeObject, { name, data }: NodeObject) => ({ item: { name, data }, nextItem })
 
-  appendNode(name: string, data?: object | null): void {
-    const newNode = Node(name, data)
-    if (!this.headNode) {
-      this.headNode = newNode
-      this.tailNode = this.headNode
-    } else {
-      this.tailNode.nextNode = newNode
-      this.tailNode = this.tailNode.nextNode
-    }
-  }
+/**
+ * create 👨‍🎤
+ * @param items
+ * a function which constructs a list
+ */
+export const create = (items): List => items.reduceRight(link, null)
 
-  removeNode(name: string): void {
-    let currentNode = this.headNode
-    while (currentNode !== null) {
-      const previousNode = currentNode
-      currentNode = currentNode.nextNode
-      if (currentNode && currentNode.name === name) {
-        previousNode.nextNode = currentNode.nextNode
-        if (currentNode.name === this.tailNode.name) {
-          this.tailNode = previousNode
-        }
-      }
-    }
-  }
+/**
+ * constuctArray 🛠
+ * @param list
+ * a curried recursive function that constructs an array from a list
+ */
+export const constructArray = (list: List): NodeObject[] =>
+  (({ item, nextItem }): NodeObject[] => [item, ...(nextItem !== null ? constructArray(nextItem) : [])])(list)
 
-  traverseList(callback: Function): void {
-    let currentNode = this.headNode
-    while (currentNode !== null) {
-      callback(currentNode)
-      currentNode = currentNode.nextNode
-    }
-  }
+/**
+ * toArray
+ * @param list
+ * @abstraction of constructArray
+ */
+export const toArray = (list) => constructArray(list)
 
-  appendNodeAt(nodePosition: number, name: string): void {
-    const nodeArray = this.toArray()
-    nodeArray.splice(nodePosition, 0, name)
-    this.constructNewList(nodeArray)
-  }
+/**
+ * linkedList ⛓
+ * @description a factory function providing utility methods to construct a linked list
+ */
+export const list = () => ({
+  create,
+  toArray,
+})
 
-  reverseList(): void {
-    const reversedListArray = this.toArray().reverse()
-    this.constructNewList(reversedListArray)
-  }
-
-  findNode(name: string) {
-    let currentNode = this.headNode.nextNode
-    while (currentNode.name !== name) {
-      currentNode = currentNode.nextNode
-    }
-    return currentNode
-  }
-
-  toArray() {
-    let currentNode = this.headNode
-    const nodes = []
-    while (currentNode !== null) {
-      nodes.push(currentNode)
-      currentNode = currentNode.nextNode
-    }
-    return nodes
-  }
-
-  getIndexOfNode(name: string): number {
-    const list = this.toArray()
-    return list.map((o) => o.name).indexOf(name)
-  }
-
-  length(): number {
-    return this.toArray().length
-  }
-
-  clear(): void {
-    this.headNode = null
-  }
-
-  removeDuplicateNodes() {
-    const nodeArray = this.toArray()
-    const nodes = {}
-    // eslint-disable-next-line no-prototype-builtins
-    const filteredNodeArray = nodeArray.filter((names) => (nodes.hasOwnProperty(names) ? false : (nodes[names] = true)))
-    return this.constructNewList(filteredNodeArray)
-  }
-
-  constructNewList(nodes: NodeObject[]) {
-    this.clear()
-    return Array.from(nodes, ({ name, data }) => this.appendNode(name, data))
-  }
-}
-
-export { LinkedList }
+// Quokka testing 💅
+//const item1 = item('foo', { foo: 'bar' })
+// const item2 = item('bar', { foo: 'bar' })
+// const items = [item1, item2]
+// const test = list().create(items)
+// const test2 = list().toArray(test)
+// test
+// test2
