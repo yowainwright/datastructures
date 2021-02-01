@@ -1,7 +1,7 @@
 {
   "name": "@datastructures/linked-list",
   "version": "1.0.0",
-  "description": "a minimal functional typed implementation of Linked List",
+  "description": "A minimal functional typed implementation of Linked List ⛓",
   "main": "dist/index.js",
   "unpkg": "dist/index.js",
   "module": "dist/index.js",

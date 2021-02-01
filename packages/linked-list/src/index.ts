@@ -11,13 +11,17 @@
 export type NodeObject = {
   name: string
   data?: unknown
-  nextItem?: NodeObject
 } | null
 
 export type List = {
   item: NodeObject
   nextItem: List
 } | null
+
+export type ListFactory = {
+  create: (items: NodeObject[]) => List
+  toArray: (list: List) => NodeObject[]
+}
 
 /**
  * item 🙋
@@ -26,10 +30,9 @@ export type List = {
  * @param nextItem
  * constructs an object describing a linked list item
  */
-export const item = (name: string, data: unknown = null, nextItem: NodeObject = null): NodeObject => ({
+export const item = (name: string, data: unknown = null): NodeObject => ({
   name,
   data,
-  nextItem,
 })
 
 /**
@@ -38,7 +41,7 @@ export const item = (name: string, data: unknown = null, nextItem: NodeObject = 
  * @param  item
  * a function which constructs a list of item from items
  */
-export const link = (nextItem: NodeObject, { name, data }: NodeObject) => ({ item: { name, data }, nextItem })
+export const link = (nextItem: List, { name, data }: NodeObject): List => ({ item: { name, data }, nextItem })
 
 /**
  * create 👨‍🎤
@@ -60,19 +63,19 @@ export const constructArray = (list: List): NodeObject[] =>
  * @param list
  * @abstraction of constructArray
  */
-export const toArray = (list) => constructArray(list)
+export const toArray = (list: List): NodeObject[] => constructArray(list)
 
 /**
  * linkedList ⛓
  * @description a factory function providing utility methods to construct a linked list
  */
-export const list = () => ({
+export const list = (): ListFactory => ({
   create,
   toArray,
 })
 
 // Quokka testing 💅
-//const item1 = item('foo', { foo: 'bar' })
+// const item1 = item('foo', { foo: 'bar' })
 // const item2 = item('bar', { foo: 'bar' })
 // const items = [item1, item2]
 // const test = list().create(items)

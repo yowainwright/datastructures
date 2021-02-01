@@ -1,4 +1,4 @@
-import { constructArray, create, item, link, list, toArray } from '..'
+import { constructArray, create, item, link, list, toArray } from '../index'
 
 describe('list', () => {
   test('item', () => {
@@ -23,8 +23,14 @@ describe('list', () => {
     const b = item('bar', { biz: 'baz' })
     const result = create([a, b])
     expect(result).toEqual({
-      item: { data: { biz: 'baz' }, name: 'bar' },
-      nextItem: { data: { foo: 'bar' }, name: 'foo', nextItem: null },
+      item: { name: 'foo', data: { foo: 'bar' } },
+      nextItem: {
+        item: {
+          name: 'bar',
+          data: { biz: 'baz' },
+        },
+        nextItem: null,
+      },
     })
   })
 
@@ -33,23 +39,41 @@ describe('list', () => {
     const b = item('bar', { biz: 'baz' })
     const testList = create([a, b])
     expect(testList).toEqual({
-      item: { data: { biz: 'baz' }, name: 'bar' },
-      nextItem: { data: { foo: 'bar' }, name: 'foo', nextItem: null },
+      item: { name: 'foo', data: { foo: 'bar' } },
+      nextItem: {
+        item: {
+          name: 'bar',
+          data: { biz: 'baz' },
+        },
+        nextItem: null,
+      },
     })
     const arraylist = constructArray(testList)
-    expect(arraylist).toEqual({})
+    expect(arraylist).toEqual([
+      { data: { foo: 'bar' }, name: 'foo' },
+      { data: { biz: 'baz' }, name: 'bar' },
+    ])
   })
 
-  test('toArray', () => {
+  test.only('toArray', () => {
     const a = item('foo', { foo: 'bar' })
     const b = item('bar', { biz: 'baz' })
     const testList = create([a, b])
     expect(testList).toEqual({
-      item: { data: { biz: 'baz' }, name: 'bar' },
-      nextItem: { data: { foo: 'bar' }, name: 'foo', nextItem: null },
+      item: { name: 'foo', data: { foo: 'bar' } },
+      nextItem: {
+        item: {
+          name: 'bar',
+          data: { biz: 'baz' },
+        },
+        nextItem: null,
+      },
     })
     const arraylist = toArray(testList)
-    expect(arraylist).toEqual({})
+    expect(arraylist).toEqual([
+      { data: { foo: 'bar' }, name: 'foo' },
+      { data: { biz: 'baz' }, name: 'bar' },
+    ])
   })
 
   test('list.create', () => {
@@ -57,8 +81,14 @@ describe('list', () => {
     const b = item('bar', { biz: 'baz' })
     const result = list().create([a, b])
     expect(result).toEqual({
-      item: { data: { biz: 'baz' }, name: 'bar' },
-      nextItem: { data: { foo: 'bar' }, name: 'foo', nextItem: null },
+      item: { name: 'foo', data: { foo: 'bar' } },
+      nextItem: {
+        item: {
+          name: 'bar',
+          data: { biz: 'baz' },
+        },
+        nextItem: null,
+      },
     })
   })
 
@@ -68,10 +98,19 @@ describe('list', () => {
     const testlist = list()
     const linkedlist = testlist.create([a, b])
     expect(linkedlist).toEqual({
-      item: { data: { biz: 'baz' }, name: 'bar' },
-      nextItem: { data: { foo: 'bar' }, name: 'foo', nextItem: null },
+      item: { name: 'foo', data: { foo: 'bar' } },
+      nextItem: {
+        item: {
+          name: 'bar',
+          data: { biz: 'baz' },
+        },
+        nextItem: null,
+      },
     })
     const arraylist = testlist.toArray(linkedlist)
-    expect(arraylist).toEqual({})
+    expect(arraylist).toEqual([
+      { data: { foo: 'bar' }, name: 'foo' },
+      { data: { biz: 'baz' }, name: 'bar' },
+    ])
   })
 })
