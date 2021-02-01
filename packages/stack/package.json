@@ -1,7 +1,7 @@
 {
-  "name": "@datastructures/queue",
+  "name": "@dollarshaveclub/queue",
   "version": "0.0.1",
-  "description": "Queue Data Structure in TypeScript",
+  "description": "Functional Typed Stack Data Structure",
   "main": "dist/",
   "unpkg": "dist/index.js",
   "module": "dist/index.js",
@@ -16,15 +16,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:yowainwright/datastructures-ts.git"
+    "url": "git@github.com:yowainwright/datastructures.git"
   },
   "keywords": [
-    "Queue"
+    "Stack",
+    "datastructures",
+    "data structures",
+    "stack data structure"
   ],
   "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
   "license": "MIT",
   "jest": {
-    "name": "@datastructures/queue",
+    "name": "@datastructures/stack",
     "projects": [
       "<rootDir>/packages/*"
     ],

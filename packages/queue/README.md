@@ -61,12 +61,15 @@ import { Queue } from '@datastructures/queue'
 
 
 
-----
+---
 
-## Resources
+## Data Structures 🦄
 
-The list below provides links to other helpful tools for understanding the Queue data structure.
+**Basic. functional. Typed. Data Structures.**
 
-- [datastructures-js](https://github.com/datastructures-js/linked-list) by [Eyas Ranjous](https://github.com/eyas-ranjous)
-- [coding-interview-university](https://github.com/jwasham/coding-interview-university#linked-lists) by [John Washam](https://github.com/jwasham)
+Functional typed data structures offering structure clarity and simplicity.
+
+---
+
+View other [data structures](https://github.com/yowainwright/data-structures).
 
