@@ -50,10 +50,11 @@ The queue is constructed as an emptry array using an `add` method to add items a
 
 ## Data Structures 🦄
 
-**Basic. functional. Typed. Data Structures.**
+**Basic. Functional. Typed. Data Structures.**
 
 Functional typed data structures offering structure clarity and simplicity.
 
 ---
 
-View other [data structures](https://github.com/yowainwright/data-structures).
+**View other [data structures](https://github.com/yowainwright/data-structures).**
+
