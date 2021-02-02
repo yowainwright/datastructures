@@ -9,7 +9,7 @@
  */
 
 export type Vertex = {
-  key: unknown
+  key: string
   siblings: Vertex[]
   addSibling: (vertex: Vertex) => Vertex
 }
@@ -35,7 +35,7 @@ export type GraphFactory = {
   getVertex: (key: unknown) => Vertex
   addEdge: (key1: unknown, key2: unknown) => GraphFactory
   render: () => GraphRender
-  print: () => string
+  // print: () => string
 }
 
 export type Graph = {
@@ -44,7 +44,7 @@ export type Graph = {
   edges: unknown[]
 }
 
-export const vertex = (key: unknown, siblings = []): Vertex => ({
+export const vertex = (key: string, siblings = []): Vertex => ({
   key,
   siblings,
   addSibling(vertex): Vertex {
@@ -57,20 +57,20 @@ export const graph = ({ directed = false, vertices = [], edges = [] }: GraphPara
   directed,
   vertices,
   edges,
-  addVertex(key: unknown): GraphFactory {
-    vertices.push(vertex(key))
+  addVertex(key: string): GraphFactory {
+    this.vertices.push(vertex(key))
     return this
   },
-  getVertex: (key: unknown): Vertex => vertices.find((vertex) => vertex.key === key),
+  getVertex: (key: string): Vertex => vertices.find((vertex) => vertex.key === key),
   addEdge(key1, key2): GraphFactory {
     const vertex1 = this.getVertex(key1)
     const vertex2 = this.getVertex(key2)
 
-    vertex1.addSibling(vertex2)
+    vertex1.addSibling(vertex2.key)
     edges.push(`${key1}-${key2}`)
 
     if (!directed) {
-      vertex2.addSibling(vertex1)
+      vertex2.addSibling(vertex1.key)
     }
 
     return this
@@ -82,11 +82,11 @@ export const graph = ({ directed = false, vertices = [], edges = [] }: GraphPara
       edges,
     }
   },
-  print: (): string =>
-    vertices.reduce((str, { key, siblings }) => {
-      const relationship = siblings?.length ? `${key} => ${siblings.map((sibling) => sibling.key).join(' ')}` : ''
-      return [str, relationship].join('\n')
-    }, ''),
+  // print: (): string =>
+  //   vertices.reduce((str, { key, siblings }) => {
+  //     const relationship = siblings?.length ? `${key} => ${siblings.map((sibling) => sibling.key).join(' ')}` : ''
+  //     return [str, relationship].join('\n')
+  //   }, ''),
 })
 
 // Quokka testing 💅

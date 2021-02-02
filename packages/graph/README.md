@@ -22,6 +22,7 @@ import { graph, vertex } from '@datastructures/graph'
 const chart = graph().addVertex('foo').addVertex('bar')
 chart.addEdge('foo', 'bar')
 const viewChart = chart.render()
+// => { directed: false, vertices: [ { key: 'foo', ...}, { key: 'bar', ...} ], edges: ['foo-bar' ]}
 const printChart = chart.print()
 ```
 
@@ -42,6 +43,23 @@ A individual vertice
 
 
 #### `Methods`
+
+**`addVertex`: adds a vertex to the graph
+
+> **ex:** const chart = graph().addVertex('foo')
+
+**`addEdge`: adds an edge to the Graph
+
+> **ex:** const chart = graph().addVertex('foo').addEdge('bar').addEdge('foo', 'bar')
+
+**`render`: renders the graph
+
+> **ex:** const chart = graph().addVertex('foo').addEdge('bar').addEdge('foo', 'bar').render()
+
+**`print`: renders a string output of the graph
+
+> **ex:** const chart = graph().addVertex('foo').addEdge('bar').addEdge('foo', 'bar').print()
+
 
 ---
 
