@@ -3,7 +3,7 @@
 ![Typed with TypeScript](https://flat.badgen.net/badge/icon/Typed?icon=typescript&label&labelColor=blue&color=555555)
 [![npm version](https://badge.fury.io/js/%40datastructures%2Fstack.svg)](https://badge.fury.io/js/%40datastructures%2Fstack)
 
-A minimal functional typed implementation of a stack. 🦄
+#### A minimal functional typed implementation of a stack. 🦄
 
 An ordered structure of data inputs obeying the principle of last in, first out.
 
@@ -33,10 +33,6 @@ pancake.print() // one pancaka
 
 ## API
 
-The stack is constructed as an emptry array using an `add`...
-
----
-
 #### `Methods`
 
 **`add(item)`** adds an item to the queue
@@ -50,11 +46,11 @@ The stack is constructed as an emptry array using an `add`...
 
 ## Data Structures 🦄
 
-**Basic. Functional. Typed. Data Structures.**
+#### Basic. Functional. Typed. Data Structures.
 
 Functional typed data structures offering structure clarity and simplicity.
 
 ---
 
-**View other [data structures](https://github.com/yowainwright/data-structures).**
+#### View other [data structures](https://github.com/yowainwright/data-structures).
 

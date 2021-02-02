@@ -3,7 +3,7 @@
 ![Typed with TypeScript](https://flat.badgen.net/badge/icon/Typed?icon=typescript&label&labelColor=blue&color=555555)
 [![npm version](https://badge.fury.io/js/%40datastructures%2Fqueue.svg)](https://badge.fury.io/js/%40datastructures%2Fqueue)
 
-A minimal functional typed implementation of a queue. 🦄
+#### A minimal functional typed implementation of a queue. 🦄
 
 An ordered structure of data inputs obeying the principle of first in, first out.
 
@@ -33,10 +33,6 @@ todo.length() // => 1
 
 ## API
 
-The queue is constructed as an emptry array using an `add` method to add items and a `remove` method to remove items from the end of the array.
-
----
-
 #### `Methods`
 
 **`add(item)`** adds an item to the queue
@@ -50,11 +46,11 @@ The queue is constructed as an emptry array using an `add` method to add items a
 
 ## Data Structures 🦄
 
-**Basic. Functional. Typed. Data Structures.**
+#### Basic. Functional. Typed. Data Structures.
 
 Functional typed data structures offering structure clarity and simplicity.
 
 ---
 
-**View other [data structures](https://github.com/yowainwright/data-structures).**
+#### View other [data structures](https://github.com/yowainwright/data-structures).
 
