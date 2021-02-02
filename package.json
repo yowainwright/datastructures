@@ -78,7 +78,9 @@
           "root",
           "avl-tree",
           "linked-list",
-          "queue"
+          "queue",
+          "stack",
+          "graph"
         ]
       ],
       "type-enum": [
