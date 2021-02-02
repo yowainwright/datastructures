@@ -1,39 +1,39 @@
-# @datastructures/queue ➡️|➡️|
+# @datastructures/stack 🥞
 
 ![Typed with TypeScript](https://flat.badgen.net/badge/icon/Typed?icon=typescript&label&labelColor=blue&color=555555)
-[![npm version](https://badge.fury.io/js/%40datastructures%2Fqueue.svg)](https://badge.fury.io/js/%40datastructures%2Fqueue)
+[![npm version](https://badge.fury.io/js/%40datastructures%2Fstack.svg)](https://badge.fury.io/js/%40datastructures%2Fstack)
 
-A minimal functional typed implementation of a queue. 🦄
+A minimal functional typed implementation of a stack. 🦄
 
-An ordered structure of data inputs obeying the principle of first in, first out.
+An ordered structure of data inputs obeying the principle of last in, first out.
 
 ---
 
 ## Install
 
 ```sh
-yarn add @datastructures/queue -D
+yarn add @datastructures/stack -D
 ```
 
 ---
 ## Usage
 
 ```typescript
-import { queue } from '@datastructures/queue'
+import { stack } from '@datastructures/stack'
 
-const todo = queue()
-todo.add('do laundry')
-todo.add('wash car')
-todo.remove()
-todo.print() // => 'wash car'
-todo.length() // => 1
+const pancake = stack()
+pancake.add('one pancaka')
+pancake.add('two pancaka')
+// I'm so hungry
+pancake.remove() // yum, pancaka remove
+pancake.print() // one pancaka
 ```
 
 ---
 
 ## API
 
-The queue is constructed as an emptry array using an `add` method to add items and a `remove` method to remove items from the end of the array.
+The stack is constructed as an emptry array using an `add`...
 
 ---
 
