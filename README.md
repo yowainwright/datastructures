@@ -16,7 +16,7 @@ Each package contains a data structure
 | **[Linked List](/packages/linked-list/)** | A linear structure inputs, each input pointing to the next |
 | **[Queue](/packages/queue)** | An ordered structure of first in, first out inputs |
 | **[Stack](/packages/stack)** | An ordered structure of last in, first out inputs  |
-| **[Graph](/packages/graph)** | |
+| **[Graph](/packages/graph)** | A collection of vertices related by edges |
 
 ## Why
 
