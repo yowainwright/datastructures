@@ -1,32 +1,38 @@
 {
-  "name": "@datastructures/avl-tree",
-  "version": "0.0.2",
-  "description": "AVL Tree Data Structure in TypeScript",
-  "main": "dist/",
+  "name": "@datastructures/graph",
+  "version": "0.0.1",
+  "description": "A minimal functional typed implementation of Graph 📈📉",
+  "main": "dist/index.js",
   "unpkg": "dist/index.js",
   "module": "dist/index.js",
-  "types": "index.ts",
-  "publishConfig": {
-    "access": "public"
-  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
     "tsc": "tsc --noEmit"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:yowainwright/datastructures.git"
   },
   "keywords": [
-    "avlTree",
-    "avl tree",
-    "avl-tree"
+    "graph data structure",
+    "graph-data-structure",
+    "graph"
   ],
-  "author": "Will Jacobson <willjacobson1@gmail.com>",
+  "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
   "license": "MIT",
   "jest": {
-    "name": "@datastructures/avl-tree",
+    "name": "@datastructures/graph",
     "projects": [
       "<rootDir>/packages/*"
     ],
