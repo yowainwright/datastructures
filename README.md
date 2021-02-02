@@ -13,8 +13,9 @@ Each package contains a data structure
 
 | Name                                      | Description                 |
 | ----------------------------------------- | --------------------------- |
-| **[Linked List](/packages/linked-list/)** | A linear structure with each data input poiting to the next |
-| **[Queue](/packages/queue)** | An ordered structure of data inputs going from front to back |
+| **[Linked List](/packages/linked-list/)** | A linear structure with each data input pointing to the next input |
+| **[Queue](/packages/queue)** | An ordered structure of data inputs obeying the principle of first in, first out  |
+| **[Stack](/packages/stack)** | An ordered structure of data inputs obeying the principle of last in, first out |
 
 ---
 ## Cites

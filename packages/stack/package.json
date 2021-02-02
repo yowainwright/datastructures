@@ -1,7 +1,7 @@
 {
-  "name": "@dollarshaveclub/queue",
+  "name": "@datastructures/stack",
   "version": "0.0.1",
-  "description": "Functional Typed Stack Data Structure",
+  "description": "A minimal functional typed implementation of Stack 🥞",
   "main": "dist/",
   "unpkg": "dist/index.js",
   "module": "dist/index.js",
