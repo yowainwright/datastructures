@@ -39,7 +39,9 @@ const arrayList = list.toArray(tree)
 Items are optional objects constructed using an `item` function. Optionally, to create a list of items, an array of items can be passed into a `list.create()` method. 
 
 **`name`:** when adding a list a `string` is always **required**
+
 **`data`:** a data `{object}` for containing useful data with a Node
+
 > **ex:** const node = item('foo', { foo: "bar" }); const linkedList = list.create(node)
 
 ---
@@ -47,8 +49,11 @@ Items are optional objects constructed using an `item` function. Optionally, to 
 #### `Methods`
 
 **`create(items)`** creates a list from an array of items with a `name` and an optional `data` `{object}`
+
 > **ex:** `list.create([ { name: 'foo',  data: { foo: 'bar'} }, { name: 'bar', data: { biz: 'baz', }}])`
+
 **`toArray(items)`** creates an array of items with a `name` and an optional `data` `{object}` from a list
+
 > **ex:** `list.toArray(someLinkedList)`
 
 ---
