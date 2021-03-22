@@ -6,6 +6,7 @@
 #### A minimal functional typed implementation of a graph. 🦄
 
 A collection of vertices related by edges
+
 ---
 
 ## Install
