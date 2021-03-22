@@ -45,19 +45,19 @@ A individual vertice
 
 #### `Methods`
 
-**`addVertex`: adds a vertex to the graph
+**`addVertex`:** adds a vertex to the graph
 
 > **ex:** const chart = graph().addVertex('foo')
 
-**`addEdge`: adds an edge to the Graph
+**`addEdge`:** adds an edge to the Graph
 
 > **ex:** const chart = graph().addVertex('foo').addEdge('bar').addEdge('foo', 'bar')
 
-**`render`: renders the graph
+**`render`:** renders the graph
 
 > **ex:** const chart = graph().addVertex('foo').addEdge('bar').addEdge('foo', 'bar').render()
 
-**`print`: renders a string output of the graph
+**`print`:** renders a string output of the graph
 
 > **ex:** const chart = graph().addVertex('foo').addEdge('bar').addEdge('foo', 'bar').print()
 
