@@ -7,8 +7,6 @@
 
 *Functional typed data structures offering clarity and simplicity.
 
-- **Functional:** In an effort to get this ish, done, there may be a little bit of non-functional stuff.
-
 ## Packages
 
 Each package contains a data structure
@@ -36,3 +34,7 @@ Here are a few: [datastructures-js](https://github.com/eyas-ranjous/datastructur
 #### There are many online classes dedicated to teaching data structures in JavaScript. 
 
 Here are a few: [Kyle Shevlin](https://github.com/kyleshevlin)'s [data structures](https://egghead.io/courses/data-structures-and-algorithms-in-javascript) class on Egg Head, [Algo Expert](algoexpert.io) is a tool for testing algorithm and data structure knowledge!
+
+---
+
+- **Functional:** In an effort to get this ish, done, there may be a little bit of non-functional stuff.
