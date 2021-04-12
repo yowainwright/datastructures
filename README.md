@@ -5,7 +5,9 @@
 
 #### Basic. Functional. Typed. Data Structures.
 
-Functional typed data structures offering clarity and simplicity.
+*Functional typed data structures offering clarity and simplicity.
+
+*\In an effort to get this ish, done, there may be a little bit of non-functional stuff.
 
 ## Packages
 
@@ -13,10 +15,10 @@ Each package contains a data structure
 
 | Name                                      | Description                 |
 | ----------------------------------------- | --------------------------- |
-| **[Linked List](/packages/linked-list/)** | A linear structure inputs, each input pointing to the next |
-| **[Queue](/packages/queue)** | An ordered structure of first in, first out inputs |
-| **[Stack](/packages/stack)** | An ordered structure of last in, first out inputs  |
-| **[Graph](/packages/graph)** | A collection of vertices related by edges |
+| **[Linked List](/packages/linked-list/)** ⛓ | A linear structure inputs, each input pointing to the next |
+| **[Queue](/packages/queue)** ➡️|➡️| | An ordered structure of first in, first out inputs |
+| **[Stack](/packages/stack)** 🥞 | An ordered structure of last in, first out inputs  |
+| **[Graph](/packages/graph)** 📈📉 | A collection of vertices related by edges |
 
 ## Why
 
