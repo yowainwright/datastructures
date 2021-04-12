@@ -7,7 +7,7 @@
 
 *Functional typed data structures offering clarity and simplicity.
 
-*\In an effort to get this ish, done, there may be a little bit of non-functional stuff.
+- **Functional:** In an effort to get this ish, done, there may be a little bit of non-functional stuff.
 
 ## Packages
 
