@@ -1622,9 +1622,9 @@
   integrity sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==
 
 "@types/node@*", "@types/node@>= 8", "@types/node@^15.0.0":
-  version "15.12.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.12.3.tgz#2817bf5f25bc82f56579018c53f7d41b1830b1af"
-  integrity sha512-SNt65CPCXvGNDZ3bvk1TQ0Qxoe3y1RKH88+wZ2Uf05dduBCqqFQ76ADP9pbT+Cpvj60SkRppMCh2Zo8tDixqjQ==
+  version "15.12.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.12.4.tgz#e1cf817d70a1e118e81922c4ff6683ce9d422e26"
+  integrity sha512-zrNj1+yqYF4WskCMOHwN+w9iuD12+dGm0rQ35HLl9/Ouuq52cEtd0CH9qMgrdNmi5ejC1/V7vKEXYubB+65DkA==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -2505,11 +2505,6 @@ color-name@~1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
-
-colors@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/colors/-/colors-1.4.0.tgz#c50491479d4c1bdaed2c9ced32cf7c7dc2360f78"
-  integrity sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==
 
 columnify@^1.5.4:
   version "1.5.4"
@@ -4018,10 +4013,10 @@ glob@7.1.4:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^7.0.0, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
-  version "7.1.6"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
-  integrity sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
+glob@^7.0.0, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6, glob@^7.1.7:
+  version "7.1.7"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.7.tgz#3b193e9233f01d42d0b3f78294bbeeb418f94a90"
+  integrity sha512-OvD9ENzPLbegENnYP5UUfJIirTg4+XwMWGaQfQTY0JenxNvvIKP3U3/tAQSPIu/lHxXYSZmpXlUHeqAIdKzBLQ==
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -5713,10 +5708,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-marked@~2.0.3:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-2.0.7.tgz#bc5b857a09071b48ce82a1f7304913a993d4b7d1"
-  integrity sha512-BJXxkuIfJchcXOJWTT2DOL+yFWifFv2yGYOUzvXg8Qz610QKw+sHCvTMYwA+qWGhlA2uivBezChZ/pBy1tWdkQ==
+marked@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-2.1.1.tgz#b7c27f520fc4de0ddd049d9b4be3b04e06314923"
+  integrity sha512-5XFS69o9CzDpQDSpUYC+AN2xvq8yl1EGa5SG/GI1hP78/uTeo3PDfiDNmsUyiahpyhToDDJhQk7fNtJsga+KVw==
 
 meow@^3.3.0:
   version "3.7.0"
@@ -7475,7 +7470,7 @@ shebang-regex@^3.0.0:
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
-shelljs@^0.8.3, shelljs@^0.8.4:
+shelljs@^0.8.3:
   version "0.8.4"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.4.tgz#de7684feeb767f8716b326078a8a00875890e3c2"
   integrity sha512-7gk3UZ9kOfPLIAbslLzyWeGiEqx9e3rxwZM0KE6EL8GlGwjym9Mrlx5/p33bWTu9YG6vcS4MBxYZDHYr5lr8BQ==
@@ -8312,27 +8307,25 @@ typedoc-default-themes@^0.12.10:
   resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.12.10.tgz#614c4222fe642657f37693ea62cad4dafeddf843"
   integrity sha512-fIS001cAYHkyQPidWXmHuhs8usjP5XVJjWB8oZGqkTowZaz3v7g3KDZeeqE82FBrmkAnIBOY3jgy7lnPnqATbA==
 
-typedoc@^0.20.1:
-  version "0.20.37"
-  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.20.37.tgz#9b9417149cb815e3d569fc300b5d2c6e4e6c5d93"
-  integrity sha512-9+qDhdc4X00qTNOtii6QX2z7ndAeWVOso7w3MPSoSJdXlVhpwPfm1yEp4ooKuWA9fiQILR8FKkyjmeqa13hBbw==
+typedoc@^0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.21.0.tgz#d35dd69b1566032cd893f4f6f21f37156f5f78d2"
+  integrity sha512-InmPBVlpOXptIkg/WnsQhbGYhv9cuDh/cRACUSautQ0QwcJPLAK2kHcfP0Pld6z/NiDvHc159fMq2qS+b/ALUw==
   dependencies:
-    colors "^1.4.0"
-    fs-extra "^9.1.0"
+    glob "^7.1.7"
     handlebars "^4.7.7"
     lodash "^4.17.21"
     lunr "^2.3.9"
-    marked "~2.0.3"
+    marked "^2.1.1"
     minimatch "^3.0.0"
     progress "^2.0.3"
-    shelljs "^0.8.4"
     shiki "^0.9.3"
     typedoc-default-themes "^0.12.10"
 
 typescript@^4.1.3:
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.4.tgz#8610b59747de028fda898a8aef0e103f156d0961"
-  integrity sha512-V+evlYHZnQkaz8TRBuxTA92yZBPotr5H+WhQ7bD3hZUndx5tGOa1fuCgeSjxAzM1RiN5IzvadIXTVefuuwZCRg==
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.4.tgz#3f85b986945bcf31071decdd96cf8bfa65f9dcbc"
+  integrity sha512-uauPG7XZn9F/mo+7MrsRjyvbxFpzemRjKEZXS4AK83oP2KKOJPvb+9cO/gmnv8arWZvhnjVOXz7B49m1l0e9Ew==
 
 uglify-js@^3.1.4:
   version "3.12.5"
