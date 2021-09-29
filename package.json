@@ -35,7 +35,7 @@
     "@commitlint/config-lerna-scopes": "^13.2.0",
     "@commitlint/prompt": "^13.1.0",
     "@heartly/eslint-config-typescript": "^0.0.2",
-    "@types/jest": "^26.0.3",
+    "@types/jest": "^27.0.2",
     "@types/node": "^16.0.0",
     "commitizen": "^4.0.4",
     "conventional-changelog-cli": "^2.0.11",
