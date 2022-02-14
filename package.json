@@ -32,7 +32,7 @@
   "homepage": "https://github.com/yowainwright/datastructures#readme",
   "devDependencies": {
     "@commitlint/cli": "^16.0.1",
-    "@commitlint/config-lerna-scopes": "^15.0.0",
+    "@commitlint/config-lerna-scopes": "^16.2.2",
     "@commitlint/prompt": "^16.0.0",
     "@heartly/eslint-config-typescript": "^0.0.2",
     "@types/jest": "^27.0.2",
