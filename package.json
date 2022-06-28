@@ -33,7 +33,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-lerna-scopes": "^17.0.2",
-    "@commitlint/prompt": "^16.0.0",
+    "@commitlint/prompt": "^17.0.3",
     "@heartly/eslint-config-typescript": "^0.0.2",
     "@types/jest": "^27.0.2",
     "@types/node": "^18.0.0",
