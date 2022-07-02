@@ -60,3 +60,6 @@ typings/
 .DS_Store
 coverage
 
+.dccache
+
+**/dist/*

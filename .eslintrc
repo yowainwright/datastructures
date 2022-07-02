@@ -1,12 +1,13 @@
 {
-  "extends": "@heartly/eslint-config-typescript",
-  "globals": {
-    "describe": true,
-    "expect": true,
-    "jest": true,
-    "it": true,
-    "test": true,
-    "browser": true,
-    "jest/globals": true
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/no-var-requires": "off"
   }
 }

@@ -1,3 +1,4 @@
+import { test, expect } from 'vitest'
 import { AvlTree, AvlTreeNode } from '..'
 import { NodeValue } from '../node'
 
