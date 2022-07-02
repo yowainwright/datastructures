@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest'
 import { constructArray, create, item, list, toArray } from '../index'
 
 describe('list', () => {
@@ -45,7 +46,7 @@ describe('list', () => {
     ])
   })
 
-  test.only('toArray', () => {
+  test('toArray', () => {
     const a = item('foo', { foo: 'bar' })
     const b = item('bar', { biz: 'baz' })
     const testList = create([a, b])

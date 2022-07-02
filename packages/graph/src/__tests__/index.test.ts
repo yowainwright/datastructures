@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest'
 import { vertex, graph } from '../index'
 
 describe('graph', () => {

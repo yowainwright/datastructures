@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest'
 import { queue } from '../index'
 
 describe('queue', () => {

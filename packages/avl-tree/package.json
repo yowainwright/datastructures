@@ -9,6 +9,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
@@ -24,20 +28,5 @@
     "avl-tree"
   ],
   "author": "Will Jacobson <willjacobson1@gmail.com>",
-  "license": "MIT",
-  "jest": {
-    "name": "@datastructures/avl-tree",
-    "projects": [
-      "<rootDir>/packages/*"
-    ],
-    "resetMocks": true,
-    "rootDir": "./",
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "testEnvironment": "node",
-    "transform": {
-      "^.+\\.(ts)$": "ts-jest"
-    }
-  }
+  "license": "MIT"
 }
