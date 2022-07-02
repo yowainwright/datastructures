@@ -61,3 +61,5 @@ typings/
 coverage
 
 .dccache
+
+**/dist/*

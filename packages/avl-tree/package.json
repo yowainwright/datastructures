@@ -9,8 +9,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
   "scripts": {
-    "build": "pnpm clean && tsc",
+    "build": "tsc",
     "clean": "rimraf dist",
     "tsc": "tsc --noEmit"
   },
