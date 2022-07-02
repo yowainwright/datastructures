@@ -46,7 +46,7 @@ describe('list', () => {
     ])
   })
 
-  test.only('toArray', () => {
+  test('toArray', () => {
     const a = item('foo', { foo: 'bar' })
     const b = item('bar', { biz: 'baz' })
     const testList = create([a, b])
