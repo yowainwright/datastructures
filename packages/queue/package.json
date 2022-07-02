@@ -10,7 +10,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "pnpm clean && tsc",
     "clean": "rimraf dist",
     "tsc": "tsc --noEmit"
   },
@@ -22,20 +22,5 @@
     "Queue"
   ],
   "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
-  "license": "MIT",
-  "jest": {
-    "name": "@datastructures/queue",
-    "projects": [
-      "<rootDir>/packages/*"
-    ],
-    "resetMocks": true,
-    "rootDir": "./",
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "testEnvironment": "node",
-    "transform": {
-      "^.+\\.(ts)$": "ts-jest"
-    }
-  }
+  "license": "MIT"
 }

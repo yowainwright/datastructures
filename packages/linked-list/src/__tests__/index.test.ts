@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest'
 import { constructArray, create, item, list, toArray } from '../index'
 
 describe('list', () => {
