@@ -1,0 +1,30 @@
+{
+  "codependencies": [
+    "@changesets/cli",
+    "@commitlint/cli",
+    "@commitlint/config-lerna-scopes",
+    "@commitlint/prompt",
+    "@types/node",
+    "@typescript-eslint/eslint-plugin",
+    "@typescript-eslint/parser",
+    "@vitest/coverage-c8",
+    "c8",
+    "changesets",
+    "codependence",
+    "commitizen",
+    "conventional-changelog-cli",
+    "cross-env",
+    "eslint",
+    "eslint-config-prettier",
+    "husky",
+    "lint-staged",
+    "path-exists-cli",
+    "prettier",
+    "rimraf",
+    "tslib",
+    "tsutils",
+    "turbo",
+    "typescript",
+    "vitest"
+  ]
+}
