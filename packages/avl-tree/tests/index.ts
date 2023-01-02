@@ -1,6 +1,6 @@
 import { test, expect } from 'vitest'
-import { AvlTree, AvlTreeNode } from '..'
-import { NodeValue } from '../node'
+import { AvlTree, AvlTreeNode } from '../src'
+import { NodeValue } from '../src/node'
 
 test('Node init', () => {
   const node = new AvlTreeNode(5)
