@@ -1,6 +1,6 @@
 import { test, expect } from 'vitest'
-import { AvlTree } from '..'
-import { NodeValue } from '../node'
+import { AvlTree } from '../src'
+import { NodeValue } from '../src/node'
 
 test('leftRotation basic', () => {
   const tree = new AvlTree()

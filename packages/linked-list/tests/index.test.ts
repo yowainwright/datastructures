@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { constructArray, create, item, list, toArray } from '../index'
+import { constructArray, create, item, list, toArray } from '../src/index'
 
 describe('list', () => {
   test('item', () => {
