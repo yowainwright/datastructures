@@ -2,10 +2,10 @@
  * Linked List ⛓
  * ----
  * @description a Linear Structure of Nodes
- * @summary a typed functional Linked List
+ * @summary a typed Linked List
  * @note if you desire to add more functionality
  * - to this minimal Linked List,
- * - submit a pull request
+ * - submit a pull request 🙏
  */
 
 export type NodeObject = {
@@ -76,14 +76,3 @@ export const list = (): ListFactory => ({
   create,
   toArray,
 })
-
-// Quokka testing 💅
-// const item1 = item('foo', { foo: 'bar' })
-// const item2 = item('bar', { foo: 'bar' })
-// const items = [item1, item2]
-// const test = list().create(items)
-// const test2 = list().toArray(test)
-// const test3 = link(item1, item2)
-// test
-// test2
-// test3

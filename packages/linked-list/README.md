@@ -3,10 +3,33 @@
 ![Typed with TypeScript](https://flat.badgen.net/badge/icon/Typed?icon=typescript&label&labelColor=blue&color=555555)
 [![npm version](https://badge.fury.io/js/%40datastructures%2Flinked-list.svg)](https://badge.fury.io/js/%40datastructures%2Flinked-list)
 
-#### A minimal typed implementation of a linked list. 🦄
+### A minimal typed implementation of a linked list. 🦄
 
 Linked lists are a linear structure of items. Each item is a seperate object.
 Each item is made with a relationship to its next item.
+
+#### Diagram
+
+```mermaid
+sequenceDiagram
+  participant Node 1
+  participant Node 2
+  participant Node 3
+  Node 1-->>Node 2: next node
+  Node 2-->>Node 1: previous node
+  Node 2-->>Node 3: next node
+  Node 3-->>Node 2: previous node
+```
+
+#### Structure
+
+```typescript
+item: { name: 'foo', data: { foo: 'bar' } },
+nextItem: {
+  item: { name: 'bar', data: { biz: 'baz' } },
+  nextItem: null,
+}
+```
 
 ---
 
