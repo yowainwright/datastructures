@@ -117,8 +117,5 @@
     "*.ts": [
       "eslint --ext '.ts'"
     ]
-  },
-  "dependencies": {
-    "@commitlint/format": "^19.3.0"
   }
 }
