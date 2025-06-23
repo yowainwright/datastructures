@@ -64,3 +64,4 @@ coverage
 
 **/dist/*
 .turbo
+.vscode

@@ -18,8 +18,8 @@
     "husky-setup:pre-commit": "npx husky add .husky/pre-commit 'npm run pre-commit'",
     "lint": "eslint --cache --fix",
     "lint:ci": "eslint --cache",
-    "test": "vitest run --coverage",
-    "test:ci": "pnpm run test",
+    "test": "turbo run test",
+    "test:ci": "turbo run test",
     "tsc": "tsc -p ./tsconfig.test.json",
     "pre-commit": "cross-env FORCE_COLOR=1 lint-staged",
     "prepare": "is-ci || pnpm husky-setup",
@@ -42,6 +42,7 @@
   },
   "homepage": "https://github.com/yowainwright/datastructures#readme",
   "devDependencies": {
+    "@biomejs/biome": "2.0.0",
     "@changesets/cli": "2.27.5",
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-lerna-scopes": "19.0.0",
@@ -116,7 +117,8 @@
   },
   "lint-staged": {
     "*.ts": [
-      "eslint --ext '.ts'"
+      "biome lint --ext '.ts'",
+      "prettier --write"
     ]
   }
 }

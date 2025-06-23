@@ -13,7 +13,8 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "test": "vitest run"
   },
   "publishConfig": {
     "access": "public"

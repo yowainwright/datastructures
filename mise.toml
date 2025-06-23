@@ -1,0 +1,8 @@
+[tools]
+node = { version = "24", postinstall = "corepack enable", package_manager = "pnpm" }
+go = { version = "1.24" }
+python = { version = "3.13", package_manager = "poetry", postinstall = "poetry install" }
+
+[env]
+NODE_ENV = "development"
+
