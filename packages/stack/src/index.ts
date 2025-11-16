@@ -1,29 +1,13 @@
-/**
- * Stack
- * ----
- * @description An ordered structure of data inputs obeying the principle of last in, first out.
- * @summary a typed functional Stack
- * @note if you desire to add more functionality
- * - to this minimal Stack,
- * - submit a pull request
- */
-
-export type StackList = {
-  add: (item: unknown) => StackList
-  remove: () => StackList
+export type Stack<T> = {
+  add: (item: T) => Stack<T>
+  remove: () => Stack<T>
   length: () => number
-  print: () => unknown[]
+  print: () => T[]
 }
 
-export const stack = (list: unknown[] = []): StackList => ({
-  add(item: unknown): StackList {
-    list.push(item)
-    return this
-  },
-  remove(): StackList {
-    list.pop()
-    return this
-  },
-  length: (): number => list.length,
-  print: (): unknown[] => list,
+export const stack = <T>(list: T[] = []): Stack<T> => ({
+  add: (item) => stack([...list, item]),
+  remove: () => stack(list.slice(0, -1)),
+  length: () => list.length,
+  print: () => [...list],
 })

@@ -1,4 +1,4 @@
-import { test, expect } from 'vitest'
+import { test, expect } from "bun:test"
 import { AvlTree, AvlTreeNode } from '../src'
 import { NodeValue } from '../src/node'
 

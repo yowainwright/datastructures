@@ -10,10 +10,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsc",
-    "clean": "rimraf dist",
-    "tsc": "tsc --noEmit",
-    "test": "vitest run"
+    "build": "tsc --noEmit",
+    "test": "bun test"
   },
   "repository": {
     "type": "git",

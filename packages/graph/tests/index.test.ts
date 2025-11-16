@@ -1,5 +1,5 @@
-import { describe, test, expect } from 'vitest'
-import { vertex, graph } from '../src/index'
+import { describe, test, expect } from "bun:test"
+import { vertex, graph } from "../src/index"
 
 describe('graph', () => {
   describe('vertex', () => {

@@ -4,30 +4,20 @@
   "description": "Data Structures in TypeScript 🦄",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "bun@1.3.1",
   "scripts": {
     "build": "turbo run build",
-    "clean": "pnpm -r clean",
-    "commit": "git-cz",
-    "commit-msg": "commitlint --edit $1",
-    "husky-setup": "(path-exists .husky/commit-msg) || (husky install && pnpm run husky-setup:commit-msg && pnpm run husky-setup:post-merge && pnpm run husky-setup:pre-commit)",
-    "husky-setup:commit-msg": "npx husky add .husky/commit-msg 'npm run commit-msg'",
-    "husky-setup:post-merge": "npx husky add .husky/post-merge 'npm run setup'",
-    "husky-setup:pre-commit": "npx husky add .husky/pre-commit 'npm run pre-commit'",
-    "lint": "eslint --cache --fix",
-    "lint:ci": "eslint --cache",
-    "test": "turbo run test",
-    "test:ci": "turbo run test",
-    "tsc": "tsc -p ./tsconfig.test.json",
-    "pre-commit": "cross-env FORCE_COLOR=1 lint-staged",
-    "prepare": "is-ci || pnpm husky-setup",
-    "prepublishOnly": "pnpm test && pnpm clean && pnpm build",
-    "publish:prep": "changeset add",
-    "publish:packages": "pnpm prepublishOnly && changeset publish && git push --follow-tags",
-    "setup": "pnpm install --reporter=silent -r && pnpm run build",
-    "update": "codependence --update"
+    "commit": "bun scripts/commit-prompt.ts",
+    "create": "bun scripts/create-datastructure.ts",
+    "generate-challenge": "bun scripts/generateNewDataStructure.ts",
+    "format": "prettier --write .",
+    "test": "bun test",
+    "pre-commit": "bun run format && turbo run build",
+    "setup": "bun install && ./scripts/setup-hooks.sh",
+    "setup:hooks": "./scripts/setup-hooks.sh"
   },
   "repository": "git@github.com:yowainwright/datastructures.git",
   "keywords": [
@@ -42,83 +32,10 @@
   },
   "homepage": "https://github.com/yowainwright/datastructures#readme",
   "devDependencies": {
-    "@biomejs/biome": "2.0.0",
-    "@changesets/cli": "2.27.5",
-    "@commitlint/cli": "19.3.0",
-    "@commitlint/config-lerna-scopes": "19.0.0",
-    "@commitlint/prompt": "19.3.1",
-    "@eslint/js": "^9.1.1",
-    "@types/node": "20.14.2",
-    "@vitest/coverage-c8": "^0.33.0",
-    "@vitest/coverage-v8": "^1.2.1",
-    "c8": "^9.1.0",
-    "changesets": "^1.0.2",
-    "codependence": "0.3.1",
-    "commitizen": "4.3.0",
-    "conventional-changelog-cli": "5.0.0",
-    "cross-env": "^7.0.3",
-    "eslint": "9.4.0",
-    "eslint-config-prettier": "^9.1.0",
-    "husky": "9.0.11",
-    "lint-staged": "15.2.5",
-    "path-exists-cli": "^2.0.0",
+    "@anthropic-ai/sdk": "^0.32.1",
+    "@types/bun": "^1.1.15",
     "prettier": "3.3.1",
-    "rimraf": "^5.0.7",
-    "tslib": "2.6.3",
-    "tsutils": "^3.21.0",
     "turbo": "2.0.3",
-    "typescript": "5.4.5",
-    "typescript-eslint": "^7.7.1",
-    "vitest": "1.6.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/@commitlint/prompt"
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-lerna-scopes"
-    ],
-    "rules": {
-      "header-max-length": [
-        2,
-        "always",
-        120
-      ],
-      "scope-enum": [
-        2,
-        "always",
-        [
-          "root",
-          "avl-tree",
-          "linked-list",
-          "queue",
-          "stack",
-          "graph"
-        ]
-      ],
-      "type-enum": [
-        2,
-        "always",
-        [
-          "chore",
-          "feat",
-          "fix",
-          "docs",
-          "style",
-          "refactor",
-          "test",
-          "release",
-          "revert"
-        ]
-      ]
-    }
-  },
-  "lint-staged": {
-    "*.ts": [
-      "biome lint --ext '.ts'",
-      "prettier --write"
-    ]
+    "typescript": "5.4.5"
   }
 }

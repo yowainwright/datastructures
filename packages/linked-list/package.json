@@ -11,10 +11,8 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc",
-    "clean": "rimraf dist",
-    "tsc": "tsc --noEmit",
-    "test": "node --test tests/"
+    "build": "tsc --noEmit",
+    "test": "bun test"
   },
   "publishConfig": {
     "access": "public"

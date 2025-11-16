@@ -1,5 +1,5 @@
-import { describe, test, expect } from 'vitest'
-import { stack } from '../src/index'
+import { describe, test, expect } from "bun:test"
+import { stack } from "../src/index"
 
 describe('stack', () => {
   test('init', () => {

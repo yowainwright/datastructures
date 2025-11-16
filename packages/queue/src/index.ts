@@ -1,40 +1,13 @@
-/**
- * Queue ➡️|➡️|
- * ----
- * @description An ordered structure of data inputs obeying the principle of first in, first out.
- * @summary a typed functional Queue
- * @note if you desire to add more functionality
- * - to this minimal queue,
- * - submit a pull request
- */
-
-export type QueueList = {
-  add: (item: unknown) => QueueList
-  remove: () => QueueList
+export type Queue<T> = {
+  add: (item: T) => Queue<T>
+  remove: () => Queue<T>
   length: () => number
-  print: () => unknown[]
+  print: () => T[]
 }
 
-export const queue = (list: unknown[] = []): QueueList => ({
-  add(item: unknown): QueueList {
-    list.unshift(item)
-    return this
-  },
-  remove(): QueueList {
-    list.pop()
-    return this
-  },
-  length: (): number => list.length,
-  print: (): unknown[] => list,
+export const queue = <T>(list: T[] = []): Queue<T> => ({
+  add: (item) => queue([item, ...list]),
+  remove: () => queue(list.slice(0, -1)),
+  length: () => list.length,
+  print: () => [...list],
 })
-
-// Quokka testing 💅
-// -----------------
-// const todo = queue()
-// todo.add('foo')
-// todo.add('bar')
-// const test1 = todo.length()
-// test1
-// tody.remove()
-// const test2 = todo.length()
-// test2

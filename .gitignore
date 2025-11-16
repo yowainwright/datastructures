@@ -65,3 +65,6 @@ coverage
 **/dist/*
 .turbo
 .vscode
+
+# Generated challenge detail files (committed in PRs)
+challenge-*.json
