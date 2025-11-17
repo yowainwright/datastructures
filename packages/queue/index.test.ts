@@ -1,5 +1,5 @@
 import { describe, test, expect } from "bun:test"
-import { queue } from "../src/index"
+import { queue } from "./index"
 
 describe('queue', () => {
   test('init', () => {

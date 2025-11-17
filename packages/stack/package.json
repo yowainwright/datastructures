@@ -2,13 +2,13 @@
   "name": "@datastructures/stack",
   "version": "0.0.1",
   "description": "A minimal functional typed implementation of Stack 🥞",
-  "main": "./src/index.ts",
-  "module": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "types": "./index.ts",
   "exports": {
     ".": {
-      "import": "./src/index.ts",
-      "types": "./src/index.ts"
+      "import": "./index.ts",
+      "types": "./index.ts"
     }
   },
   "publishConfig": {
@@ -16,7 +16,10 @@
   },
   "scripts": {
     "build": "tsc --noEmit",
-    "test": "bun test"
+    "test": "bun test",
+    "test:ts": "bun test index.test.ts",
+    "test:go": "go test -v",
+    "test:python": "python -m pytest -v"
   },
   "repository": {
     "type": "git",

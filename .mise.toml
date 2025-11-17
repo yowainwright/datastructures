@@ -1,7 +1,41 @@
 [tools]
 bun = "1.3.1"
-python = "3.14"
-go = "1.25"
+python = "3.13"
+go = "1.23"
 
 [settings]
 legacy_version_file = true
+
+[tasks.install]
+description = "Install all dependencies"
+run = [
+  "bun install",
+  "pip install pytest"
+]
+
+[tasks.test]
+description = "Run all tests with Turbo caching"
+run = "turbo run test:ts test:go test:python"
+
+[tasks."test:ts"]
+description = "Run TypeScript tests"
+run = "bun test"
+
+[tasks."test:go"]
+description = "Run Go tests"
+run = "cd packages && for dir in */; do [ -f \"$dir/main.go\" ] && (cd \"$dir\" && go test -v) || true; done"
+
+[tasks."test:python"]
+description = "Run Python tests"
+run = "cd packages && for dir in */; do [ -f \"$dir/main.py\" ] && (cd \"$dir\" && python -m pytest -v) || true; done"
+
+[tasks.format]
+description = "Format code with Prettier"
+run = "bun run format"
+
+[tasks."generate-challenge"]
+description = "Generate a new data structure challenge"
+run = "bun run generate-challenge"
+
+[env]
+_.python.venv = { path = ".venv", create = true }

@@ -68,3 +68,12 @@ coverage
 
 # Generated challenge detail files (committed in PRs)
 challenge-*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/

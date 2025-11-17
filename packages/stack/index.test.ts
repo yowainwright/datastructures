@@ -1,5 +1,5 @@
 import { describe, test, expect } from "bun:test"
-import { stack } from "../src/index"
+import { stack } from "./index"
 
 describe('stack', () => {
   test('init', () => {
