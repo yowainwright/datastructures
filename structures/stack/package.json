@@ -16,10 +16,7 @@
   },
   "scripts": {
     "build": "tsc --noEmit",
-    "test": "bun test",
-    "test:ts": "bun test index.test.ts",
-    "test:go": "go test -v",
-    "test:python": "python -m pytest -v"
+    "test": "bun test"
   },
   "repository": {
     "type": "git",

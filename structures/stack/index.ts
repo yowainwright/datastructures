@@ -9,5 +9,5 @@ export const stack = <T>(list: T[] = []): Stack<T> => ({
   add: (item) => stack([...list, item]),
   remove: () => stack(list.slice(0, -1)),
   length: () => list.length,
-  print: () => [...list],
+  print: () => list,
 })

@@ -1,7 +1,7 @@
 [tools]
 bun = "1.3.1"
-python = "3.13"
-go = "1.23"
+python = "3.14"
+go = "1.25"
 
 [settings]
 legacy_version_file = true
@@ -15,27 +15,59 @@ run = [
 
 [tasks.test]
 description = "Run all tests with Turbo caching"
-run = "turbo run test:ts test:go test:python"
+run = "turbo run test"
 
 [tasks."test:ts"]
 description = "Run TypeScript tests"
-run = "bun test"
+run = "turbo run test:ts"
 
 [tasks."test:go"]
 description = "Run Go tests"
-run = "cd packages && for dir in */; do [ -f \"$dir/main.go\" ] && (cd \"$dir\" && go test -v) || true; done"
+run = "turbo run test:go"
 
 [tasks."test:python"]
 description = "Run Python tests"
-run = "cd packages && for dir in */; do [ -f \"$dir/main.py\" ] && (cd \"$dir\" && python -m pytest -v) || true; done"
+run = "turbo run test:python"
 
 [tasks.format]
 description = "Format code with Prettier"
 run = "bun run format"
 
+[tasks.clean]
+description = "Remove build artifacts and caches"
+run = [
+  "rm -rf structures/*/dist",
+  "rm -rf structures/*/.turbo",
+  "rm -rf .turbo",
+  "find structures -name '__pycache__' -exec rm -rf {} +",
+  "find structures -name '.pytest_cache' -exec rm -rf {} +"
+]
+
+[tasks.setup]
+description = "First-time project setup"
+run = [
+  "bun install",
+  "pip install pytest",
+  "./scripts/setup-hooks.sh"
+]
+
+[tasks.check]
+description = "Verify all tools and dependencies are working"
+run = [
+  "bun --version",
+  "go version",
+  "python --version",
+  "pytest --version",
+  "turbo --version"
+]
+
 [tasks."generate-challenge"]
 description = "Generate a new data structure challenge"
 run = "bun run generate-challenge"
+
+[tasks."update-readme"]
+description = "Update README with implementation status"
+run = "bun run scripts/updateReadme.ts"
 
 [env]
 _.python.venv = { path = ".venv", create = true }

@@ -1,10 +1,9 @@
 import { test, describe } from 'node:test'
 import assert from 'node:assert'
-import { 
-  constructArray, 
-  create, 
-  item, 
-  list, 
+import {
+  create,
+  item,
+  list,
   toArray,
   prepend,
   append,
@@ -44,19 +43,6 @@ describe('LinkedList', () => {
         },
       }
       assert.deepStrictEqual(result, expected)
-    })
-
-    test('constructArray', () => {
-      const a = item('foo', { foo: 'bar' })
-      const b = item('bar', { biz: 'baz' })
-      const testList = create([a, b])
-      const arraylist = constructArray(testList)
-      
-      const expected = [
-        { data: { foo: 'bar' }, name: 'foo' },
-        { data: { biz: 'baz' }, name: 'bar' },
-      ]
-      assert.deepStrictEqual(arraylist, expected)
     })
 
     test('toArray', () => {

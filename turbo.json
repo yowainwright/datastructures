@@ -3,10 +3,6 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"]
-    },
-    "test": {},
-    "test:ts": {},
-    "test:go": {},
-    "test:python": {}
+    }
   }
 }
