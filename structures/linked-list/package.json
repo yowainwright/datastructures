@@ -1,0 +1,31 @@
+{
+  "name": "@datastructures/linked-list",
+  "version": "1.0.0",
+  "description": "A minimal typed implementation of Linked List ⛓",
+  "main": "dist/index.js",
+  "unpkg": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yowainwright/datastructures.git"
+  },
+  "keywords": [
+    "linked list",
+    "linkedlist",
+    "linked-list"
+  ],
+  "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
+  "license": "MIT"
+}

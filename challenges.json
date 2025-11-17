@@ -1,0 +1,39 @@
+{
+  "challenges": [
+    {
+      "name": "stack",
+      "title": "Stack",
+      "description": "An ordered structure of data inputs obeying the principle of last in, first out (LIFO)",
+      "difficulty": "easy",
+      "completed": true
+    },
+    {
+      "name": "queue",
+      "title": "Queue",
+      "description": "An ordered structure of data inputs obeying the principle of first in, first out (FIFO)",
+      "difficulty": "easy",
+      "completed": true
+    },
+    {
+      "name": "linked-list",
+      "title": "Linked List",
+      "description": "A linear structure of nodes where each node contains data and a reference to the next node",
+      "difficulty": "easy",
+      "completed": true
+    },
+    {
+      "name": "avl-tree",
+      "title": "AVL Tree",
+      "description": "A self-balancing binary search tree where heights of left and right subtrees differ by at most 1",
+      "difficulty": "medium",
+      "completed": true
+    },
+    {
+      "name": "graph",
+      "title": "Graph",
+      "description": "A collection of vertices/nodes connected by edges",
+      "difficulty": "medium",
+      "completed": true
+    }
+  ]
+}

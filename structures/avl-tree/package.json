@@ -1,0 +1,31 @@
+{
+  "name": "@datastructures/avl-tree",
+  "version": "0.0.2",
+  "description": "AVL Tree Data Structure in TypeScript",
+  "main": "dist/",
+  "unpkg": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "index.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yowainwright/datastructures.git"
+  },
+  "keywords": [
+    "avlTree",
+    "avl tree",
+    "avl-tree"
+  ],
+  "author": "Will Jacobson <willjacobson1@gmail.com>",
+  "license": "MIT"
+}

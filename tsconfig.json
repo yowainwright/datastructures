@@ -5,22 +5,20 @@
     "allowJs": false,
     "declaration": true,
     "esModuleInterop": true,
-    "importHelpers": true,
-    "jsx": "react",
-    "lib": ["esnext", "dom"],
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "lib": ["esnext"],
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "noEmit": false,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "./dist",
-    "preserveConstEnums": true,
-    "removeComments": false,
+    "preserveConstEnums": false,
+    "removeComments": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
-    "target": "es5"
+    "target": "esnext"
   },
-  "exclude": ["**/*.test.ts", "**/*.test.tsx", "packages/*/dist/**", "**/__tests__/**", "*.js"]
+  "exclude": ["*.js", "**/dist"]
 }

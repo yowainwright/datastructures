@@ -1,0 +1,30 @@
+{
+  "name": "@datastructures/scripts",
+  "version": "0.0.1",
+  "description": "Utility scripts for the datastructures monorepo",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "commit-lint": "./commit-lint.ts",
+    "commit-prompt": "./commit-prompt.ts",
+    "create-datastructure": "./create-datastructure.ts",
+    "generate-challenge": "./generateNewDataStructure.ts",
+    "update-readme": "./updateReadme.ts"
+  },
+  "scripts": {
+    "commit-lint": "bun commit-lint.ts",
+    "commit-prompt": "bun commit-prompt.ts",
+    "create": "bun create-datastructure.ts",
+    "generate-challenge": "bun generateNewDataStructure.ts",
+    "update-readme": "bun updateReadme.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/bun": "workspace:*",
+    "typescript": "workspace:*"
+  },
+  "author": "Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)",
+  "license": "MIT"
+}
